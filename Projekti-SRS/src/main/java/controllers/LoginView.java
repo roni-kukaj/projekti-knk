@@ -1,4 +1,4 @@
-package views;
+package controllers;
 
 public class LoginView {
 }
