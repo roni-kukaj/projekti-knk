@@ -10,5 +10,7 @@ module com.example.projektisrs {
     requires com.almasb.fxgl.all;
 
     opens com.example.projektisrs to javafx.fxml;
+    opens views to javafx.fxml, javafx.graphics;
     exports com.example.projektisrs;
+
 }
