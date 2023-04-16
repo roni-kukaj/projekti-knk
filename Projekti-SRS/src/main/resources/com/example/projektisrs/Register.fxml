@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="929.0" style="-fx-border-radius: 15px; -fx-background-radius: #FFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="-5.0" prefHeight="130.0" prefWidth="933.0" style="-fx-background-color: #38B6FF;">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="200.0" layoutX="706.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Desktop/srs.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="71.0" fitWidth="96.0" layoutX="36.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/left_arrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Button layoutX="491.0" layoutY="522.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: #38B6FF;" text="Regjistro" textAlignment="JUSTIFY" textFill="WHITE" />
+      <TextField layoutX="322.0" layoutY="196.0" prefHeight="27.0" prefWidth="287.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="324.0" layoutY="175.0" prefHeight="18.0" prefWidth="100.0" text="Emri dhe Mbiemri">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="322.0" layoutY="252.0" prefHeight="27.0" prefWidth="287.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="323.0" layoutY="234.0" prefHeight="18.0" prefWidth="100.0" text="E-mail Adresa">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="323.0" layoutY="308.0" prefHeight="27.0" prefWidth="136.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 7; -fx-background-color: #FFFFFF;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <TextField layoutX="474.0" layoutY="308.0" prefHeight="27.0" prefWidth="136.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 7; -fx-background-color: #FFFFFF;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="324.0" layoutY="288.0" prefHeight="18.0" prefWidth="100.0" text="Datëlindja">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="474.0" layoutY="288.0" prefHeight="18.0" prefWidth="100.0" text="Vendi i lindjes">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+
+      <TextField layoutX="322.0" layoutY="360.0" prefHeight="27.0" prefWidth="136.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 7; -fx-background-color: #FFFFFF;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <TextField layoutX="475.0" layoutY="360.0" prefHeight="27.0" prefWidth="136.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 7; -fx-background-color: #FFFFFF;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="324.0" layoutY="341.0" prefHeight="18.0" prefWidth="100.0" text="Datëlindja">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="477.0" layoutY="341.0" prefHeight="18.0" prefWidth="100.0" text="Datëlindja">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
