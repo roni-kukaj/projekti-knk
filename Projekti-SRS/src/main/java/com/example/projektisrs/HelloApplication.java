@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
                 HelloApplication.class.getResource("HomeView.fxml")
         );
         AnchorPane studentsView = fxmlLoader.load();
-        Scene scene = new Scene(studentsView);
+        Scene scene = new Scene(studentsView, 1600, 900);
         stage.setTitle("Sistemi për Regjistrimin e Studentëve");
         stage.setScene(scene);
         stage.show();
