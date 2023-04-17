@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -23,5 +29,127 @@
             </ImageView>
          </children>
       </Pane>
+      <BorderPane layoutX="433.0" layoutY="139.0" prefHeight="728.0" prefWidth="598.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 20;" />
+      <TextField layoutX="491.0" layoutY="280.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="494.0" layoutY="262.0" prefHeight="18.0" prefWidth="118.0" text="Emri dhe Mbiemri">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="461.0" layoutY="172.0" prefHeight="27.0" prefWidth="739.0" text="Forma për Përditësimin e të Dhënave për Studentin">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="490.0" layoutY="348.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="493.0" layoutY="327.0" prefHeight="18.0" prefWidth="118.0" text="Email Adresa">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="490.0" layoutY="417.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <TextField layoutX="742.0" layoutY="416.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="742.0" layoutY="397.0" prefHeight="18.0" prefWidth="118.0" text="Gjinia">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="399.0" prefHeight="18.0" prefWidth="118.0" text="Data e Lindjes">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox layoutX="930.0" layoutY="415.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
+      <Button layoutX="796.0" layoutY="805.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="178.0" style="-fx-background-color: #38B6FF;" text="Regjistro" textAlignment="JUSTIFY" textFill="WHITE" />
+      <TextField layoutX="490.0" layoutY="484.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <TextField layoutX="743.0" layoutY="485.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="491.0" layoutY="464.0" prefHeight="18.0" prefWidth="118.0" text="Qyteti i Lindjes">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="744.0" layoutY="466.0" prefHeight="18.0" prefWidth="118.0" text="Komuna">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox layoutX="678.0" layoutY="484.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
+      <ChoiceBox layoutX="931.0" layoutY="485.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
+      <TextField layoutX="492.0" layoutY="560.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="491.0" layoutY="540.0" prefHeight="18.0" prefWidth="118.0" text="Shkolla e Mesme">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox layoutX="931.0" layoutY="560.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
+      <TextField layoutX="491.0" layoutY="634.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <TextField layoutX="745.0" layoutY="634.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="492.0" layoutY="615.0" prefHeight="18.0" prefWidth="118.0" text="Pikët e Matures">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="747.0" layoutY="615.0" prefHeight="18.0" prefWidth="165.0" text="Pikët e Provimit Pranues">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="491.0" layoutY="703.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <TextField layoutX="747.0" layoutY="702.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="492.0" layoutY="683.0" prefHeight="18.0" prefWidth="194.0" text="Suksesi në Shkollën e Mesme">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="747.0" layoutY="683.0" prefHeight="18.0" prefWidth="194.0" text="Drejtimi">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox layoutX="936.0" layoutY="702.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
    </children>
 </AnchorPane>
