@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-border-radius: 15px; -fx-background-radius: #FFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1604.0" style="-fx-border-radius: 15px; -fx-background-radius: #FFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="-3.0" layoutY="-14.0" prefHeight="102.0" prefWidth="1606.0" style="-fx-background-color: #38B6FF;">
          <children>
 
-             <ImageView fitHeight="120.0" fitWidth="200.0" layoutX="1392.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true"></ImageView>
+             <ImageView fitHeight="120.0" fitWidth="200.0" layoutX="1392.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
 
-            <ImageView fitHeight="78.0" fitWidth="150.0" layoutX="758.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="78.0" fitWidth="150.0" layoutX="1442.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
 
                <image>
                   <Image url="@../../../images/blue_logo_sm.png" />
@@ -32,101 +32,127 @@
             </ImageView>
          </children>
       </Pane>
-      <BorderPane layoutX="109.0" layoutY="251.0" prefHeight="261.0" prefWidth="118.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 20;" />
-      <Button layoutX="782.0" layoutY="755.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="178.0" style="-fx-background-color: #38B6FF;" text="Regjistro" textAlignment="JUSTIFY" textFill="WHITE" />
-      <TextField layoutX="461.0" layoutY="250.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <BorderPane layoutX="414.0" layoutY="126.0" prefHeight="728.0" prefWidth="598.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 20;" />
+      <Button layoutX="776.0" layoutY="785.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="178.0" style="-fx-background-color: #38B6FF;" text="Regjistro" textAlignment="JUSTIFY" textFill="WHITE" />
+      <TextField layoutX="471.0" layoutY="260.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <Label layoutX="464.0" layoutY="232.0" prefHeight="18.0" prefWidth="118.0" text="Emri dhe Mbiemri">
+      <Label layoutX="474.0" layoutY="242.0" prefHeight="18.0" prefWidth="118.0" text="Emri dhe Mbiemri">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="453.0" layoutY="154.0" prefHeight="27.0" prefWidth="534.0" text="Forma për Regjistrimin e Studentëve të Rinj">
+      <Label layoutX="473.0" layoutY="152.0" prefHeight="27.0" prefWidth="534.0" text="Forma për Regjistrimin e Studentëve të Rinj">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="460.0" layoutY="318.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <TextField layoutX="470.0" layoutY="328.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <Label layoutX="463.0" layoutY="297.0" prefHeight="18.0" prefWidth="118.0" text="Email Adresa">
+      <Label layoutX="473.0" layoutY="307.0" prefHeight="18.0" prefWidth="118.0" text="Email Adresa">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="460.0" layoutY="387.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <TextField layoutX="470.0" layoutY="397.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <TextField layoutX="712.0" layoutY="386.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <TextField layoutX="722.0" layoutY="396.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <Label layoutX="712.0" layoutY="367.0" prefHeight="18.0" prefWidth="118.0" text="Gjinia">
+      <Label layoutX="722.0" layoutY="377.0" prefHeight="18.0" prefWidth="118.0" text="Gjinia">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="462.0" layoutY="369.0" prefHeight="18.0" prefWidth="118.0" text="Data e Lindjes">
+      <Label layoutX="472.0" layoutY="379.0" prefHeight="18.0" prefWidth="118.0" text="Data e Lindjes">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="900.0" layoutY="385.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
-      <TextField layoutX="460.0" layoutY="454.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <ChoiceBox layoutX="910.0" layoutY="395.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
+      <TextField layoutX="470.0" layoutY="464.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <TextField layoutX="713.0" layoutY="455.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <TextField layoutX="723.0" layoutY="465.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <Label layoutX="461.0" layoutY="434.0" prefHeight="18.0" prefWidth="118.0" text="Qyteti i Lindjes">
+      <Label layoutX="471.0" layoutY="444.0" prefHeight="18.0" prefWidth="118.0" text="Qyteti i Lindjes">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="714.0" layoutY="436.0" prefHeight="18.0" prefWidth="118.0" text="Komuna">
+      <Label layoutX="724.0" layoutY="446.0" prefHeight="18.0" prefWidth="118.0" text="Komuna">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="648.0" layoutY="454.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
-      <ChoiceBox layoutX="901.0" layoutY="455.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
-      <TextField layoutX="461.0" layoutY="530.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <ChoiceBox layoutX="658.0" layoutY="464.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
+      <ChoiceBox layoutX="911.0" layoutY="465.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
+      <TextField layoutX="472.0" layoutY="540.0" prefHeight="34.0" prefWidth="474.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <Label layoutX="461.0" layoutY="510.0" prefHeight="18.0" prefWidth="118.0" text="Shkolla e Mesme">
+      <Label layoutX="471.0" layoutY="520.0" prefHeight="18.0" prefWidth="118.0" text="Shkolla e Mesme">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="900.0" layoutY="530.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
-      <TextField layoutX="460.0" layoutY="611.0" prefHeight="34.0" prefWidth="166.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <ChoiceBox layoutX="911.0" layoutY="540.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
+      <TextField layoutX="471.0" layoutY="614.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <TextField layoutX="637.0" layoutY="611.0" prefHeight="34.0" prefWidth="166.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <TextField layoutX="725.0" layoutY="614.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
-      <TextField layoutX="817.0" layoutY="611.0" prefHeight="34.0" prefWidth="166.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+      <Label layoutX="472.0" layoutY="595.0" prefHeight="18.0" prefWidth="118.0" text="Pikët e Matures">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="727.0" layoutY="595.0" prefHeight="18.0" prefWidth="165.0" text="Pikët e Provimit Pranues">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="471.0" layoutY="683.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
          <effect>
             <Blend mode="RED" />
          </effect>
       </TextField>
+      <TextField layoutX="727.0" layoutY="682.0" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #38B6FF; -fx-background-color: #FFFFFF; -fx-border-radius: 7;">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </TextField>
+      <Label layoutX="472.0" layoutY="663.0" prefHeight="18.0" prefWidth="194.0" text="Suksesi në Shkollën e Mesme">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="727.0" layoutY="663.0" prefHeight="18.0" prefWidth="194.0" text="Drejtimi">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox layoutX="916.0" layoutY="682.0" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #38B6FF; -fx-border-radius: 7;" />
    </children>
 </AnchorPane>
