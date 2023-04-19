@@ -17,7 +17,7 @@
          <children>
             <ImageView fitHeight="87.0" fitWidth="214.0" layoutX="1341.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\lenovo\IdeaProjects\projekti-knk\Projekti-SRS\src\main\resources\images\blue_logo_sm.png" />
+                  <Image url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
          </children></Pane>
