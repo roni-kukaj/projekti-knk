@@ -1,0 +1,8 @@
+Madhesia e dritares - 1600 x 900
+Pane kryesor i eperm - 1600 x 100
+Logo e vogel - 200 x 80
+Butonat e medhenj ne dashboard - 350 x 250
+Butoni per kthim prapa - 60 x 60
+Foto ne butonin per kthim prapa - 60 x 60
+Butonat standard - 200 x 45, 24px
+Fonti i labelave - 24px
