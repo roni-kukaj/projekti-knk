@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginViewController">
+<AnchorPane fx:id="username" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginViewController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="100.0">
          <children>
@@ -35,7 +35,7 @@
                </font>
             </Label>
             <PasswordField fx:id="passwordTextfield" layoutX="250.0" layoutY="415.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="500.0" />
-            <Button fx:id="loginButton" onAction="#loginButtonClicked" layoutX="400.0" layoutY="530.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #38B6FF;" text="Log In" textFill="WHITE">
+            <Button fx:id="loginButton" layoutX="400.0" layoutY="530.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #38B6FF;" text="Log In" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

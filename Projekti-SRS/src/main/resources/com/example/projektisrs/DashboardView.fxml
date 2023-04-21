@@ -55,7 +55,7 @@
                </font></Button>
             <Button fx:id="updateStudentButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Update Student" textFill="#38b6ff" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="113.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="updateImageView" fitHeight="113.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/update.png" />
                      </image>
@@ -77,7 +77,7 @@
          <children>
             <Button fx:id="graphicsButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Graphics &amp; Analytics" textFill="#38b6ff" GridPane.halignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="graphicsImageView" fitHeight="114.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/statistics.png" />
                      </image>
@@ -88,7 +88,7 @@
                </font></Button>
             <Button fx:id="settingsButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Settings" textFill="#38b6ff" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="settingImageView" fitHeight="114.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/settings.png" />
                      </image>
