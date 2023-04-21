@@ -1,8 +1,9 @@
 package controllers;
 
+    @FXML
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 
 public class LogInViewController {
     @FXML
