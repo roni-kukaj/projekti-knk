@@ -1,8 +1,14 @@
 package controllers;
 
+import javafx.fxml.FXML;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
 public class LoginViewController {
     @FXML
     private TextField emriTextfield;
+
     @FXML
     private TextField mbiemriTextfield;
     @FXML
@@ -47,9 +53,5 @@ public class LoginViewController {
         String drejtimi = this.drejtimiChoiceBox.getText();
         String provimiPranues = this.provimiPranuesTextfield.getText();
 
-
-        System.out.println("Emri: " + emri + " - Mbiemri: " + mbiemri);
-        System.out.println("Data e Lindjes: " + birthdate  + " - Email: " + email);
-        System.out.println("Testi i Matures: " + matura  + " - Suksesi ne SHM: " + suksesi + "Provimi pranues" + provimiPranues);
     }
 }
