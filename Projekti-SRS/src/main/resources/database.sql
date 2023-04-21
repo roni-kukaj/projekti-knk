@@ -5,7 +5,6 @@
 # Studenti -> QId te shkruhet vetem njeher
 # Studenti -> Pse emails jane me - dhe jo me .    ?
 
-
 CREATE DATABASE DB_SRS;
 
 Use DB_SRS;
@@ -151,3 +150,6 @@ VALUES
 (124, "Drin", "Rugova", "Femer", 03/13/2003, "drin-rugova@student.edu",1, 1, 1, 5, 82, 100, "IKS"),
 (125, "Ardian", "Murtezi", "Femer", 03/13/2003, "ardian-murtezi@student.edu",9, 9, 9, 5, 80, 100, "EAR"),
 (126, "Flutura", "Morina", "Femer", 03/13/2003, "flutra-morina@student.edu",3, 3, 3, 4.9, 81, 100, "TIK");
+
+SELECT * FROM Qyteti;
+SELECT * FROM Students;
