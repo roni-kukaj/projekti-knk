@@ -16,9 +16,9 @@ public class LogInViewController {
 
     @FXML
     private void loginButtonClicked(ActionEvent e){
-        String username=this.usernameTextfield.getText();
+        String username = this.usernameTextfield.getText();
         String password = this.passwordTextfield.getText();
 
-        System.out.println("Username: "+username+ " Password: "+password);
+        System.out.println(" Username: "+username+ " Password: "+password);
     }
 }
