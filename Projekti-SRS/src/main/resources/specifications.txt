@@ -6,3 +6,9 @@ Butoni per kthim prapa - 60 x 60
 Foto ne butonin per kthim prapa - 60 x 60
 Butonat standard - 200 x 45, 24px
 Fonti i labelave - 24px
+TextField - 500 x 45
+Alignment i butonit ne pane - x: 20, y: 20
+Alignment i logos - x: 1400, y:10
+Little label - 100 x 30
+
+Primary color - e kalter -  #38B6FF

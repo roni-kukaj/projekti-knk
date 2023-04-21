@@ -18,18 +18,19 @@
     <children>
         <Pane fx:id="topNav" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;">
             <children>
-            <ImageView fx:id="logo" fitHeight="80.0" fitWidth="200.0" layoutX="1398.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo" fitHeight="80.0" fitWidth="200.0" layoutX="1400.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
-                <Button fx:id="goBackButton" layoutX="11.0" layoutY="9.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" textAlignment="CENTER" textFill="WHITE" />
-            <Region layoutX="64.0" layoutY="1.0" prefHeight="60.0" prefWidth="821.0" />
-                  <ImageView fx:id="leftArrowFigure" fitHeight="48.0" fitWidth="60.0" layoutX="38.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/left_arrow.png" />
-               </image>
-            </ImageView>
+                <Button fx:id="goBackButton" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" textAlignment="CENTER" textFill="WHITE">
+               <graphic>
+                        <ImageView fx:id="leftArrowFigure" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/left_arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             </children>
         </Pane>
       <HBox alignment="TOP_CENTER" layoutX="3.0" layoutY="108.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="70.0" prefWidth="1580.0" spacing="10.0">

@@ -7,21 +7,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField layoutX="644.0" layoutY="105.0" prefHeight="26.0" prefWidth="312.0" AnchorPane.leftAnchor="644.0" AnchorPane.rightAnchor="644.0" AnchorPane.topAnchor="365.0" />
-      <Label layoutX="645.0" layoutY="138.0" prefHeight="30.0" prefWidth="200.0" text="Password" AnchorPane.leftAnchor="644.0" AnchorPane.rightAnchor="644.0" AnchorPane.topAnchor="410.0" />
-      <PasswordField layoutX="644.0" layoutY="111.0" prefHeight="26.0" prefWidth="312.0" AnchorPane.leftAnchor="644.0" AnchorPane.rightAnchor="644.0" AnchorPane.topAnchor="440.0" />
-      <Button layoutX="715.0" layoutY="138.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="192.0" style="-fx-background-color: #38B6FF;" text="Log In" textFill="WHITE" AnchorPane.leftAnchor="715.0" AnchorPane.rightAnchor="715.0" AnchorPane.topAnchor="500.0" />
-      <VBox layoutX="770.0" layoutY="182.0" prefHeight="478.0" prefWidth="400.0" style="-fx-border-color: #38b6ff;" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="180.0" />
-      <ImageView fx:id="logo" fitHeight="80.0" fitWidth="200.0" layoutX="708.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="708.0" AnchorPane.rightAnchor="708.0" AnchorPane.topAnchor="200.0">
-         <image>
-            <Image url="@../../../images/blue_logo_sm.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="697.0" layoutY="105.0" prefHeight="30.0" prefWidth="200.0" text="Username" AnchorPane.leftAnchor="644.0" AnchorPane.rightAnchor="644.0" AnchorPane.topAnchor="330.0" />
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <ImageView fx:id="logo" fitHeight="130.0" fitWidth="300.0" layoutX="350.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/blue_logo_sm.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="250.0" layoutY="250.0" prefHeight="30.0" prefWidth="200.0" text="Username">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTextfield" layoutX="250.0" layoutY="290.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="500.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <Label layoutX="250.0" layoutY="375.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="Password">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordTextfield" layoutX="250.0" layoutY="415.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="500.0" />
+            <Button layoutX="400.0" layoutY="530.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #38B6FF;" text="Log In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

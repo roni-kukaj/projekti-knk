@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -30,30 +31,39 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" GridPane.halignment="CENTER">
+            <Button fx:id="registerStudentButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Register Student" textFill="#38b6ff" textOverrun="CLIP" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="109.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/add.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Button>
+            <Button fx:id="studentListButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Student List" textFill="#38b6ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <graphic>
                   <ImageView fitHeight="141.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: 1;">
                      <image>
                         <Image url="@../../../images/students.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Button>
+            <Button fx:id="updateStudentButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Update Student" textFill="#38b6ff" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="113.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/update.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Button>
          </children>
       </GridPane>
       <GridPane layoutX="383.0" layoutY="507.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="850.0">
@@ -65,22 +75,28 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" GridPane.halignment="CENTER">
+            <Button fx:id="graphicsButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Graphics &amp; Analytics" textFill="#38b6ff" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/statistics.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Button>
+            <Button fx:id="settingsButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Settings" textFill="#38b6ff" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/settings.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Button>
          </children>
       </GridPane>
    </children>
