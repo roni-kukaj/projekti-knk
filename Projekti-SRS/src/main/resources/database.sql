@@ -123,7 +123,7 @@ VALUES
 (103, "Klea", "Bislimi", "Femer", 03/13/2003, "klea-bislimi@student.edu",8, 8, 8, 4.96, 80, 70, "IKS"),
 (104, "Fitim", "Arifi", "Femer", 03/13/2003, "fitim-arifi@student.edu",5, 5, 5, 4.9, 80, 73, "TIK"),
 (105, "Nita", "Rexha", "Femer", 03/13/2003, "nita-rexha@student.edu",2, 2, 2, 5, 80, 75, "IKS"),
-(106, "Endrit", "Kastrati", "Femer", 03/13/2003, "endirt-kastrati@student.edu",7, 7, 7, 4.8, 83, 100, "EAR"),
+(106, "Endrit", "Kastrati", "Femer", 03/13/2003, "endrit-kastrati@student.edu",7, 7, 7, 4.8, 83, 100, "EAR"),
 (107, "Blend", "Shala", "Femer", 03/13/2003, "blend-shala@student.edu",4, 4, 4, 4.98, 82, 100, "TIK"),
 (108, "Gentiana", "Aliu", "Femer", 03/13/2003, "gentiana-aliu@student.edu",1, 1, 1, 4.78, 77, 100, "IKS"),
 (109, "Lirim", "Shabani", "Femer", 03/13/2003, "lirim-shabani@student.edu",10, 10, 10, 4.99, 74, 100, "IKS"),
