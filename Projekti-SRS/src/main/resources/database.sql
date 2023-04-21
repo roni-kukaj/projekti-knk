@@ -1,3 +1,10 @@
+# ndryshimet e nevojshme
+# Admin -> Password -> NVARCHAR(512);
+# Studenti -> Mbiemri - te shkruhet mire
+# Studenti -> Gjinia -> NVARCHAR(1)
+# Studenti -> QId te shkruhet vetem njeher
+# Studenti -> Pse emails jane me - dhe jo me .    ?
+
 
 CREATE DATABASE DB_SRS;
 
