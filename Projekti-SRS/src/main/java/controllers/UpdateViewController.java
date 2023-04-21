@@ -9,33 +9,33 @@ public class UpdateViewController {
 
     public class LoginViewController {
 
-
+        @FXML
         private TextField emriUpdateTextfield;
         @FXML
         private TextField mbiemriUpdateTextfield;
         @FXML
         private RadioButton mRadioOption;
-
+        @FXML
         private RadioButton fRadioOption;
-
+        @FXML
         private DatePicker dataLindjesPicker;
-
+        @FXML
         private ChoiceBox qytetiLindjesChoiceBox;
-
+        @FXML
         private TextField emailTextfield;
-
+        @FXML
         private ChoiceBox komunaChoiceBox;
-
+        @FXML
         private ChoiceBox shkollaChoiceBox;
-
+        @FXML
         private TextField testiMaturesTextfield;
-
+        @FXML
         private TextField suksesiTextfield;
-
+        @FXML
         private TextField provimiPranuesTextfield;
-
+        @FXML
         private ChoiceBox drejtimiChoiceBox;
-
+        @FXML
         private Button updateButton;
 
         @FXML

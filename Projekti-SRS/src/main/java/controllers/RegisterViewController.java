@@ -9,33 +9,33 @@ public class RegisterViewController {
 
     public class LoginViewController {
 
-
+        @FXML
         private TextField emriTextfield;
         @FXML
         private TextField mbiemriTextfield;
         @FXML
         private RadioButton mRadioChoice;
-
+        @FXML
         private RadioButton fradioChoice;
-
+        @FXML
         private DatePicker birthdayPicker;
-
+        @FXML
         private ChoiceBox qytetiLindjesChoiceBox;
-
+        @FXML
         private TextField emailTextfield;
-
+        @FXML
         private ChoiceBox komunaChoiceBox;
-
+        @FXML
         private ChoiceBox shkollaChoiceBox;
-
+        @FXML
         private TextField maturaTextfield;
-
+        @FXML
         private TextField suksesiTextfield;
-
+        @FXML
         private TextField provimiPranuesTextfield;
-
+        @FXML
         private ChoiceBox drejtimiChoiceBox;
-
+        @FXML
         private Button registerButton;
 
         @FXML
