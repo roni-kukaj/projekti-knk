@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class UpdateView {
+public class UpdateViewController {
 
 
     public class LoginViewController {
@@ -43,7 +43,7 @@ public class UpdateView {
             String emri = this.emriUpdateTextfield.getText();
             String mbiemri = this.mbiemriUpdateTextfield.getText();
             String Mchoice = this.mRadioOption.getText();
-            String Fchoice = this.fradioChoice.getText();
+            String Fchoice = this.fRadioOption.getText();
             String birthdate = this.dataLindjesPicker.toString();
             String choiceBox = this.qytetiLindjesChoiceBox.toString();
             String email = this.emailTextfield.getText();

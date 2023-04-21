@@ -3,7 +3,8 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.scene.image.ImageView;
 
-public class DashbordViewControler {
+public class DashboardViewController {
+
     private ImageView registerImageView;
     private ImageView stulistImageView;
     private ImageView updateImageView;
