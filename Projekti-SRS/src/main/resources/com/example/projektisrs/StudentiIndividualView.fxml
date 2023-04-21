@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="controllers.StudentiIndividualViewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentiIndividualViewController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;">
          <children>
@@ -175,7 +175,7 @@
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0">
                      <children>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="ID" textOverrun="CLIP">
+                        <Label fx:id="idLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="ID" textOverrun="CLIP">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -186,7 +186,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Emri">
+                        <Label fx:id="emriLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Emri">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -197,7 +197,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Mbiemri">
+                        <Label fx:id="mbiemriLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Mbiemri">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -208,7 +208,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Gjinia">
+                        <Label fx:id="gjiniaLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Gjinia">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -219,7 +219,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Datelindja">
+                        <Label fx:id="datelindjaLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Datelindja">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -230,7 +230,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Email">
+                        <Label fx:id="emailLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Email">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -241,7 +241,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Qyteti i lindjes">
+                        <Label fx:id="qytetiLindjesLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Qyteti i lindjes">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -252,7 +252,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Komuna">
+                        <Label fx:id="komunaLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Komuna">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -263,7 +263,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Shkolla e mesme">
+                        <Label fx:id="shkollaLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Shkolla e mesme">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -274,7 +274,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Suksesi ne shkollen e mesme">
+                        <Label fx:id="suksesiLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Suksesi ne shkollen e mesme">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -285,7 +285,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Piket ne testin e matures">
+                        <Label fx:id="piketMaturesLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Piket ne testin e matures">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -296,7 +296,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Piket ne provimin pranues">
+                        <Label fx:id="provimiPranuesLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Piket ne provimin pranues">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -307,7 +307,7 @@
                               <Insets left="10.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Drejtimi">
+                        <Label fx:id="drejtimiLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Drejtimi">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
