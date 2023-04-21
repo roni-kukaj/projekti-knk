@@ -33,7 +33,7 @@
          <children>
             <Button fx:id="registerStudentButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Register Student" textFill="#38b6ff" textOverrun="CLIP" GridPane.halignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="109.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="registerImageView" fitHeight="109.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/add.png" />
                      </image>
@@ -44,7 +44,7 @@
                </font></Button>
             <Button fx:id="studentListButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Student List" textFill="#38b6ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="141.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: 1;">
+                  <ImageView fx:id="stulistImageView" fitHeight="141.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: 1;">
                      <image>
                         <Image url="@../../../images/students.png" />
                      </image>
