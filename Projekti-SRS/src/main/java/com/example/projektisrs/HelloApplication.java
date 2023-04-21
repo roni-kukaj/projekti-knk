@@ -9,7 +9,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                HelloApplication.class.getResource("DashboardView.fxml")
+                HelloApplication.class.getResource("LogInView.fxml")
         );
         AnchorPane studentsView = fxmlLoader.load();
         Scene scene = new Scene(studentsView, 1600, 900);
