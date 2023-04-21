@@ -4,6 +4,7 @@
 # Studenti -> Gjinia -> NVARCHAR(1)
 # Studenti -> QId te shkruhet vetem njeher
 # Studenti -> Pse emails jane me - dhe jo me .    ?
+# Studenti -> stuID -> duhet te jete fushe AUTOINCREMENT
 
 CREATE DATABASE DB_SRS;
 
