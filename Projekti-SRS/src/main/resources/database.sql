@@ -47,11 +47,11 @@ CREATE TABLE Studenti(
 
 INSERT INTO Admin(AId, username, password)
 VALUES
-(1, "admin1", "admin1"),
-(2, "admin2", "admin2"),
-(3, "admin3", "admin3"),
-(4, "admin4", "admin4"),
-(5, "admin5", "admin5");
+(1, "admin1", "$2a$10$UYVdyJoNOnE.k6ZGmzuGXei0/OXfLcXVpisgbCVnuReFU.IqN5jBS"),
+(2, "admin2", "$2a$10$wDFVmkU47IVvWFMyF9Ugc.bFlsXNlCYd2E.RQkIKhdq4dO04Kg9k6"),
+(3, "admin3", "$2a$10$5dzVhYIbiLGAHu7A53qgQuyCWO71q.XpkCAKtqDACcGPS5qaAZSYG"),
+(4, "admin4", "$2a$10$.hgKitbPnJdWW7tWdeCzguFyiXlAOfUDpP7xDfwI3mjUx.f6JfAtu"),
+(5, "admin5", "$2a$10$rXXgxlb.5T1qlFjUh4EEDeIuTUWy.BJAA2yIODCJ3VLtXk5efmXqi");
 
 INSERT INTO Qyteti(QId, Emri)
 VALUES
