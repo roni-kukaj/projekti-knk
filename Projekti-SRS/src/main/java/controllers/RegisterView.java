@@ -31,10 +31,25 @@ public class LoginViewController {
     private Button registerButton;
 
     @FXML
-    private void loginButtonClicked(ActionEvent e){
+    private void registerButton(ActionEvent e){
         String emri = this.emriTextfield.getText();
         String mbiemri = this.mbiemriTextfield.getText();
+        String Mchoice = this.mRadioChoice.getText();
+        String Fchoice = this.fradioChoice.getText();
+        String birthdate = this.birthdayPicker.getText();
+        String choiceBox = this.qytetiLindjesChoiceBox.getText();
+        String email = this.emailTextfield.getText();
+        String komuna = this.komunaChoiceBox.getText();
+        String shkolla = this.shkollaChoiceBox.getText();
+        String matura = this.maturaTextfield.getText();
+        String suksesi = this.suksesiTextfield.getText();
+        String provimiPranues = this.provimiPranuesTextfield.getText();
+        String drejtimi = this.drejtimiChoiceBox.getText();
+        String provimiPranues = this.provimiPranuesTextfield.getText();
 
-        System.out.println("Username: " + username + " - Password: " + password);
+
+        System.out.println("Emri: " + emri + " - Mbiemri: " + mbiemri);
+        System.out.println("Data e Lindjes: " + birthdate  + " - Email: " + email);
+        System.out.println("Testi i Matures: " + matura  + " - Suksesi ne SHM: " + suksesi + "Provimi pranues" + provimiPranues);
     }
 }
