@@ -9,7 +9,7 @@ module com.example.projektisrs {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
 
-    opens com.example.projektisrs to javafx.fxml;
+    opens com.example.projektisrs to javafx.fxml, javafx.graphics;
     opens controllers to javafx.fxml, javafx.graphics;
     exports com.example.projektisrs;
 
