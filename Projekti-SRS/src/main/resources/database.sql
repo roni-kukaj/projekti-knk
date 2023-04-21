@@ -1,11 +1,3 @@
-# ndryshimet e nevojshme
-# Admin -> Password -> NVARCHAR(512);
-# Studenti -> Mbiemri - te shkruhet mire
-# Studenti -> Gjinia -> NVARCHAR(1)
-# Studenti -> QId te shkruhet vetem njeher
-# Studenti -> Pse emails jane me - dhe jo me .    ?
-# Studenti -> stuID -> duhet te jete fushe AUTOINCREMENT
-
 CREATE DATABASE DB_SRS;
 
 Use DB_SRS;
@@ -14,7 +6,7 @@ Use DB_SRS;
 CREATE TABLE Admin(
 	AId INTEGER,
     Username NVARCHAR(50),
-    Password NVARCHAR(50),
+    Password NVARCHAR(512),
     PRIMARY KEY (AId)
 );
 
@@ -36,13 +28,12 @@ CREATE TABLE Shkolla(
 
 #Krijimi i tabeles STUDENTI
 CREATE TABLE Studenti(
-	stuId INTEGER,
+	stuId INTEGER AUTO_INCREMENT,
 	Emri NVARCHAR(20),
-    Mbrimei NVARCHAR(20),
-    Gjinia NVARCHAR(15),
+    Mbiemri NVARCHAR(20),
+    Gjinia VARCHAR(1),
     Ditelindja DATE,
     Email NVARCHAR(50),
-    QId INTEGER,
     QId INTEGER,
     sid Integer,
     SuksesiNeSHM DOUBLE,
@@ -124,33 +115,33 @@ VALUES
 
 INSERT INTO Studenti(stuId,Emri, Mbiemri, Gjinia, Ditelindja,Email, QytetiILindjes, Komuna, ShkollaEMesme,PiketEMatures, PiketEProvimitPranues)
 VALUES
-(100, "Besarta", "Gashi", "Femer", 03/13/2003, "besarta-gashi@student.edu",9, 9, 9, 4.98, 80, 100, "IKS"),
-(101, "Drilon", "Krasniqi", "Femer", 03/13/2003, "drilon-krasniqi@student.edu",6, 6, 6, 5, 83, 100, "IKS"),
-(102, "Agnesa", "Bytyqi", "Femer", 03/13/2003, "agnesa-bytyqi@student.edu",3, 3, 3, 4.98, 79, 100, "IKS"),
-(103, "Klea", "Bislimi", "Femer", 03/13/2003, "klea-bislimi@student.edu",8, 8, 8, 4.96, 80, 70, "IKS"),
-(104, "Fitim", "Arifi", "Femer", 03/13/2003, "fitim-arifi@student.edu",5, 5, 5, 4.9, 80, 73, "TIK"),
-(105, "Nita", "Rexha", "Femer", 03/13/2003, "nita-rexha@student.edu",2, 2, 2, 5, 80, 75, "IKS"),
-(106, "Endrit", "Kastrati", "Femer", 03/13/2003, "endrit-kastrati@student.edu",7, 7, 7, 4.8, 83, 100, "EAR"),
-(107, "Blend", "Shala", "Femer", 03/13/2003, "blend-shala@student.edu",4, 4, 4, 4.98, 82, 100, "TIK"),
-(108, "Gentiana", "Aliu", "Femer", 03/13/2003, "gentiana-aliu@student.edu",1, 1, 1, 4.78, 77, 100, "IKS"),
-(109, "Lirim", "Shabani", "Femer", 03/13/2003, "lirim-shabani@student.edu",10, 10, 10, 4.99, 74, 100, "IKS"),
-(110, "Arbnora", "Haxhiu", "Femer", 03/13/2003, "arbnora-haxhiu@student.edu",9, 9, 9, 5, 70, 100, "IKS"),
-(111, "Riad", "Syla", "Femer", 03/13/2003, "riad-syla@student.edu",1, 1, 1, 4.7, 70, 100, "IKS"),
-(112, "Tina", "Thaqi", "Femer", 03/13/2003, "tina-thaqi@student.edu",7, 7, 7, 5, 79, 100, "EAR"),
-(113, "Fjolla", "Llapi", "Femer", 03/13/2003, "fjolla-llapi@student.edu",19, 19, 19, 5, 80, 100, "IKS"),
-(114, "Lorik", "Shatri", "Femer", 03/13/2003, "lorik-shatri@student.edu",18, 18, 18, 4.98, 83, 100, "IKS"),
-(115, "Valdrin", "Shoshi", "Femer", 03/13/2003, "valdrin-shoshi@student.edu",14, 14, 14, 4.9, 88, 100, "TIK"),
-(116, "Fatlum", "Osmani", "Femer", 03/13/2003, "fatlum-osmani@student.edu",16, 16, 16, 4.9, 83, 100, "TIK"),
-(117, "Leonora", "Maraj", "Femer", 03/13/2003, "leonora-maraj@student.edu",17, 17, 17,5, 79, 100, "IKS"),
-(118, "Rreze", "Ukaj", "Femer", 03/13/2003, "rreze-ukaj@student.edu",20, 20, 20, 4.9, 74, 100, "EAR"),
-(119, "Lis", "Sejdiu", "Femer", 03/13/2003, "lis-sejdiu@student.edu",6,6, 6, 4.98, 72, 100, "IKS"),
-(120, "Erza", "Rugova", "Femer", 03/13/2003, "erza-rugova@student.edu",5, 5, 5, 4.8, 79, 100, "IKS"),
-(121, "Rinesa", "Murtezi", "Femer", 03/13/2003, "rinesa-murtezaj@student.edu",8, 8, 8,5, 80, 100, "EAR"),
-(122, "Jeta", "Ukaj", "Femer", 03/13/2003, "jeta-ukaj@student.edu",11, 11, 11, 4.9, 84, 100, "IKS"),
-(123, "Vjosa", "Sejdiu", "Femer", 03/13/2003, "vjosa-sejdiu@student.edu",14, 14, 14, 4.8, 70, 100, "IKS"),
-(124, "Drin", "Rugova", "Femer", 03/13/2003, "drin-rugova@student.edu",1, 1, 1, 5, 82, 100, "IKS"),
-(125, "Ardian", "Murtezi", "Femer", 03/13/2003, "ardian-murtezi@student.edu",9, 9, 9, 5, 80, 100, "EAR"),
-(126, "Flutura", "Morina", "Femer", 03/13/2003, "flutra-morina@student.edu",3, 3, 3, 4.9, 81, 100, "TIK");
+(100, "Besarta", "Gashi", "F", 03/13/2003, "besarta-gashi@student.edu",9, 9, 9, 4.98, 80, 100, "IKS"),
+(101, "Drilon", "Krasniqi", "M", 03/23/2003, "drilon-krasniqi@student.edu",6, 6, 6, 5, 83, 100, "IKS"),
+(102, "Agnesa", "Bytyqi", "F", 05/13/2003, "agnesa-bytyqi@student.edu",3, 3, 3, 4.98, 79, 100, "IKS"),
+(103, "Klea", "Bislimi", "F", 06/03/2003, "klea-bislimi@student.edu",8, 8, 8, 4.96, 80, 70, "IKS"),
+(104, "Fitim", "Arifi", "M", 02/12/2003, "fitim-arifi@student.edu",5, 5, 5, 4.9, 80, 73, "TIK"),
+(105, "Nita", "Rexha", "F", 04/08/2003, "nita-rexha@student.edu",2, 2, 2, 5, 80, 75, "IKS"),
+(106, "Endrit", "Kastrati", "M", 12/13/2002, "endrit-kastrati@student.edu",7, 7, 7, 4.8, 83, 100, "EAR"),
+(107, "Blend", "Shala", "M", 06/21/2003, "blend-shala@student.edu",4, 4, 4, 4.98, 82, 100, "TIK"),
+(108, "Gentiana", "Aliu", "F", 09/25/2003, "gentiana-aliu@student.edu",1, 1, 1, 4.78, 77, 100, "IKS"),
+(109, "Lirim", "Shabani", "M", 05/03/2003, "lirim-shabani@student.edu",10, 10, 10, 4.99, 74, 100, "IKS"),
+(110, "Arbnora", "Haxhiu", "F", 08/14/2003, "arbnora-haxhiu@student.edu",9, 9, 9, 5, 70, 100, "IKS"),
+(111, "Riad", "Syla", "M", 12/30/2003, "riad-syla@student.edu",1, 1, 1, 4.7, 70, 100, "IKS"),
+(112, "Tina", "Thaqi", "F", 03/03/2003, "tina-thaqi@student.edu",7, 7, 7, 5, 79, 100, "EAR"),
+(113, "Fjolla", "Llapi", "F", 03/13/2003, "fjolla-llapi@student.edu",19, 19, 19, 5, 80, 100, "IKS"),
+(114, "Lorik", "Shatri", "M", 09/20/2003, "lorik-shatri@student.edu",18, 18, 18, 4.98, 83, 100, "IKS"),
+(115, "Valdrin", "Shoshi", "M", 10/21/2003, "valdrin-shoshi@student.edu",14, 14, 14, 4.9, 88, 100, "TIK"),
+(116, "Fatlum", "Osmani", "M", 05/26/2003, "fatlum-osmani@student.edu",16, 16, 16, 4.9, 83, 100, "TIK"),
+(117, "Leonora", "Maraj", "F", 09/03/2003, "leonora-maraj@student.edu",17, 17, 17,5, 79, 100, "IKS"),
+(118, "Rreze", "Ukaj", "F", 03/09/2003, "rreze-ukaj@student.edu",20, 20, 20, 4.9, 74, 100, "EAR"),
+(119, "Lis", "Sejdiu", "M", 07/16/2003, "lis-sejdiu@student.edu",6,6, 6, 4.98, 72, 100, "IKS"),
+(120, "Erza", "Rugova", "F", 04/19/2003, "erza-rugova@student.edu",5, 5, 5, 4.8, 79, 100, "IKS"),
+(121, "Rinesa", "Murtezi", "F", 01/17/2003, "rinesa-murtezaj@student.edu",8, 8, 8,5, 80, 100, "EAR"),
+(122, "Jeta", "Ukaj", "F", 09/19/2003, "jeta-ukaj@student.edu",11, 11, 11, 4.9, 84, 100, "IKS"),
+(123, "Vjosa", "Sejdiu", "F", 10/01/2003, "vjosa-sejdiu@student.edu",14, 14, 14, 4.8, 70, 100, "IKS"),
+(124, "Drin", "Rugova", "M", 02/20/2003, "drin-rugova@student.edu",1, 1, 1, 5, 82, 100, "IKS"),
+(125, "Ardian", "Murtezi", "M", 12/13/2002, "ardian-murtezi@student.edu",9, 9, 9, 5, 80, 100, "EAR"),
+(126, "Flutura", "Morina", "F", 11/13/2002, "flutra-morina@student.edu",3, 3, 3, 4.9, 81, 100, "TIK");
 
 SELECT * FROM Qyteti;
 SELECT * FROM Students;
