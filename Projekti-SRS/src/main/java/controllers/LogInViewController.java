@@ -4,8 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class LoginViewController {
-    @FXML
+public class LogInViewController {
     private TextField emriTextfield;
     @FXML
     private TextField mbiemriTextfield;
@@ -49,7 +48,7 @@ public class LoginViewController {
         String suksesi = this.suksesiTextfield.getText();
         String provimiPranues = this.provimiPranuesTextfield.getText();
         String drejtimi = this.drejtimiChoiceBox.toString();
-       // String provimiPranues = this.provimiPranuesTextfield.getText();
+        // String provimiPranues = this.provimiPranuesTextfield.getText();
 
 
         System.out.println("Emri: " + emri + " - Mbiemri: " + mbiemri);
