@@ -1,5 +1,9 @@
 package controllers;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+
 public class LoginViewController {
     @FXML
     private TextField emriTextfield;
@@ -36,16 +40,16 @@ public class LoginViewController {
         String mbiemri = this.mbiemriTextfield.getText();
         String Mchoice = this.mRadioChoice.getText();
         String Fchoice = this.fradioChoice.getText();
-        String birthdate = this.birthdayPicker.getText();
-        String choiceBox = this.qytetiLindjesChoiceBox.getText();
+        String birthdate = this.birthdayPicker.toString();
+        String choiceBox = this.qytetiLindjesChoiceBox.toString();
         String email = this.emailTextfield.getText();
-        String komuna = this.komunaChoiceBox.getText();
-        String shkolla = this.shkollaChoiceBox.getText();
+        String komuna = this.komunaChoiceBox.toString();
+        String shkolla = this.shkollaChoiceBox.toString();
         String matura = this.maturaTextfield.getText();
         String suksesi = this.suksesiTextfield.getText();
         String provimiPranues = this.provimiPranuesTextfield.getText();
-        String drejtimi = this.drejtimiChoiceBox.getText();
-        String provimiPranues = this.provimiPranuesTextfield.getText();
+        String drejtimi = this.drejtimiChoiceBox.toString();
+       // String provimiPranues = this.provimiPranuesTextfield.getText();
 
 
         System.out.println("Emri: " + emri + " - Mbiemri: " + mbiemri);
