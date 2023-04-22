@@ -1,20 +1,20 @@
 package models;
 
 public class Qyteti{
-    private int qyteti_id;
+    private int qytetiId;
     private String emri;
 
     public Qyteti(int qyteti_id, String emri) {
-        this.qyteti_id = qyteti_id;
+        this.qytetiId = qyteti_id;
         this.emri = emri;
     }
 
-    public int getQyteti_id() {
-        return qyteti_id;
+    public int getQytetiId() {
+        return qytetiId;
     }
 
-    public void setQyteti_id(int qyteti_id) {
-        this.qyteti_id = qyteti_id;
+    public void setQytetiId(int qyteti_id) {
+        this.qytetiId = qyteti_id;
     }
 
     public String getEmri() {

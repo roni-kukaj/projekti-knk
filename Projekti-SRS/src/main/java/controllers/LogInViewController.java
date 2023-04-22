@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import repository.AdminRepository;
+import services.SceneUtil;
 
 import java.io.IOException;
 
@@ -29,11 +30,11 @@ public class LogInViewController {
 
         boolean logged_in = AdminRepository.login(username, password);
         if(logged_in){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/projektisrs/DashboardView.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) this.loginButton.getScene().getWindow();
-            stage.setScene(scene);
+            try{
+                SceneUtil.changeScene((Stage)this.loginButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+            } catch(IOException ioe){
+                // TO DO
+            }
         }
     }
 }
