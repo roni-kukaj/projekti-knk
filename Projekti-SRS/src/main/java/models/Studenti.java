@@ -118,14 +118,12 @@ public class Studenti {
         this.shkollaId = shkollaId;
     }
 
-    public double
-    getSuksesiNeShkollenMesme() {
+    public double getSuksesiNeShkollenMesme() {
 
         return suksesiNeShkollenMesme;
     }
 
-    public void
-    setSuksesiNeShkollenMesme(double suksesiNeShkollenMesme) {
+    public void setSuksesiNeShkollenMesme(double suksesiNeShkollenMesme) {
 
         this.suksesiNeShkollenMesme = suksesiNeShkollenMesme;
     }
@@ -144,8 +142,7 @@ public class Studenti {
         return piketProvimitPranues;
     }
 
-    public void
-    setPiketProvimitPranues(int piketProvimitPranues) {
+    public void setPiketProvimitPranues(int piketProvimitPranues) {
 
         this.piketProvimitPranues = piketProvimitPranues;
 
