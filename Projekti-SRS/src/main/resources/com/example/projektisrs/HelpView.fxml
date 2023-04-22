@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;">
+         <children>
+            <Button layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #33B6FF;">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/left_arrow.png" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="80.0" fitWidth="200.0" layoutX="1400.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/blue_logo_sm.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TabPane layoutX="143.0" layoutY="259.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #33B6FF; -fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="40.0" tabMaxWidth="250.0" tabMinHeight="40.0" tabMinWidth="200.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="150.0">
+        <tabs>
+          <Tab text="Hyrje">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="150.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miresevini ne sistemin tone per regjistrimin e studenteve, i cili eshte dizajnuar per ta bere procesin e regjistrimit me te shpejte, lehte dhe eficient. Sistemi yne eshte i lehte per perdorim dhe u jep mundesine e regjistrimit te studenteve duke perdorur informacionet baze qe merren nga studentet. Gjithashtu, sistemi siguron edhe shfaqjen e te dhenave ne menyre grafike, varesisht nga kriteri qe jipni." textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
