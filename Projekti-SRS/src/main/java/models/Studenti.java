@@ -17,13 +17,7 @@ public class Studenti {
     private int piketProvimitPranues;
     private String drejtimi;
 
-    public Studenti(int studentId, String
-            emri, String mbiemri, char gjinia, Date
-                            ditelindja, String email, int
-                            qytetiLindjesId, int komunaId, int
-                            shkollaId, double suksesiNeShkollenMesme,
-                    int piketTestitMatures, int
-                            piketProvimitPranues, String drejtimi) {
+    public Studenti(int studentId, String emri, String mbiemri, char gjinia, Date ditelindja, String email, int qytetiLindjesId, int komunaId, int shkollaId, double suksesiNeShkollenMesme, int piketTestitMatures, int piketProvimitPranues, String drejtimi) {
 
         this.studentId = studentId;
         this.emri = emri;
@@ -32,23 +26,15 @@ public class Studenti {
         this.ditelindja = ditelindja;
         this.email = email;
 
-        this.qytetiLindjesId =
-
-                qytetiLindjesId;
+        this.qytetiLindjesId =  qytetiLindjesId;
 
         this.komunaId = komunaId;
         this.shkollaId = shkollaId;
-        this.suksesiNeShkollenMesme =
+        this.suksesiNeShkollenMesme =  suksesiNeShkollenMesme;
 
-                suksesiNeShkollenMesme;
+        this.piketTestitMatures = piketTestitMatures;
 
-        this.piketTestitMatures =
-
-                piketTestitMatures;
-
-        this.piketProvimitPranues =
-
-                piketProvimitPranues;
+        this.piketProvimitPranues = piketProvimitPranues;
 
         this.drejtimi = drejtimi;
     }
@@ -57,8 +43,7 @@ public class Studenti {
         return studentId;
     }
 
-    public void setStudentId(int
-                                     studentId) {
+    public void setStudentId(int studentId) {
 
         this.studentId = studentId;
     }
@@ -93,8 +78,7 @@ public class Studenti {
         return ditelindja;
     }
 
-    public void setDitelindja(Date
-                                      ditelindja) {
+    public void setDitelindja(Date ditelindja) {
 
         this.ditelindja = ditelindja;
     }
@@ -111,12 +95,9 @@ public class Studenti {
         return qytetiLindjesId;
     }
 
-    public void setQytetiLindjesId(int
-                                           qytetiLindjesId) {
+    public void setQytetiLindjesId(int qytetiLindjesId) {
 
-        this.qytetiLindjesId =
-
-                qytetiLindjesId;
+        this.qytetiLindjesId = qytetiLindjesId;
 
     }
 
@@ -126,7 +107,6 @@ public class Studenti {
 
     public void setKomunaId(int komunaId)
     {
-
         this.komunaId = komunaId;
     }
 
@@ -134,9 +114,7 @@ public class Studenti {
         return shkollaId;
     }
 
-    public void setShkollaId(int
-                                     shkollaId) {
-
+    public void setShkollaId(int shkollaId) {
         this.shkollaId = shkollaId;
     }
 
@@ -147,24 +125,18 @@ public class Studenti {
     }
 
     public void
-    setSuksesiNeShkollenMesme(double
-                                      suksesiNeShkollenMesme) {
+    setSuksesiNeShkollenMesme(double suksesiNeShkollenMesme) {
 
-        this.suksesiNeShkollenMesme =
-
-                suksesiNeShkollenMesme;
+        this.suksesiNeShkollenMesme = suksesiNeShkollenMesme;
     }
 
     public int getPiketTestitMatures() {
         return piketTestitMatures;
     }
 
-    public void setPiketTestitMatures(int
-                                              piketTestitMatures) {
+    public void setPiketTestitMatures(int piketTestitMatures) {
 
-        this.piketTestitMatures =
-
-                piketTestitMatures;
+        this.piketTestitMatures = piketTestitMatures;
 
     }
 
@@ -173,12 +145,9 @@ public class Studenti {
     }
 
     public void
-    setPiketProvimitPranues(int
-                                    piketProvimitPranues) {
+    setPiketProvimitPranues(int piketProvimitPranues) {
 
-        this.piketProvimitPranues =
-
-                piketProvimitPranues;
+        this.piketProvimitPranues = piketProvimitPranues;
 
     }
 
@@ -186,8 +155,7 @@ public class Studenti {
         return drejtimi;
     }
 
-    public void setDrejtimi(String
-                                    drejtimi) {
+    public void setDrejtimi(String drejtimi) {
 
         this.drejtimi = drejtimi;
     }
