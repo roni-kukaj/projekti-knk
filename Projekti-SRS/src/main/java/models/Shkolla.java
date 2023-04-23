@@ -3,12 +3,12 @@ package models;
 public class Shkolla {
 
     private int shkollaId;
-    private String emriIShkolles;
+    private String emriShkolles;
     private int qytetiId;
 
-    public Shkolla(int shkollaId, String emriIShkolles, int qytetiId){
+    public Shkolla(int shkollaId, String emriShkolles, int qytetiId){
         this.shkollaId=shkollaId;
-        this.emriIShkolles=emriIShkolles;
+        this.emriShkolles=emriShkolles;
         this.qytetiId=qytetiId;
     }
 
@@ -23,14 +23,14 @@ public class Shkolla {
     public int getQytetiId(){
         return qytetiId;
     }
-    public void setQytetiId(){
+    public void setQytetiId(int qytetiId){
         this.qytetiId=qytetiId;
     }
 
-    public String getEmriIShkolles(){
-        return emriIShkolles;
+    public String getEmriShkolles(){
+        return emriShkolles;
     }
-    public void setEmriIShkolles(){
-        this.emriIShkolles=emriIShkolles;
+    public void setEmriShkolles(String emriShkolles){
+        this.emriShkolles=emriShkolles;
     }
 }
