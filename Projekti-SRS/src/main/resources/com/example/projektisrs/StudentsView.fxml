@@ -51,7 +51,7 @@
                </font>
             </TextField>
             <Region prefHeight="55.0" prefWidth="451.0" />
-            <Button id="filterButton" fx:id="filterButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #38B6FF;" text="Filter" textAlignment="CENTER" textFill="WHITE">
+            <Button id="filterButton" onAction="#filterButtonClicked" fx:id="filterButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #38B6FF;" text="Filter" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>

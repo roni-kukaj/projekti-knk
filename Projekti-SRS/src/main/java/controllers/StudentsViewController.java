@@ -43,11 +43,56 @@ public class StudentsViewController {
         drejtimiColumn.setCellValueFactory(new PropertyValueFactory<>("drejtimi"));
 
         try{
-            studentiData = StudentiRepository.getStudentsForTable();
+            studentiData = StudentiRepository.getTableStudenti();
         } catch (SQLException e) {
             e.printStackTrace();
             return;
         }
         studentTable.setItems(studentiData);
+    }
+
+    public void filterButtonClicked(){
+        String id = this.idFilterField.getText();
+        String emri = this.emriFilterField.getText();
+        String mbiemri = this.mbiemriFilterField.getText();
+        try{
+            if(id.equals("") & emri.equals("") & mbiemri.equals("")){
+                studentiData = StudentiRepository.getTableStudenti();
+            }
+            else if(emri.equals("") & mbiemri.equals("")){
+                studentiData = StudentiRepository.getTableStudentiById(Integer.parseInt(id));
+            }
+            else if(id.equals("") & mbiemri.equals("")){
+                studentiData = StudentiRepository.getTableStudentiByEmri(emri);
+            }
+            else if(id.equals("") & emri.equals("")){
+                studentiData = StudentiRepository.getTableStudentiByMbiemri(mbiemri);
+            }
+            else if(id.equals("")){
+                studentiData = StudentiRepository.getTableStudentiByEmri(emri);
+                studentiData.addAll(StudentiRepository.getTableStudentiByMbiemri(mbiemri));
+            }
+            else if(emri.equals("")){
+                studentiData = StudentiRepository.getTableStudentiById(Integer.parseInt(id));
+                studentiData.addAll(StudentiRepository.getTableStudentiByMbiemri(mbiemri));
+            }
+            else if(emri.equals("")){
+                studentiData = StudentiRepository.getTableStudentiById(Integer.parseInt(id));
+                studentiData.addAll(StudentiRepository.getTableStudentiByEmri(emri));
+            }
+            else{
+                studentiData = StudentiRepository.getTableStudentiById(Integer.parseInt(id));
+                studentiData.addAll(StudentiRepository.getTableStudentiByEmri(emri));
+                studentiData.addAll(StudentiRepository.getTableStudentiByMbiemri(mbiemri));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return;
+        }
+        studentTable.setItems(studentiData);
+        idFilterField.clear();
+        emriFilterField.clear();
+        mbiemriFilterField.clear();
     }
 }
