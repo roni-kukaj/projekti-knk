@@ -14,5 +14,6 @@ module com.example.projektisrs {
     opens com.example.projektisrs to javafx.fxml, javafx.graphics;
     opens controllers to javafx.fxml, javafx.graphics;
     exports com.example.projektisrs;
+    opens models to javafx.base;
 
 }

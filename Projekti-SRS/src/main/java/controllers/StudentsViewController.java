@@ -2,12 +2,17 @@ package controllers;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.Studenti;
+import models.TableStudenti;
+import repository.StudentiRepository;
+
+import java.sql.SQLException;
 
 public class StudentsViewController {
     @FXML
@@ -19,23 +24,30 @@ public class StudentsViewController {
     @FXML
     private Button filterButton;
     @FXML
-    private TableView<Studenti> studentTable;
+    private TableView<TableStudenti> studentTable;
     @FXML
-    private TableColumn<Studenti, Integer> idColumn;
+    private TableColumn<TableStudenti, Integer> idColumn;
     @FXML
-    private TableColumn<Studenti, String> emriColumn;
+    private TableColumn<TableStudenti, String> emriColumn;
     @FXML
-    private TableColumn<Studenti, String> mbiemriColumn;
+    private TableColumn<TableStudenti, String> mbiemriColumn;
     @FXML
-    private TableColumn<Studenti, String> drejtimiColumn;
+    private TableColumn<TableStudenti, String> drejtimiColumn;
 
-    private ObservableList<Studenti> studentiData;
+    private ObservableList<TableStudenti> studentiData;
 
     public void initialize(){
-        idColumn.setCellValueFactory(new PropertyValueFactory<Studenti, Integer>("ID"));
-        emriColumn.setCellValueFactory(new PropertyValueFactory<Studenti, String>("Emri"));
-        mbiemriColumn.setCellValueFactory(new PropertyValueFactory<Studenti, String>("Mbiemri"));
-        drejtimiColumn.setCellValueFactory(new PropertyValueFactory<Studenti, String>("Drejtimi"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        emriColumn.setCellValueFactory(new PropertyValueFactory<>("emri"));
+        mbiemriColumn.setCellValueFactory(new PropertyValueFactory<>("mbiemri"));
+        drejtimiColumn.setCellValueFactory(new PropertyValueFactory<>("drejtimi"));
 
+        try{
+            studentiData = StudentiRepository.getStudentsForTable();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return;
+        }
+        studentTable.setItems(studentiData);
     }
 }
