@@ -15,7 +15,6 @@ public class DashboardViewController {
     public void Clicked(ActionEvent e){
 
         if (e.getSource() == registerImageView) {
-
             System.out.println("Register image view clicked.");
         } else if (e.getSource() == stulistImageView) {
             System.out.println("Student list image view clicked.");
