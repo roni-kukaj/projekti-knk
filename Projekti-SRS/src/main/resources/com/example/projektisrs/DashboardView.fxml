@@ -31,7 +31,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="registerStudentButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Register Student" textFill="#38b6ff" textOverrun="CLIP" GridPane.halignment="CENTER">
+            <Button fx:id="registerStudentButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Register Student" textFill="#38b6ff" textOverrun="CLIP" GridPane.halignment="CENTER" onAction="#registerClicked">
                <graphic>
                   <ImageView fx:id="registerImageView" fitHeight="109.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -42,7 +42,7 @@
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Button>
-            <Button fx:id="studentListButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Student List" textFill="#38b6ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="studentListButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Student List" textFill="#38b6ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" onAction="#studentClicked">
                <graphic>
                   <ImageView fx:id="stulistImageView" fitHeight="141.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: 1;">
                      <image>
@@ -53,7 +53,7 @@
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Button>
-            <Button fx:id="updateStudentButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Update Student" textFill="#38b6ff" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+            <Button fx:id="updateStudentButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Update Student" textFill="#38b6ff" GridPane.columnIndex="2" GridPane.halignment="CENTER" onAction="#updateClicked">
                <graphic>
                   <ImageView fx:id="updateImageView" fitHeight="113.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -75,7 +75,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="graphicsButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Graphics &amp; Analytics" textFill="#38b6ff" GridPane.halignment="CENTER">
+            <Button fx:id="graphicsButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Graphics &amp; Analytics" textFill="#38b6ff" GridPane.halignment="CENTER" onAction="#graphicsClicked">
                <graphic>
                   <ImageView fx:id="graphicsImageView" fitHeight="114.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -86,7 +86,7 @@
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Button>
-            <Button fx:id="settingsButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Settings" textFill="#38b6ff" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Button fx:id="settingsButton" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="350.0" text="Settings" textFill="#38b6ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" onAction="#settingsClicked">
                <graphic>
                   <ImageView fx:id="settingImageView" fitHeight="114.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
                      <image>
