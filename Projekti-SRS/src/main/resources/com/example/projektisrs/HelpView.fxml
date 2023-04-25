@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -110,41 +109,26 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="220.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="627.3333333333334">
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="220.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="627.3333333333334" AnchorPane.topAnchor="200.0">
                            <image>
                               <Image url="@../../../images/email.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="626.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="220.12366231282556">
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="625.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="221.12366231282556">
                            <image>
                               <Image url="@../../../images/phone.png" />
                            </image>
                         </ImageView>
-                        <Text layoutX="194.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="srs.techteam@gmail.com">
+                        <Text layoutX="194.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="srs.techteam@gmail.com">
                            <font>
                               <Font name="Georgia" size="18.0" />
                            </font>
                         </Text>
-                        <Text layoutX="641.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(512) 773-5566">
+                        <Text layoutX="641.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(512) 773-5566">
                            <font>
                               <Font name="Georgia" size="18.0" />
                            </font>
                         </Text>
-                        <Text layoutX="48.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shtoni nje koment rreth sistemit:">
-                           <font>
-                              <Font name="System Bold Italic" size="16.0" />
-                           </font>
-                        </Text>
-                        <TextField alignment="TOP_LEFT" layoutX="46.0" layoutY="334.0" prefHeight="162.0" prefWidth="897.0" promptText="Shenoni ketu:" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="48.0">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
-                        <Button layoutX="886.0" layoutY="510.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #33B6FF;" text="Dergo" textFill="WHITE"  >
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Button>
                      </children>
                   </AnchorPane>
               </content>
