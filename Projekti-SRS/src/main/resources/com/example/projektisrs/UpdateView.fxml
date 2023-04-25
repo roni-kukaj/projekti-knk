@@ -21,7 +21,7 @@
                   <Image url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
-            <Button layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF;">
+            <Button fx:id="goBackButton" onAction="#goToDashboard" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF;">
                <graphic>
                   <ImageView fitHeight="52.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                      <image>

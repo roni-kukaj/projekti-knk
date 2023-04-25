@@ -20,7 +20,7 @@
                      <Image url="@../../../images/blue_logo_sm.png" />
                  </image>
              </ImageView>
-             <Button fx:id="goBackButton" layoutX="20.0" layoutY="20.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" textAlignment="CENTER" textFill="WHITE">
+             <Button fx:id="goBackButton" onAction="#goToDashboard" layoutX="20.0" layoutY="20.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" textAlignment="CENTER" textFill="WHITE">
                <graphic>
                    <ImageView fx:id="leftArrowFigure" fitHeight="60.0" fitWidth="60.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                        <image>

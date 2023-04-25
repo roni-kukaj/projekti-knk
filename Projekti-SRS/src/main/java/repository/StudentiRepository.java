@@ -102,4 +102,29 @@ public class StudentiRepository {
 
         return data;
     }
+    public static ObservableList<TableStudenti> filterTableStudenti(int id, String emri, String mbiemri) throws SQLException{
+        ObservableList<TableStudenti> data = FXCollections.observableArrayList();
+
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM Studenti WHERE stuId = ? OR Emri LIKE ? OR Mbiemri LIKE ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, id);
+        preparedStatement.setString(2, emri);
+        preparedStatement.setString(3, mbiemri);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        while(resultSet.next()){
+            data.add(new TableStudenti(
+                    resultSet.getInt("stuId"),
+                    resultSet.getString("Emri"),
+                    resultSet.getString("Mbiemri"),
+                    resultSet.getString("Drejtimi")
+            ));
+        }
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+
+        return data;
+    }
 }

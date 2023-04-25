@@ -3,18 +3,24 @@ package controllers;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import models.Studenti;
 import models.TableStudenti;
 import repository.StudentiRepository;
+import services.SceneUtil;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class StudentsViewController {
+    @FXML
+    private Button goBackButton;
     @FXML
     private TextField idFilterField;
     @FXML
@@ -59,34 +65,11 @@ public class StudentsViewController {
             if(id.equals("") & emri.equals("") & mbiemri.equals("")){
                 studentiData = StudentiRepository.getTableStudenti();
             }
-            else if(emri.equals("") & mbiemri.equals("")){
-                studentiData = StudentiRepository.getTableStudentiById(Integer.parseInt(id));
-            }
-            else if(id.equals("") & mbiemri.equals("")){
-                studentiData = StudentiRepository.getTableStudentiByEmri(emri);
-            }
-            else if(id.equals("") & emri.equals("")){
-                studentiData = StudentiRepository.getTableStudentiByMbiemri(mbiemri);
-            }
-            else if(id.equals("")){
-                studentiData = StudentiRepository.getTableStudentiByEmri(emri);
-                studentiData.addAll(StudentiRepository.getTableStudentiByMbiemri(mbiemri));
-            }
-            else if(emri.equals("")){
-                studentiData = StudentiRepository.getTableStudentiById(Integer.parseInt(id));
-                studentiData.addAll(StudentiRepository.getTableStudentiByMbiemri(mbiemri));
-            }
-            else if(emri.equals("")){
-                studentiData = StudentiRepository.getTableStudentiById(Integer.parseInt(id));
-                studentiData.addAll(StudentiRepository.getTableStudentiByEmri(emri));
-            }
-            else{
-                studentiData = StudentiRepository.getTableStudentiById(Integer.parseInt(id));
-                studentiData.addAll(StudentiRepository.getTableStudentiByEmri(emri));
-                studentiData.addAll(StudentiRepository.getTableStudentiByMbiemri(mbiemri));
+            else {
+                studentiData = StudentiRepository.filterTableStudenti(Integer.parseInt(id), emri, mbiemri);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return;
         }
@@ -94,5 +77,15 @@ public class StudentsViewController {
         idFilterField.clear();
         emriFilterField.clear();
         mbiemriFilterField.clear();
+    }
+
+    @FXML
+    public void goToDashboard() {
+        try{
+            SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+        } catch (IOException e){
+            e.printStackTrace();
+            return;
+        }
     }
 }
