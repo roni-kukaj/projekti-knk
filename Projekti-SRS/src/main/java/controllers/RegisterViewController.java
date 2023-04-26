@@ -39,6 +39,9 @@ public class RegisterViewController {
         private Button registerButton;
 
         @FXML
+        private Button goBackButton;
+
+        @FXML
         private void registerButton(ActionEvent e){
             String emri = this.emriTextfield.getText();
             String mbiemri = this.mbiemriTextfield.getText();
