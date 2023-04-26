@@ -37,6 +37,8 @@ public class UpdateViewController {
         private ChoiceBox drejtimiChoiceBox;
         @FXML
         private Button updateButton;
+        @FXML
+        private Button gobackbutton;
 
         @FXML
         private void registerButton(ActionEvent e){
