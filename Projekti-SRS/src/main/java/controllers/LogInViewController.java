@@ -2,14 +2,10 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import repository.AdminRepository;
-import services.AdminService;
+import services.AdminUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
@@ -29,7 +25,7 @@ public class LogInViewController {
         String username = this.usernameTextfield.getText();
         String password = this.passwordTextfield.getText();
 
-        boolean logged_in = AdminService.login(username, password);
+        boolean logged_in = AdminUtil.login(username, password);
         if(logged_in){
             try{
                 SceneUtil.changeScene((Stage)this.loginButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");

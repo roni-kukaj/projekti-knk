@@ -4,7 +4,7 @@ import models.Admin;
 import org.mindrot.jbcrypt.BCrypt;
 import repository.AdminRepository;
 
-public class AdminService {
+public class AdminUtil {
     public static boolean login(String username, String password){
         try{
             Admin admin = AdminRepository.getAdminByUsername(username);

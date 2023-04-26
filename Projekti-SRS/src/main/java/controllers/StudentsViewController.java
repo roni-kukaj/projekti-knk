@@ -14,6 +14,7 @@ import models.Studenti;
 import models.TableStudenti;
 import repository.StudentiRepository;
 import services.SceneUtil;
+import services.TypeUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -78,7 +79,7 @@ public class StudentsViewController {
                 studentiData = StudentiRepository.getTableStudenti();
             }
             else {
-                if(id.equals(""))
+                if(id.equals("") || !TypeUtil.isNumeric(id))
                     id = "0";
                 studentiData = StudentiRepository.filterTableStudenti(Integer.parseInt(id), emri, mbiemri);
             }
