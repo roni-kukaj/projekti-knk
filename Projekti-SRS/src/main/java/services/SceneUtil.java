@@ -17,17 +17,12 @@ public class SceneUtil {
         stage.setScene(scene);
     }
 
-    public static void changeSceneWithParameter(Stage stage, String viewName, Object parameter) throws IOException{
+    public static void changeSceneWithIdParameter(Stage stage, String viewName, int id) throws IOException{
         FXMLLoader loader = new FXMLLoader(SceneUtil.class.getResource(viewName));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         StudentiIndividualViewController controller = loader.getController();
-        TableStudenti ts;
-        if(parameter instanceof TableStudenti)
-            ts = (TableStudenti) parameter;
-        else
-            return;
-        controller.initData(ts.getId());
+        controller.initData(id);
         stage.setScene(scene);
     }
 }

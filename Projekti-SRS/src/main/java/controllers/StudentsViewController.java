@@ -60,7 +60,7 @@ public class StudentsViewController {
             if(event.getClickCount() == 2){
                 TableStudenti ts = this.studentTable.getSelectionModel().getSelectedItem();
                 try {
-                    SceneUtil.changeSceneWithParameter((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentiIndividualView.fxml", ts);
+                    SceneUtil.changeSceneWithIdParameter((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentiIndividualView.fxml", ts.getId());
                 } catch (IOException e) {
                     e.printStackTrace();
                     return;

@@ -30,18 +30,4 @@ public class AdminRepository {
             return null;
         }
     }
-
-    public static boolean login(String username, String password){
-        try{
-            Admin admin = AdminRepository.getAdminByUsername(username);
-            if(BCrypt.checkpw(password, admin.getPassword())){
-                return true;
-            }
-            else{
-                return false;
-            }
-        } catch (Exception e) {
-            return false;
-        }
-    }
 }
