@@ -38,7 +38,7 @@ public class UpdateViewController {
         @FXML
         private Button updateButton;
         @FXML
-        private Button gobackbutton;
+        private Button goBackButton;
 
         @FXML
         private void registerButton(ActionEvent e){
