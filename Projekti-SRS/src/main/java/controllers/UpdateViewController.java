@@ -61,7 +61,15 @@ public class UpdateViewController {
             System.out.println("Testi i Matures: " + matura  + " - Suksesi ne SHM: " + suksesi + "Provimi pranues" + provimiPranues);
         }
 
-
+        @FXML
+        public void goToDashboard() {
+            try{
+                SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+            } catch (IOException e){
+                e.printStackTrace();
+                return;
+            }
+        }
 
     }
 
