@@ -20,7 +20,7 @@
                      <Image url="@../../../images/blue_logo_sm.png" />
                  </image>
              </ImageView>
-             <Button fx:id="goBackButton" onAction="#goToDashboard" layoutX="20.0" layoutY="20.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" textAlignment="CENTER" textFill="WHITE">
+             <Button fx:id="goBackButton" layoutX="20.0" layoutY="20.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" textAlignment="CENTER" textFill="WHITE">
                <graphic>
                    <ImageView fx:id="leftArrowFigure" fitHeight="60.0" fitWidth="60.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                        <image>
@@ -320,7 +320,12 @@
                         </Label>
                      </children></VBox>
                </items></SplitPane>
-            <Button alignment="CENTER" layoutX="1144.0" layoutY="699.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Perditeso te dhenat" textFill="WHITE">
+            <Button fx:id="updateInfoButton" alignment="CENTER" layoutX="824.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Perditeso te dhenat" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="printAsPDFButton" alignment="CENTER" layoutX="1144.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Printo si PDF" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

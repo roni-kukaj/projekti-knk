@@ -127,4 +127,30 @@ public class StudentiRepository {
 
         return data;
     }
+
+    public static Studenti getStudentiById(int id) throws SQLException{
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM Studenti WHERE stuId = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id);
+        ResultSet resultSet = statement.executeQuery();
+        if(resultSet.next())
+            return new Studenti(
+                    resultSet.getInt("stuId"),
+                    resultSet.getString("Emri"),
+                    resultSet.getString("Mbiemri"),
+                    resultSet.getString("Gjinia").charAt(0),
+                    resultSet.getDate("Ditelindja"),
+                    resultSet.getString("Email"),
+                    resultSet.getInt("QytetiILindjes"),
+                    resultSet.getInt("Komuna"),
+                    resultSet.getInt("SId"),
+                    resultSet.getDouble("SuksesiNeSHM"),
+                    resultSet.getInt("PiketEMatures"),
+                    resultSet.getInt("PiketEProvimitPranues"),
+                    resultSet.getString("Drejtimi")
+            );
+        else
+            return null;
+    }
 }

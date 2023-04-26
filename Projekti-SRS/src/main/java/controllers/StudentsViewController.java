@@ -55,6 +55,18 @@ public class StudentsViewController {
             return;
         }
         studentTable.setItems(studentiData);
+
+        this.studentTable.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2){
+                TableStudenti ts = this.studentTable.getSelectionModel().getSelectedItem();
+                try {
+                    SceneUtil.changeSceneWithParameter((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentiIndividualView.fxml", ts);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return;
+                }
+            }
+        });
     }
 
     public void filterButtonClicked(){
@@ -66,6 +78,8 @@ public class StudentsViewController {
                 studentiData = StudentiRepository.getTableStudenti();
             }
             else {
+                if(id.equals(""))
+                    id = "0";
                 studentiData = StudentiRepository.filterTableStudenti(Integer.parseInt(id), emri, mbiemri);
             }
 
@@ -78,7 +92,6 @@ public class StudentsViewController {
         emriFilterField.clear();
         mbiemriFilterField.clear();
     }
-
     @FXML
     public void goToDashboard() {
         try{

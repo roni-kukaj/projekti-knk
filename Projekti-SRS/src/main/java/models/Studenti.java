@@ -25,17 +25,12 @@ public class Studenti {
         this.gjinia = gjinia;
         this.ditelindja = ditelindja;
         this.email = email;
-
         this.qytetiLindjesId =  qytetiLindjesId;
-
         this.komunaId = komunaId;
         this.shkollaId = shkollaId;
         this.suksesiNeShkollenMesme =  suksesiNeShkollenMesme;
-
         this.piketTestitMatures = piketTestitMatures;
-
         this.piketProvimitPranues = piketProvimitPranues;
-
         this.drejtimi = drejtimi;
     }
 

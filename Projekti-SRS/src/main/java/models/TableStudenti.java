@@ -14,7 +14,7 @@ public class TableStudenti {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
@@ -22,7 +22,7 @@ public class TableStudenti {
     }
 
     public String getEmri() {
-        return emri;
+        return this.emri;
     }
 
     public void setEmri(String emri) {
@@ -30,7 +30,7 @@ public class TableStudenti {
     }
 
     public String getMbiemri() {
-        return mbiemri;
+        return this.mbiemri;
     }
 
     public void setMbiemri(String mbiemri) {
