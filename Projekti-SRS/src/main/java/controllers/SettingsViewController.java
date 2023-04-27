@@ -1,9 +1,16 @@
 package controllers;
 
-@FXML
-private Button goBackButton;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+import services.SceneUtil;
+
+import java.io.IOException;
+
 
 public class SettingsViewController {
+    @FXML
+    private Button goBackButton;
     @FXML
     public void goToDashboard() {
         try{

@@ -11,7 +11,7 @@ public class ConnectionUtil {
         if (connection == null || connection.isClosed()) {
             String url = "jdbc:mysql://localhost:3306/DB_SRS";
             String user = "root";
-            String password = "root";
+            String password = "";
             connection = DriverManager.getConnection(url, user, password);
         }
         return connection;

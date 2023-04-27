@@ -64,7 +64,6 @@ public class DashboardViewController {
 
     @FXML
     private void graphicsClicked(ActionEvent e) throws IOException {
-
             try {
                 SceneUtil.changeScene((Stage)graphicsButton.getScene().getWindow(), "/com/example/projektisrs/GraphicsView.fxml");
             } catch(IOException ioe) {
