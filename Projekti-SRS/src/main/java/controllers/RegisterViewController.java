@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import services.AlertUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
@@ -71,6 +72,14 @@ public class RegisterViewController {
         } catch (IOException e){
             e.printStackTrace();
             return;
+        }
+    }
+    public void registerButtonClicked(){
+        if(true){
+
+        }
+        else {
+            AlertUtil.alertError("Registration Error", "ALl fields are required!", "Please fill all of the fields before proceeding!");
         }
     }
 }

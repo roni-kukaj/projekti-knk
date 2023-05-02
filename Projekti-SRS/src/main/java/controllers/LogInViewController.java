@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import services.AdminUtil;
+import services.AlertUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
@@ -33,11 +34,7 @@ public class LogInViewController {
             }
         }
         else{
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Login Error");
-            alert.setHeaderText("Invalid login credentials");
-            alert.setContentText("Please check your username and password and try again!");
-            alert.showAndWait();
+            AlertUtil.alertError("Login Error", "Invalid Login Credentials", "Please check your username and password and try again!");
         }
     }
 }

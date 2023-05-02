@@ -33,17 +33,25 @@ public class FileUtil {
         }
     }
     public static void writeStudentInfoOnPDF(Studenti studenti, String path) throws IOException, SQLException {
+        // Marrja e imazhit nga path i caktuar
         BufferedImage bim = ImageIO.read(new File("src/main/resources/images/UP_logo.png"));
+        // Krijimi i nje dokumenti PDF
         PDDocument document = new PDDocument();
+        // Krijimi i nje faqeje
         PDPage page = new PDPage();
         PDRectangle pageSize = page.getMediaBox();
         document.addPage(page);
+        // Fillimi i content-it
         PDPageContentStream contentStream = new PDPageContentStream(document, page);
+        // Imazhi
         PDImageXObject image = LosslessFactory.createFromImage(document, bim);
 
+        // Vendosja e imazheve dhe e tekstit ne content
         contentStream.drawImage(image, 10, pageSize.getHeight() - image.getHeight() - 10);
         contentStream.beginText();
         contentStream.setFont(PDType1Font.HELVETICA, 16);
+        // Cdo koordinate x paraqet offset te tekstit ndaj rreshtit paraprak
+        // E njejta vlene edhe per y
         contentStream.newLineAtOffset(15, pageSize.getHeight() - image.getHeight() - 40);
         contentStream.showText("ID - " + studenti.getStudentId());
         contentStream.newLineAtOffset(0, -25);
