@@ -325,7 +325,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="printAsPDFButton" alignment="CENTER" layoutX="1144.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Printo si PDF" textFill="WHITE">
+            <Button fx:id="printAsPDFButton" alignment="CENTER" layoutX="1144.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printAsPDFButtonClicked" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Printo si PDF" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

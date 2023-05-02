@@ -9,6 +9,7 @@ import models.TableStudenti;
 import repository.QytetiRepository;
 import repository.ShkollaRepository;
 import repository.StudentiRepository;
+import services.FileUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
@@ -43,6 +44,9 @@ public class StudentiIndividualViewController {
     private Label drejtimiLabel;
     @FXML
     private Button goBackButton;
+
+    @FXML
+    private Button printAsPDFButton;
 
     private Studenti studenti;
 
@@ -87,6 +91,19 @@ public class StudentiIndividualViewController {
         } catch (IOException e) {
             e.printStackTrace();
             return;
+        }
+    }
+
+    @FXML
+    public void printAsPDFButtonClicked() {
+        try{
+            String directory = FileUtil.getDirectoryFromUser((Stage) this.printAsPDFButton.getScene().getWindow());
+            FileUtil.writeStudentInfoOnPDF(this.studenti, directory);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
