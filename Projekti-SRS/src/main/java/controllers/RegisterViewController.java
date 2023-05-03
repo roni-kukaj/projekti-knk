@@ -74,6 +74,8 @@ public class RegisterViewController {
             return;
         }
     }
+    
+    @FXML
     public void registerButtonClicked(){
         if(true){
 
