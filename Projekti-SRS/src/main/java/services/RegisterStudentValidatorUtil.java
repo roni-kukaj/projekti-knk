@@ -21,6 +21,28 @@ public class RegisterStudentValidatorUtil {
         ){
             return false;
         }
+        if(studentDto.getEmri().length() < 2 || studentDto.getEmri().length() > 20) {
+            return false;
+        }
+        if(studentDto.getMbiemri().length() < 2 || studentDto.getMbiemri().length() > 20){
+            return false;
+        }
+        if(studentDto.getGjinia() != 'M' && studentDto.getGjinia() != 'F'){
+            return false;
+        }
+        if(!studentDto.getEmail().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")){
+            return false;
+        }
+        if(studentDto.getPiketProvimitPranues() < 0 || studentDto.getPiketProvimitPranues() > 100){
+            return false;
+        }
+        if(studentDto.getPiketTestitMatures() < 0 || studentDto.getPiketTestitMatures() > 100){
+            return false;
+        }
+        if(studentDto.getSuksesiNeShkollenMesme() < 0.0 || studentDto.getSuksesiNeShkollenMesme() > 5.0){
+            return false;
+        }
+
         return true;
     }
 }
