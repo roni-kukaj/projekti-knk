@@ -4,10 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import models.dto.CreateStudentDto;
 import services.AlertUtil;
+import services.RegisterStudentValidatorUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
+import java.sql.Date;
 
 public class RegisterViewController {
     @FXML
@@ -74,10 +77,24 @@ public class RegisterViewController {
             return;
         }
     }
-    
+
     @FXML
-    public void registerButtonClicked(){
-        if(true){
+    public void registerButtonClicked(ActionEvent e){
+        String emri = this.emriTextfield.getText();
+        String mbiemri = this.mbiemriTextfield.getText();
+        String Mchoice = this.mRadioChoice.getText();
+        String Fchoice = this.fradioChoice.getText();
+        Date birthdate = this.birthdayPicker.get();
+        String choiceBox = this.qytetiLindjesChoiceBox.toString();
+        String email = this.emailTextfield.getText();
+        String komuna = this.komunaChoiceBox.toString();
+        String shkolla = this.shkollaChoiceBox.toString();
+        String matura = this.maturaTextfield.getText();
+        String suksesi = this.suksesiTextfield.getText();
+        String provimiPranues = this.provimiPranuesTextfield.getText();
+        String drejtimi = this.drejtimiChoiceBox.toString();
+        CreateStudentDto studentDto = new CreateStudentDto(emri, mbiemri, Mchoice, birthdate, );
+        if(RegisterStudentValidatorUtil.validateStudentOnRegister()){
 
         }
         else {
