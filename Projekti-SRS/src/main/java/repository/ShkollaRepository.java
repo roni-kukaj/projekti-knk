@@ -52,5 +52,5 @@ public class ShkollaRepository {
         return data;
     }
 
-    
+
 }
