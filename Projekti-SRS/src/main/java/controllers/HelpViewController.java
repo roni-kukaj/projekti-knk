@@ -15,10 +15,11 @@ public class HelpViewController {
     @FXML
     private Button goBackButton;
 
-    public void goToDashboard(){
-        try {
-            SceneUtil.changeScene((Stage) this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentsView.fxml");
-        } catch (IOException e) {
+    @FXML
+    public void goToDashboard() {
+        try{
+            SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+        } catch (IOException e){
             e.printStackTrace();
             return;
         }
