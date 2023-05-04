@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class QytetiRepository {
     public static Qyteti getQytetiById(int id) throws SQLException {
@@ -26,5 +27,16 @@ public class QytetiRepository {
         else{
             return null;
         }
+    }
+    public static ArrayList<String> getQytetiNames() throws SQLException {
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT Emri FROM Qyteti";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+        ArrayList<String> qytetet = new ArrayList<>();
+        while(resultSet.next()){
+            qytetet.add(resultSet.getString(1));
+        }
+        return qytetet;
     }
 }

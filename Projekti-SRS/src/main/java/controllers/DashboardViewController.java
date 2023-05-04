@@ -33,58 +33,55 @@ public class DashboardViewController {
     private Button helpButton;
 
 
-
-
     @FXML
     private void registerClicked(ActionEvent e) throws IOException {
 
-            try {
-                SceneUtil.changeScene((Stage)registerStudentButton.getScene().getWindow(), "/com/example/projektisrs/RegisterView.fxml");
-            } catch(IOException ioe) {
-                // TO DO
-            }
+        try {
+            SceneUtil.changeScene((Stage) registerStudentButton.getScene().getWindow(), "/com/example/projektisrs/RegisterView.fxml");
+        } catch (IOException ioe) {
+            // TO DO
+        }
 
     }
 
     @FXML
     private void studentClicked(ActionEvent e) throws IOException {
 
-            try {
-                SceneUtil.changeScene((Stage)studentListButton.getScene().getWindow(), "/com/example/projektisrs/StudentsView.fxml");
-            } catch(IOException ioe) {
-                // TO DO
-            }
+        try {
+            SceneUtil.changeScene((Stage) studentListButton.getScene().getWindow(), "/com/example/projektisrs/StudentsView.fxml");
+        } catch (IOException ioe) {
+            // TO DO
+        }
 
     }
 
     @FXML
     private void updateClicked(ActionEvent e) throws IOException {
 
-            try {
-                SceneUtil.changeScene((Stage)updateStudentButton.getScene().getWindow(), "/com/example/projektisrs/UpdateView.fxml");
-            } catch(IOException ioe) {
-                // TO DO
-            }
+        try {
+            SceneUtil.changeScene((Stage) updateStudentButton.getScene().getWindow(), "/com/example/projektisrs/UpdateView.fxml");
+        } catch (IOException ioe) {
+            // TO DO
         }
+    }
 
 
     @FXML
     private void graphicsClicked(ActionEvent e) throws IOException {
-            try {
-                SceneUtil.changeScene((Stage)graphicsButton.getScene().getWindow(), "/com/example/projektisrs/GraphicsView.fxml");
-            } catch(IOException ioe) {
-                // TO DO
-            }
+        try {
+            SceneUtil.changeScene((Stage) graphicsButton.getScene().getWindow(), "/com/example/projektisrs/GraphicsView.fxml");
+        } catch (IOException ioe) {
+            // TO DO
         }
+    }
 
     @FXML
     private void settingsClicked(ActionEvent e) throws IOException {
 
-            try {
-                SceneUtil.changeScene((Stage)settingsButton.getScene().getWindow(), "/com/example/projektisrs/SettingsView.fxml");
-            } catch(IOException ioe) {
-                // TO DO
-            }
+        try {
+            SceneUtil.changeScene((Stage) settingsButton.getScene().getWindow(), "/com/example/projektisrs/SettingsView.fxml");
+        } catch (IOException ioe) {
+            // TO DO
         }
     }
 
@@ -92,8 +89,8 @@ public class DashboardViewController {
     private void logOutClicked(ActionEvent e) throws IOException {
 
         try {
-            SceneUtil.changeScene((Stage)logoutButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
-        } catch(IOException ioe) {
+            SceneUtil.changeScene((Stage) logOutButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
+        } catch (IOException ioe) {
             // TO DO
         }
 
@@ -103,10 +100,11 @@ public class DashboardViewController {
     private void helpClicked(ActionEvent e) throws IOException {
 
         try {
-            SceneUtil.changeScene((Stage)helpButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
-        } catch(IOException ioe) {
+            SceneUtil.changeScene((Stage) helpButton.getScene().getWindow(), "/com/example/projektisrs/HelpView.fxml");
+        } catch (IOException ioe) {
             // TO DO
         }
 
     }
 
+}
