@@ -61,16 +61,6 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <RadioButton fx:id="mRadioOption" layoutX="734.0" layoutY="238.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="M">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </RadioButton>
-            <RadioButton fx:id="fRadioOption" layoutX="794.0" layoutY="238.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="F">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </RadioButton>
             <Label layoutX="100.0" layoutY="285.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Email adresa">
                <font>
                   <Font size="20.0" />

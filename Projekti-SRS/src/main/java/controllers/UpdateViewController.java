@@ -16,9 +16,13 @@ public class UpdateViewController {
     @FXML
     private TextField emailTextfield;
     @FXML
+    private TextField idTextField;
+    @FXML
     private ChoiceBox drejtimiChoiceBox;
     @FXML
     private Button updateButton;
+    @FXML
+    private Button searchButton;
     @FXML
     private Button goBackButton;
 
@@ -26,8 +30,6 @@ public class UpdateViewController {
     private void registerButton(ActionEvent e){
         String emri = this.emriUpdateTextfield.getText();
         String mbiemri = this.mbiemriUpdateTextfield.getText();
-        String Mchoice = this.mRadioOption.getText();
-        String Fchoice = this.fRadioOption.getText();
         String email = this.emailTextfield.getText();
         String drejtimi = this.drejtimiChoiceBox.toString();
         // String provimiPranues = this.provimiPranuesTextfield.getText();
