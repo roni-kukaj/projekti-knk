@@ -100,7 +100,7 @@ public class DashboardViewController {
     private void helpClicked(ActionEvent e) throws IOException {
 
         try {
-            SceneUtil.changeScene((Stage) helpButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
+            SceneUtil.changeScene((Stage) helpButton.getScene().getWindow(), "/com/example/projektisrs/HelpView.fxml");
         } catch (IOException ioe) {
             // TO DO
         }
