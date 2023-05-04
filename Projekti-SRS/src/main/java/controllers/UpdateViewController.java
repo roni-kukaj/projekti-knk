@@ -14,10 +14,6 @@ public class UpdateViewController {
     @FXML
     private TextField mbiemriUpdateTextfield;
     @FXML
-    private RadioButton mRadioOption;
-    @FXML
-    private RadioButton fRadioOption;
-    @FXML
     private TextField emailTextfield;
     @FXML
     private ChoiceBox drejtimiChoiceBox;
