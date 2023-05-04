@@ -18,21 +18,7 @@ public class UpdateViewController {
     @FXML
     private RadioButton fRadioOption;
     @FXML
-    private DatePicker dataLindjesPicker;
-    @FXML
-    private ChoiceBox qytetiLindjesChoiceBox;
-    @FXML
     private TextField emailTextfield;
-    @FXML
-    private ChoiceBox komunaChoiceBox;
-    @FXML
-    private ChoiceBox shkollaChoiceBox;
-    @FXML
-    private TextField testiMaturesTextfield;
-    @FXML
-    private TextField suksesiTextfield;
-    @FXML
-    private TextField provimiPranuesTextfield;
     @FXML
     private ChoiceBox drejtimiChoiceBox;
     @FXML
@@ -46,21 +32,13 @@ public class UpdateViewController {
         String mbiemri = this.mbiemriUpdateTextfield.getText();
         String Mchoice = this.mRadioOption.getText();
         String Fchoice = this.fRadioOption.getText();
-        String birthdate = this.dataLindjesPicker.toString();
-        String choiceBox = this.qytetiLindjesChoiceBox.toString();
         String email = this.emailTextfield.getText();
-        String komuna = this.komunaChoiceBox.toString();
-        String shkolla = this.shkollaChoiceBox.toString();
-        String matura = this.testiMaturesTextfield.getText();
-        String suksesi = this.suksesiTextfield.getText();
-        String provimiPranues = this.provimiPranuesTextfield.getText();
         String drejtimi = this.drejtimiChoiceBox.toString();
         // String provimiPranues = this.provimiPranuesTextfield.getText();
 
 
         System.out.println("Emri: " + emri + " - Mbiemri: " + mbiemri);
-        System.out.println("Data e Lindjes: " + birthdate  + " - Email: " + email);
-        System.out.println("Testi i Matures: " + matura  + " - Suksesi ne SHM: " + suksesi + "Provimi pranues" + provimiPranues);
+        System.out.println("Email: " + email);
     }
 
     @FXML
