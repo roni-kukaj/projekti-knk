@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class QytetiRepository {
     public static Qyteti getQytetiById(int id) throws SQLException {
@@ -26,34 +27,16 @@ public class QytetiRepository {
         else{
             return null;
         }
-
-        ArrayList<String> qyteti = new ArrayList<String>();
-        ArrayList<Integer> ids=new ArrayList<Integer>();
-        qyteti.add("Prishtina");
-        qyteti.add("Mitrovice");
-        qyteti.add("Peje");
-        qyteti.add("Prizren");
-        qyteti.add("Ferizaj");
-        qyteti.add("Gjilan");
-        qyteti.add("Gjakove");
-        qyteti.add("Podujeve");
-        qyteti.add("Vushtri");
-        qyteti.add("Rahovec");
-        qyteti.add("Drenas");
-        qyteti.add("Lipjan");
-        qyteti.add("Malisheve");
-        qyteti.add("Deqan");
-        qyteti.add("Istog");
-        qyteti.add("Kline");
-        qyteti.add("Kaqanik");
-        qyteti.add("Suharek");
-        qyteti.add("Viti");
-
-        public static void iterateNames(ArrayList<String>qyteti, ArrayList<Integer> ids) {
-            for (int id : ids) {
-                System.out.println(names.get(id));
-            }
+    }
+    public static ArrayList<String> getQytetiNames() throws SQLException {
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT Emri FROM Qyteti";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+        ArrayList<String> qytetet = new ArrayList<>();
+        while(resultSet.next()){
+            qytetet.add(resultSet.getString(1));
         }
-
+        return qytetet;
     }
 }
