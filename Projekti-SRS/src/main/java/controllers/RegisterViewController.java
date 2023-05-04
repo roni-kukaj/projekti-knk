@@ -59,6 +59,9 @@ public class RegisterViewController implements Initializable {
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
         fradioChoice.setToggleGroup(toggleGroup);
+
+        this.komunaChoiceBox.getItems().add("Peje");
+
     }
 
     @FXML
