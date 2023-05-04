@@ -22,5 +22,11 @@ public class UpdateStudentDto {
             this.emri = emri;
             this.mbiemri = mbiemri;
             this.email = email;
+            this.id = id;
+            this.drejtimi = drejtimi;
+    }
+
+    public String getEmri(){
+        return emri;
     }
 }
