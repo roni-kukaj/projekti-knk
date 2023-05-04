@@ -28,4 +28,38 @@ public class ShkollaRepository {
             return null;
         }
     }
+
+    public static ArrayList<Shkolla> getShkolla() throws SQLException {
+        ArrayList<Shkolla> data = new ArrayList<>();
+
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM Shkolla";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        while(resultSet.next()){
+            data.add(new TableStudenti(
+                    resultSet.getInt("QId"),
+                    resultSet.getString("Emri"),
+                    resultSet.getInt("QId")
+            ));
+        }
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+
+        return data;
+    }
+
+    public static ArrayList<String> getStudentNames() throws SQLException {
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT Emri FROM Shkolla";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+        ArrayList<String> shkollat = new ArrayList<>();
+        while(resultSet.next()){
+            shkollat.add(resultSet.getString(1));
+        }
+        return shkollat;
+    }
 }
