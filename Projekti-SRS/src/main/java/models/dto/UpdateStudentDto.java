@@ -36,4 +36,10 @@ public class UpdateStudentDto {
     public String getEmail(){
         return email;
     }
+    public int getId(){
+        return id;
+    }
+    public String getDrejtimi(){
+        return drejtimi;
+    }
 }
