@@ -38,7 +38,7 @@ public class ShkollaRepository {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while(resultSet.next()){
-            data.add(new Shkollat(
+            data.add(new Shkolla(
                     resultSet.getInt("SId"),
                     resultSet.getString("Emri"),
                     resultSet.getInt("QId")
