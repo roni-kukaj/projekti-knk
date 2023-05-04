@@ -29,4 +29,11 @@ public class UpdateStudentDto {
     public String getEmri(){
         return emri;
     }
+
+    public String getMbiemri(){
+        return mbiemri;
+    }
+    public String getEmail(){
+        return email;
+    }
 }
