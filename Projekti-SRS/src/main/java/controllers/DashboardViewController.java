@@ -71,7 +71,6 @@ public class DashboardViewController {
             }
         }
 
-
     @FXML
     private void settingsClicked(ActionEvent e) throws IOException {
 

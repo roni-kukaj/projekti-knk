@@ -2,10 +2,12 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import services.AdminUtil;
+import services.AlertUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
@@ -17,8 +19,6 @@ public class LogInViewController {
     private TextField passwordTextfield;
     @FXML
     private Button loginButton;
-
-
 
     @FXML
     private void loginButtonClicked(ActionEvent e) throws IOException {
@@ -32,6 +32,9 @@ public class LogInViewController {
             } catch(IOException ioe){
                 // TO DO
             }
+        }
+        else{
+            AlertUtil.alertError("Login Error", "Invalid Login Credentials", "Please check your username and password and try again!");
         }
     }
 }

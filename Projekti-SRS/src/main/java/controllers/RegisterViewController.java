@@ -2,84 +2,105 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import models.dto.CreateStudentDto;
+import repository.StudentiRepository;
+import services.AlertUtil;
+import services.RegisterStudentValidatorUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ResourceBundle;
 
-public class RegisterViewController {
+public class RegisterViewController implements Initializable {
 
+    @FXML
+    private TextField emriTextfield;
+    @FXML
+    private TextField mbiemriTextfield;
+    @FXML
+    private RadioButton mRadioChoice;
+    @FXML
+    private RadioButton fradioChoice;
 
-    public class LoginViewController {
+    private ToggleGroup toggleGroup;
+    @FXML
+    private DatePicker birthdayPicker;
+    @FXML
+    private ChoiceBox qytetiLindjesChoiceBox;
+    @FXML
+    private TextField emailTextfield;
+    @FXML
+    private ChoiceBox komunaChoiceBox;
+    @FXML
+    private ChoiceBox shkollaChoiceBox;
+    @FXML
+    private TextField maturaTextfield;
+    @FXML
+    private TextField suksesiTextfield;
+    @FXML
+    private TextField provimiPranuesTextfield;
+    @FXML
+    private ChoiceBox drejtimiChoiceBox;
+    @FXML
+    private Button registerButton;
+    @FXML
+    private Button goBackButton;
 
-        @FXML
-        private TextField emriTextfield;
-        @FXML
-        private TextField mbiemriTextfield;
-        @FXML
-        private RadioButton mRadioChoice;
-        @FXML
-        private RadioButton fradioChoice;
-        @FXML
-        private DatePicker birthdayPicker;
-        @FXML
-        private ChoiceBox qytetiLindjesChoiceBox;
-        @FXML
-        private TextField emailTextfield;
-        @FXML
-        private ChoiceBox komunaChoiceBox;
-        @FXML
-        private ChoiceBox shkollaChoiceBox;
-        @FXML
-        private TextField maturaTextfield;
-        @FXML
-        private TextField suksesiTextfield;
-        @FXML
-        private TextField provimiPranuesTextfield;
-        @FXML
-        private ChoiceBox drejtimiChoiceBox;
-        @FXML
-        private Button registerButton;
-
-        @FXML
-        private Button goBackButton;
-
-        @FXML
-        private void registerButton(ActionEvent e){
-            String emri = this.emriTextfield.getText();
-            String mbiemri = this.mbiemriTextfield.getText();
-            String Mchoice = this.mRadioChoice.getText();
-            String Fchoice = this.fradioChoice.getText();
-            String birthdate = this.birthdayPicker.toString();
-            String choiceBox = this.qytetiLindjesChoiceBox.toString();
-            String email = this.emailTextfield.getText();
-            String komuna = this.komunaChoiceBox.toString();
-            String shkolla = this.shkollaChoiceBox.toString();
-            String matura = this.maturaTextfield.getText();
-            String suksesi = this.suksesiTextfield.getText();
-            String provimiPranues = this.provimiPranuesTextfield.getText();
-            String drejtimi = this.drejtimiChoiceBox.toString();
-            // String provimiPranues = this.provimiPranuesTextfield.getText();
-
-
-            System.out.println("Emri: " + emri + " - Mbiemri: " + mbiemri);
-            System.out.println("Data e Lindjes: " + birthdate  + " - Email: " + email);
-            System.out.println("Testi i Matures: " + matura  + " - Suksesi ne SHM: " + suksesi + "Provimi pranues" + provimiPranues);
-        }
-
-        @FXML
-        public void goToDashboard() {
-            try{
-                SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
-            } catch (IOException e){
-                e.printStackTrace();
-                return;
-            }
-        }
-
-
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        toggleGroup = new ToggleGroup();
+        mRadioChoice.setToggleGroup(toggleGroup);
+        fradioChoice.setToggleGroup(toggleGroup);
     }
 
+    @FXML
+    public void goToDashboard() {
+        try{
+            SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+        } catch (IOException e){
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    @FXML
+    public void registerButtonClicked(ActionEvent e){
+        try{
+            String emri = this.emriTextfield.getText();
+            String mbiemri = this.mbiemriTextfield.getText();
+            char gjinia = ((RadioButton)toggleGroup.getSelectedToggle()).getText().charAt(0);
+
+            LocalDate selectedDate = this.birthdayPicker.getValue();
+            Instant instant = Instant.from(selectedDate.atStartOfDay(ZoneId.systemDefault()));
+            Date date = (Date) Date.from(instant);
+            String choiceBox = this.qytetiLindjesChoiceBox.toString();
+            String email = this.emailTextfield.getText();
+
+            int qyteti = Integer.parseInt((String) this.qytetiLindjesChoiceBox.getValue());
+            int komuna = Integer.parseInt((String) this.komunaChoiceBox.getValue());
+            int shkolla = Integer.parseInt((String) this.shkollaChoiceBox.toString());
+            int matura = Integer.parseInt(this.maturaTextfield.getText());
+            double suksesi = Double.parseDouble(this.suksesiTextfield.getText());
+            int provimiPranues = Integer.parseInt(this.provimiPranuesTextfield.getText());
+            String drejtimi = this.drejtimiChoiceBox.toString();
+            CreateStudentDto studentDto = new CreateStudentDto(emri, mbiemri, gjinia, date, email, qyteti, komuna, shkolla, suksesi, matura, provimiPranues, drejtimi);
+            if(RegisterStudentValidatorUtil.validateStudentOnRegister(studentDto)){
+                StudentiRepository.insert(studentDto); // TO DO
+            }
+            else {
+                AlertUtil.alertError("Registration Error", "ALl fields are required!", "Please fill all of the fields before proceeding!");
+            }
+        }
+        catch(Exception exc){
+            AlertUtil.alertError("Input Error", "Wrong input!", "Please check that all of the fields have the right type of data!");
+        }
+    }
 }

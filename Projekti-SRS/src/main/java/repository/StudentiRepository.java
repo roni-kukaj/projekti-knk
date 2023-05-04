@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import models.Studenti;
 import models.TableStudenti;
+import models.dto.CreateStudentDto;
 import services.ConnectionUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -127,7 +128,6 @@ public class StudentiRepository {
 
         return data;
     }
-
     public static Studenti getStudentiById(int id) throws SQLException{
         Connection connection = ConnectionUtil.getConnection();
         String sql = "SELECT * FROM Studenti WHERE stuId = ?";
@@ -152,5 +152,9 @@ public class StudentiRepository {
             );
         else
             return null;
+    }
+
+    public static void insert(CreateStudentDto studentDto){
+        // TO DO
     }
 }
