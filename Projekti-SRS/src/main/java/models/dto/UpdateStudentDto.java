@@ -6,15 +6,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
-public class updateStudentDto {
-    @FXML
-    private TextField emriUpdateTextfield;
-    @FXML
-    private TextField mbiemriUpdateTextfield;
-    @FXML
-    private TextField emailTextfield;
-    @FXML
-    private TextField idTextField;
+public class UpdateStudentDto {
+
+    private String emri;
+
+    private String mbiemri;
+
+    private String email;
+
+    private int id;
     @FXML
     private ChoiceBox drejtimiChoiceBox;
     @FXML
