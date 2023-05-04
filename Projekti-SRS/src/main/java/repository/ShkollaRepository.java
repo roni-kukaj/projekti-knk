@@ -40,9 +40,9 @@ public class ShkollaRepository {
 
         while(resultSet.next()){
             data.add(new Shkolla(
-                    resultSet.getInt("SId"),
+                    resultSet.getInt("QId"),
                     resultSet.getString("Emri"),
-                    resultSet.getInt("QId")
+                    resultSet.getInt("SId")
             ));
         }
         resultSet.close();
