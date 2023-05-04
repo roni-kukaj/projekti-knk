@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ShkollaRepository {
     public static Shkolla getShkollaById(int id) throws SQLException {
@@ -38,7 +39,7 @@ public class ShkollaRepository {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while(resultSet.next()){
-            data.add(new Shkollat(
+            data.add(new Shkolla(
                     resultSet.getInt("SId"),
                     resultSet.getString("Emri"),
                     resultSet.getInt("QId")
