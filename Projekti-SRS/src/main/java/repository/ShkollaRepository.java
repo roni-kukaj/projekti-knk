@@ -28,4 +28,28 @@ public class ShkollaRepository {
             return null;
         }
     }
+
+    public static ArrayList<Shkolla> getShkollat() throws SQLException {
+        ArrayList<Shkolla> data = new ArrayList<>();
+
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM Shkolla";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        while(resultSet.next()){
+            data.add(new Shkollat(
+                    resultSet.getInt("SId"),
+                    resultSet.getString("Emri"),
+                    resultSet.getInt("QId")
+            ));
+        }
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+
+        return data;
+    }
+
+    
 }
