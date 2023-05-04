@@ -31,6 +31,7 @@ public class UpdateViewController {
         String emri = this.emriUpdateTextfield.getText();
         String mbiemri = this.mbiemriUpdateTextfield.getText();
         String email = this.emailTextfield.getText();
+        String id = this.idTextField.getText();
         String drejtimi = this.drejtimiChoiceBox.toString();
         // String provimiPranues = this.provimiPranuesTextfield.getText();
 
@@ -38,6 +39,8 @@ public class UpdateViewController {
         System.out.println("Emri: " + emri + " - Mbiemri: " + mbiemri);
         System.out.println("Email: " + email);
     }
+
+
 
     @FXML
     public void goToDashboard() {
