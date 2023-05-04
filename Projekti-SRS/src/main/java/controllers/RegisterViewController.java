@@ -5,7 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import models.Qyteti;
+import models.Shkolla;
 import models.dto.CreateStudentDto;
+import repository.QytetiRepository;
+import repository.ShkollaRepository;
 import repository.StudentiRepository;
 import services.AlertUtil;
 import services.RegisterStudentValidatorUtil;
@@ -14,9 +18,11 @@ import services.SceneUtil;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class RegisterViewController implements Initializable {
@@ -54,14 +60,26 @@ public class RegisterViewController implements Initializable {
     @FXML
     private Button goBackButton;
 
+    private ArrayList<Qyteti> qytetet;
+    private ArrayList<Shkolla> shkollat;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
         fradioChoice.setToggleGroup(toggleGroup);
 
-        this.komunaChoiceBox.getItems().add("Peje");
-        // TO DO WHEN FUNCTIONS ARE READY
+        try {
+            this.qytetet = QytetiRepository.getQytetet();
+            this.shkollat = ShkollaRepository.getShkollat();
+        } catch (SQLException e) {
+            AlertUtil.alertError("Data Error", "Database Data Error", "There was an error while trying to get the data!");
+        }
+
+        for(Qyteti qyteti: qytetet){
+            this.komunaChoiceBox.getItems().add(qyteti.getEmri());
+            this.qytetiLindjesChoiceBox.getItems().add(qyteti.getEmri());
+        }
 
     }
 
