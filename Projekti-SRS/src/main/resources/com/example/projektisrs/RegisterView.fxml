@@ -74,7 +74,7 @@
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <Label fx:id="birthDateLabel"layoutX="100.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Data e lindjes">
+            <Label fx:id="birthDateLabel" layoutX="100.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Data e lindjes">
                <font>
                   <Font size="20.0" />
                </font>

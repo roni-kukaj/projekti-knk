@@ -5,7 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import models.Qyteti;
+import models.Shkolla;
 import models.dto.CreateStudentDto;
+import repository.QytetiRepository;
+import repository.ShkollaRepository;
 import repository.StudentiRepository;
 import services.AlertUtil;
 import services.RegisterStudentValidatorUtil;
@@ -14,9 +18,11 @@ import services.SceneUtil;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class RegisterViewController implements Initializable {
@@ -34,11 +40,11 @@ public class RegisterViewController implements Initializable {
     @FXML
     private DatePicker birthdayPicker;
     @FXML
-    private ChoiceBox qytetiLindjesChoiceBox;
+    private ChoiceBox<String> qytetiLindjesChoiceBox;
     @FXML
     private TextField emailTextfield;
     @FXML
-    private ChoiceBox komunaChoiceBox;
+    private ChoiceBox<String> komunaChoiceBox;
     @FXML
     private ChoiceBox shkollaChoiceBox;
     @FXML
@@ -54,14 +60,25 @@ public class RegisterViewController implements Initializable {
     @FXML
     private Button goBackButton;
 
+    private ArrayList<Qyteti> qytetet;
+    private ArrayList<Shkolla> shkollat;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
         fradioChoice.setToggleGroup(toggleGroup);
 
-        this.komunaChoiceBox.getItems().add("Peje");
-        // TO DO WHEN FUNCTIONS ARE READY
+//        try {
+//            this.qytetet = QytetiRepository.getQytetet();
+//            this.shkollat = ShkollaRepository.getShkollat();
+//            for(Qyteti qyteti: qytetet){
+//                this.komunaChoiceBox.getItems().add(qyteti.getEmri());
+//                this.qytetiLindjesChoiceBox.getItems().add(qyteti.getEmri());
+//            }
+//        } catch (SQLException e) {
+//            AlertUtil.alertError("Data Error", "Database Data Error", "There was an error while trying to get the data!");
+//        }
 
     }
 
@@ -88,26 +105,21 @@ public class RegisterViewController implements Initializable {
             String choiceBox = this.qytetiLindjesChoiceBox.toString();
             String email = this.emailTextfield.getText();
 
-            int qyteti = Integer.parseInt((String) this.qytetiLindjesChoiceBox.getValue());
-            int komuna = Integer.parseInt((String) this.komunaChoiceBox.getValue());
+            int qyteti = Integer.parseInt(this.qytetiLindjesChoiceBox.getValue());
+            int komuna = Integer.parseInt(this.komunaChoiceBox.getValue());
             int shkolla = Integer.parseInt((String) this.shkollaChoiceBox.toString());
             int matura = Integer.parseInt(this.maturaTextfield.getText());
             double suksesi = Double.parseDouble(this.suksesiTextfield.getText());
             int provimiPranues = Integer.parseInt(this.provimiPranuesTextfield.getText());
             String drejtimi = this.drejtimiChoiceBox.toString();
+
             CreateStudentDto studentDto = new CreateStudentDto(emri, mbiemri, gjinia, date, email, qyteti, komuna, shkolla, suksesi, matura, provimiPranues, drejtimi);
             if(RegisterStudentValidatorUtil.validateStudentOnRegister(studentDto)){
                 if(AlertUtil.alertConfirm("Confirmation", "Student Values", "Are you sure you want to proceed and register the student to the system?")) {
-                    if (StudentiRepository.insert(studentDto)) {
-                        AlertUtil.alertSuccess("Success!", "Inserting the student to database was successful!");
-                        SceneUtil.changeScene((Stage) this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
-                    } else {
-                        AlertUtil.alertError("Database Error", "Data could not be inserted in the database!", "Please check the data format again!");
-                    }
+                    StudentiRepository.insert(studentDto);
+                    AlertUtil.alertSuccess("Success!", "Inserting the student to database was successful!");
+                    SceneUtil.changeScene((Stage) this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
                 }
-                else{
-                    return;
-                    }
             }
             else {
                 AlertUtil.alertError("Registration Error", "ALl fields are required!", "Please fill all of the fields before proceeding!");
