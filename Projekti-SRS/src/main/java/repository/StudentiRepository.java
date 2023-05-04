@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import models.Studenti;
 import models.TableStudenti;
 import models.dto.CreateStudentDto;
+import services.AlertUtil;
 import services.ConnectionUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -154,7 +155,28 @@ public class StudentiRepository {
             return null;
     }
 
-    public static void insert(CreateStudentDto studentDto){
-        // TO DO
+    public static boolean insert(CreateStudentDto studentDto) {
+        try {
+            Connection connection = ConnectionUtil.getConnection();
+            String sql = "INSERT INTO Studenti(Emri, Mbiemri, Gjinia, Ditelindja, Email, QytetiILindjes, Komuna, SuksesiNeSHM, PiketEMatures, PiketEProvimitPranues, Drejtimi, SId)" +
+                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, studentDto.getEmri());
+            statement.setString(2, studentDto.getMbiemri());
+            statement.setString(3, String.valueOf(studentDto.getGjinia()));
+            statement.setObject(4, studentDto.getDitelindja());
+            statement.setString(5, studentDto.getEmail());
+            statement.setInt(6, studentDto.getQytetiLindjesId());
+            statement.setInt(7, studentDto.getKomunaId());
+            statement.setObject(8, studentDto.getSuksesiNeShkollenMesme());
+            statement.setInt(9, studentDto.getPiketTestitMatures());
+            statement.setInt(10, studentDto.getPiketProvimitPranues());
+            statement.setString(11, studentDto.getDrejtimi());
+            statement.setInt(12, studentDto.getShkollaId());
+            statement.executeQuery();
+            return true;
+        } catch (SQLException e){
+            return false;
+        }
     }
 }

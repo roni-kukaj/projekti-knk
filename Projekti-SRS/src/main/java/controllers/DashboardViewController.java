@@ -26,6 +26,12 @@ public class DashboardViewController {
     @FXML
     private Button settingsButton;
 
+    @FXML
+    private Button logOutButton;
+
+    @FXML
+    private Button helpButton;
+
 
 
 
@@ -80,5 +86,27 @@ public class DashboardViewController {
                 // TO DO
             }
         }
+    }
+
+    @FXML
+    private void logOutClicked(ActionEvent e) throws IOException {
+
+        try {
+            SceneUtil.changeScene((Stage)logoutButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
+        } catch(IOException ioe) {
+            // TO DO
+        }
+
+    }
+
+    @FXML
+    private void helpClicked(ActionEvent e) throws IOException {
+
+        try {
+            SceneUtil.changeScene((Stage)helpButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
+        } catch(IOException ioe) {
+            // TO DO
+        }
+
     }
 

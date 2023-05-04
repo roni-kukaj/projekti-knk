@@ -39,7 +39,7 @@ public class RegisterStudentValidatorUtil {
         if(studentDto.getPiketTestitMatures() < 0 || studentDto.getPiketTestitMatures() > 100){
             return false;
         }
-        if(studentDto.getSuksesiNeShkollenMesme() < 0.0 || studentDto.getSuksesiNeShkollenMesme() > 5.0){
+        if(studentDto.getSuksesiNeShkollenMesme() < 1.0 || studentDto.getSuksesiNeShkollenMesme() > 5.0){
             return false;
         }
 
