@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardViewController">
+<AnchorPane fx:id="logoutButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardViewController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;">
          <children>
@@ -20,12 +20,14 @@
                   <Image url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
-            <Button fx:id="logOut" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;" />
-            <ImageView fitHeight="70.0" fitWidth="103.0" layoutX="1505.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/LogOut.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="logOutButton" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOutClicked" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/LogOut.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Label layoutX="1522.0" layoutY="72.0" prefHeight="17.0" prefWidth="56.0" text="Log Out" textFill="WHITE" />
          </children>
       </Pane>
@@ -108,11 +110,13 @@
          </children>
       </GridPane>
       <ImageView fitHeight="80.0" fitWidth="144.0" layoutX="1410.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="1519.0" layoutY="815.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffffff;" />
-      <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="1526.0" layoutY="823.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/help.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="helpButton" layoutX="1519.0" layoutY="815.0" mnemonicParsing="false" onAction="#helpClicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffffff;">
+         <graphic>
+            <ImageView fitHeight="54.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/help.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>

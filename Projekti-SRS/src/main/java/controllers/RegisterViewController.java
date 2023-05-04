@@ -59,6 +59,10 @@ public class RegisterViewController implements Initializable {
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
         fradioChoice.setToggleGroup(toggleGroup);
+
+        this.komunaChoiceBox.getItems().add("Peje");
+        // TO DO WHEN FUNCTIONS ARE READY
+
     }
 
     @FXML
@@ -93,13 +97,17 @@ public class RegisterViewController implements Initializable {
             String drejtimi = this.drejtimiChoiceBox.toString();
             CreateStudentDto studentDto = new CreateStudentDto(emri, mbiemri, gjinia, date, email, qyteti, komuna, shkolla, suksesi, matura, provimiPranues, drejtimi);
             if(RegisterStudentValidatorUtil.validateStudentOnRegister(studentDto)){
-                if(StudentiRepository.insert(studentDto)){
-                    AlertUtil.alertSuccess("Success!", "Inserting the student to database was successful!");
-                    SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+                if(AlertUtil.alertConfirm("Confirmation", "Student Values", "Are you sure you want to proceed and register the student to the system?")) {
+                    if (StudentiRepository.insert(studentDto)) {
+                        AlertUtil.alertSuccess("Success!", "Inserting the student to database was successful!");
+                        SceneUtil.changeScene((Stage) this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+                    } else {
+                        AlertUtil.alertError("Database Error", "Data could not be inserted in the database!", "Please check the data format again!");
+                    }
                 }
                 else{
-                    AlertUtil.alertError("Database Error", "Data could not be inserted in the database!", "Please check the data format again!");
-                }
+                    return;
+                    }
             }
             else {
                 AlertUtil.alertError("Registration Error", "ALl fields are required!", "Please fill all of the fields before proceeding!");
