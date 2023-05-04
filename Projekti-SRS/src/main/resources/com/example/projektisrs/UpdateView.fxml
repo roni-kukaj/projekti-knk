@@ -32,6 +32,7 @@
             </Button>
          </children>
       </Pane>
+
       <Pane layoutX="300.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="500.0" text="Forma për Përditësimin e Studentëve">
