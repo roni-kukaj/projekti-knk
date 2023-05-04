@@ -38,7 +38,7 @@ public class QytetiRepository {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while(resultSet.next()){
-            data.add(new Qytetet(
+            data.add(new Qyteti(
                     resultSet.getInt("QId"),
                     resultSet.getString("Emri")
             ));
