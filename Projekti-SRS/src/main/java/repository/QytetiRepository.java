@@ -26,5 +26,34 @@ public class QytetiRepository {
         else{
             return null;
         }
+
+        ArrayList<String> qyteti = new ArrayList<String>();
+        ArrayList<Integer> ids=new ArrayList<Integer>();
+        qyteti.add("Prishtina");
+        qyteti.add("Mitrovice");
+        qyteti.add("Peje");
+        qyteti.add("Prizren");
+        qyteti.add("Ferizaj");
+        qyteti.add("Gjilan");
+        qyteti.add("Gjakove");
+        qyteti.add("Podujeve");
+        qyteti.add("Vushtri");
+        qyteti.add("Rahovec");
+        qyteti.add("Drenas");
+        qyteti.add("Lipjan");
+        qyteti.add("Malisheve");
+        qyteti.add("Deqan");
+        qyteti.add("Istog");
+        qyteti.add("Kline");
+        qyteti.add("Kaqanik");
+        qyteti.add("Suharek");
+        qyteti.add("Viti");
+
+        public static void iterateNames(ArrayList<String>qyteti, ArrayList<Integer> ids) {
+            for (int id : ids) {
+                System.out.println(names.get(id));
+            }
+        }
+
     }
 }
