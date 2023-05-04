@@ -29,7 +29,7 @@ public class ShkollaRepository {
         }
     }
 
-    public static ArrayList<Shkolla> getShkolla() throws SQLException {
+    public static ArrayList<Shkolla> getShkollat() throws SQLException {
         ArrayList<Shkolla> data = new ArrayList<>();
 
         Connection connection = ConnectionUtil.getConnection();
@@ -38,8 +38,8 @@ public class ShkollaRepository {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while(resultSet.next()){
-            data.add(new TableStudenti(
-                    resultSet.getInt("QId"),
+            data.add(new Shkollat(
+                    resultSet.getInt("SId"),
                     resultSet.getString("Emri"),
                     resultSet.getInt("QId")
             ));
@@ -51,15 +51,5 @@ public class ShkollaRepository {
         return data;
     }
 
-    public static ArrayList<String> getStudentNames() throws SQLException {
-        Connection connection = ConnectionUtil.getConnection();
-        String sql = "SELECT Emri FROM Shkolla";
-        PreparedStatement statement = connection.prepareStatement(sql);
-        ResultSet resultSet = statement.executeQuery();
-        ArrayList<String> shkollat = new ArrayList<>();
-        while(resultSet.next()){
-            shkollat.add(resultSet.getString(1));
-        }
-        return shkollat;
-    }
+    
 }
