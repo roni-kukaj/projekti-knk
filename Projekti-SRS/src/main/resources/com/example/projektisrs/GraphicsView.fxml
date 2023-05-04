@@ -30,14 +30,14 @@
     </Pane>
    <Pane layoutX="-1.0" layoutY="98.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0">
       <children>
-         <Label layoutX="300.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" text="Formo graf sipas kriterit:" textAlignment="CENTER">
+         <Label fx:id="formoGrafTextLabel" layoutX="300.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" text="Formo graf sipas kriterit:" textAlignment="CENTER">
             <font>
                <Font name="System Bold Italic" size="24.0" />
             </font>
          </Label>
          <ChoiceBox layoutX="300.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="1000.0" />
          <PieChart layoutX="300.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;" />
-         <Button layoutX="1084.0" layoutY="704.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" text="Save as PNG" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <Button fx:id="saveAsPNGButton" layoutX="1084.0" layoutY="704.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" text="Save as PNG" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
             <font>
                <Font name="System Bold" size="24.0" />
             </font>
