@@ -19,6 +19,27 @@ public class UpdateStudentDto {
     private String drejtimi;
 
     public UpdateStudentDto(String emri, String mbiemri, String email, int id, String drejtimi){
+            this.emri = emri;
+            this.mbiemri = mbiemri;
+            this.email = email;
+            this.id = id;
+            this.drejtimi = drejtimi;
+    }
 
+    public String getEmri(){
+        return emri;
+    }
+
+    public String getMbiemri(){
+        return mbiemri;
+    }
+    public String getEmail(){
+        return email;
+    }
+    public int getId(){
+        return id;
+    }
+    public String getDrejtimi(){
+        return drejtimi;
     }
 }
