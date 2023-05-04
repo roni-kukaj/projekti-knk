@@ -36,17 +36,17 @@
       </Pane>
       <Pane layoutX="300.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="500.0" text="Forma për Regjistrimin e Studentëve">
+            <Label fx:id="formaLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="500.0" text="Forma për Regjistrimin e Studentëve">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Emri">
+            <Label fx:id="emriLabel" layoutX="100.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Emri">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="425.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Mbiemri">
+            <Label fx:id="mbiemriLabel" layoutX="425.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Mbiemri">
                <font>
                   <Font size="20.0" />
                </font>
@@ -59,7 +59,7 @@
                <font>
                   <Font size="20.0" />
                </font></TextField>
-            <Label layoutX="750.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Gjinia">
+            <Label fx:id="gjiniaLabel" layoutX="750.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Gjinia">
                <font>
                   <Font size="20.0" />
                </font>
@@ -69,12 +69,12 @@
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="fradioChoice" layoutX="810.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="F">
+            <RadioButton fx:id="fRadioChoice" layoutX="810.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="F">
                <font>
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <Label layoutX="100.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Data e lindjes">
+            <Label fx:id="birthDateLabel"layoutX="100.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Data e lindjes">
                <font>
                   <Font size="20.0" />
                </font>
