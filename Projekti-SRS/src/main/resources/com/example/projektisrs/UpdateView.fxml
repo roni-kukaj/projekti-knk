@@ -77,62 +77,11 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <DatePicker fx:id="dataLindjesPicker" layoutX="100.0" layoutY="215.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" />
-            <Label layoutX="425.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Qyteti i lindjes">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="qytetiLindjesChoiceBox" layoutX="425.0" layoutY="215.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" />
-            <Label layoutX="100.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Email adresa">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
             <TextField fx:id="emailTextfield" layoutX="100.0" layoutY="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="800.0">
                <font>
                   <Font size="20.0" />
                </font></TextField>
             <Label layoutX="100.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Komuna">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="komunaChoiceBox" layoutX="100.0" layoutY="415.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" />
-            <Label layoutX="425.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Shkolla e mesme">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="shkollaChoiceBox" layoutX="425.0" layoutY="415.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="475.0" />
-            <Label layoutX="100.0" layoutY="475.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="250.0" text="Tesi i matures">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <TextField fx:id="testiMaturesTextfield" layoutX="100.0" layoutY="515.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0">
-               <font>
-                  <Font size="20.0" />
-               </font></TextField>
-            <Label layoutX="400.0" layoutY="475.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="250.0" text="Suksesi ne shkollen e mesme">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <TextField fx:id="suksesiTextfield" layoutX="400.0" layoutY="515.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0">
-               <font>
-                  <Font size="20.0" />
-               </font></TextField>
-            <Label layoutX="700.0" layoutY="475.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Provimi pranues">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <TextField fx:id="provimiPranuesTextfield" layoutX="700.0" layoutY="515.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0">
-               <font>
-                  <Font size="20.0" />
-               </font></TextField>
-            <Label layoutX="100.0" layoutY="575.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Drejtimi">
                <font>
                   <Font size="20.0" />
                </font>
