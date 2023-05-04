@@ -1,14 +1,12 @@
-package controllers;
+package models.dto;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.stage.Stage;
-import services.SceneUtil;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 
-import java.io.IOException;
-
-public class UpdateViewController {
+public class updateStudentDto {
     @FXML
     private TextField emriUpdateTextfield;
     @FXML
@@ -39,17 +37,4 @@ public class UpdateViewController {
         System.out.println("Emri: " + emri + " - Mbiemri: " + mbiemri);
         System.out.println("Email: " + email);
     }
-
-
-
-    @FXML
-    public void goToDashboard() {
-        try{
-            SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
-        } catch (IOException e){
-            e.printStackTrace();
-            return;
-        }
-    }
-
 }
