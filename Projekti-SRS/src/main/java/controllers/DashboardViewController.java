@@ -26,6 +26,12 @@ public class DashboardViewController {
     @FXML
     private Button settingsButton;
 
+    @FXML
+    private Button logOutButton;
+
+    @FXML
+    private Button helpButton;
+
 
 
 
