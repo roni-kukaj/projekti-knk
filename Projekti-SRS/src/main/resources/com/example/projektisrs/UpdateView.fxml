@@ -33,17 +33,17 @@
       </Pane>
       <Pane layoutX="300.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="940.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="500.0" text="Forma për Përditësimin e Studentëve">
+            <Label fx:id="updateForm" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="500.0" text="Forma për Përditësimin e Studentëve">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Emri">
+            <Label fx:id="updateEmri" layoutX="100.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Emri">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="425.0" layoutY="198.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Mbiemri">
+            <Label fx:id="updateMbiemri" layoutX="425.0" layoutY="198.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Mbiemri">
                <font>
                   <Font size="20.0" />
                </font>
@@ -56,12 +56,12 @@
                <font>
                   <Font size="20.0" />
                </font></TextField>
-            <Label layoutX="734.0" layoutY="203.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Gjinia">
+            <Label fx:id="updateGjinia" layoutX="734.0" layoutY="203.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Gjinia">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="285.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Email adresa">
+            <Label fx:id="updateEmail" layoutX="100.0" layoutY="285.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Email adresa">
                <font>
                   <Font size="20.0" />
                </font>
@@ -70,7 +70,7 @@
                <font>
                   <Font size="20.0" />
                </font></TextField>
-            <Label layoutX="100.0" layoutY="389.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Drejtimi">
+            <Label fx:id="updateDrejtimi" layoutX="100.0" layoutY="389.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Drejtimi">
                <font>
                   <Font size="20.0" />
                </font>
@@ -93,7 +93,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="310.0" layoutY="191.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Id">
+      <Label fx:id="searchWithID" layoutX="310.0" layoutY="191.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Id">
          <font>
             <Font size="20.0" />
          </font>

@@ -32,7 +32,7 @@
       </Pane>
       <Pane layoutY="100.0" prefHeight="800.0" prefWidth="1600.0">
          <children>
-            <Label layoutX="634.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="400.0" text="Te dhenat e studentit">
+            <Label fx:id="studentDataLabel" layoutX="634.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="400.0" text="Te dhenat e studentit">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
@@ -41,7 +41,7 @@
                <items>
                   <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="ID" textOverrun="CLIP">
+                        <Label fx:id="studentiID" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="ID" textOverrun="CLIP">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -51,7 +51,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Emri">
+                        <Label fx:id="studentiName" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Emri">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -61,7 +61,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Mbiemri">
+                        <Label fx:id="studentiSurname" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Mbiemri">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -71,7 +71,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Gjinia">
+                        <Label fx:id="studentiGender" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Gjinia">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -81,7 +81,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Datelindja">
+                        <Label fx:id="studentiBirthdate" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Datelindja">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -91,7 +91,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Email">
+                        <Label fx:id="studentiEmail" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Email">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -101,7 +101,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Qyteti i lindjes">
+                        <Label fx:id="studentiBirthPlace" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Qyteti i lindjes">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -111,7 +111,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Komuna">
+                        <Label fx:id="studentiCommune" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Komuna">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -121,7 +121,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Shkolla e mesme">
+                        <Label fx:id="studentiHS" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Shkolla e mesme">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -131,7 +131,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Suksesi ne shkollen e mesme">
+                        <Label fx:id="studentiHSSuccess" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Suksesi ne shkollen e mesme">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -141,7 +141,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                         <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Piket ne testin e matures">
+                         <Label fx:id="studentiHSpoints" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Piket ne testin e matures">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -151,7 +151,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                         <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Piket ne provimin pranues">
+                         <Label fx:id="studentiUniPonts" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Piket ne provimin pranues">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -161,7 +161,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                         <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Drejtimi">
+                         <Label fx:id="studentiMajor" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="650.0" text="Drejtimi">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>

@@ -31,11 +31,11 @@
       </Pane>
       <TabPane layoutX="143.0" layoutY="259.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #33B6FF; -fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="40.0" tabMaxWidth="250.0" tabMinHeight="40.0" tabMinWidth="200.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="150.0">
         <tabs>
-          <Tab text="Hyrje">
+          <Tab fx:id="hyrjeTab" text="Hyrje">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text layoutX="30.0" layoutY="228.0" lineSpacing="3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miresevini ne sistemin tone per regjistrimin e studenteve, i cili eshte dizajnuar per ta bere procesin e regjistrimit me te shpejte, lehte dhe eficient.&#10;Sistemi yne eshte i lehte per perdorim dhe u jep mundesine e regjistrimit te studenteve duke perdorur informacionet baze qe merren nga studentet. Gjithashtu, sistemi siguron edhe shfaqjen e te dhenave ne menyre grafike, varesisht nga kriteri qe jipni." textAlignment="CENTER" wrappingWidth="756.59130859375" AnchorPane.bottomAnchor="215.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="215.0">
+                        <Text fx:id="hyrjeText" layoutX="30.0" layoutY="228.0" lineSpacing="3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miresevini ne sistemin tone per regjistrimin e studenteve, i cili eshte dizajnuar per ta bere procesin e regjistrimit me te shpejte, lehte dhe eficient.&#10;Sistemi yne eshte i lehte per perdorim dhe u jep mundesine e regjistrimit te studenteve duke perdorur informacionet baze qe merren nga studentet. Gjithashtu, sistemi siguron edhe shfaqjen e te dhenave ne menyre grafike, varesisht nga kriteri qe jipni." textAlignment="CENTER" wrappingWidth="756.59130859375" AnchorPane.bottomAnchor="215.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="215.0">
                            <font>
                               <Font name="Georgia" size="18.0" />
                            </font>
@@ -44,21 +44,21 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Zgjidhja e problemeve">
+          <Tab fx:id="troubleshootingTab" text="Zgjidhja e problemeve">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text layoutX="30.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disa probleme qe mund t’i hasni gjate perdorimit te sistemit tone dhe zgjidhjet per to:">
+                        <Text fx:id="troubleshotingText1" layoutX="30.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disa probleme qe mund t’i hasni gjate perdorimit te sistemit tone dhe zgjidhjet per to:">
                            <font>
                               <Font name="Georgia" size="18.0" />
                            </font>
                         </Text>
-                        <Text layoutX="30.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nese keshillat e lartecekura nuk ju ndihmojne, kontaktoni ekipin tone teknik per ndihme." underline="true">
+                        <Text fx:id="troubleshootingText2" layoutX="30.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nese keshillat e lartecekura nuk ju ndihmojne, kontaktoni ekipin tone teknik per ndihme." underline="true">
                            <font>
                               <Font name="Georgia Italic" size="18.0" />
                            </font>
                         </Text>
-                        <Text fill="#33b6ff" layoutX="116.0" layoutY="160.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Probleme ne kycje: Nese keni probleme gjate kycjes ne sistem, sigurohuni qe jeni duke perdorur emrin e sakte te perdoruesit dhe fjalekalimin&#10;&#10;2. Shfaqjen e studenteve: Nese keni veshtiresi ne gjetjen e studenteve, kontrolloni serish kriterin e kerkimit qe jeni duke e perdorur dhe te dhenat qe i keni dhene mbi ate kriter&#10;&#10;3. Gabime ne sistem: Nese hasni ne mesazhe gabimi gjate perdorimit te sistemit, provoni te rifreskoni faqen ose te kyceni serish ne sistem&#10;&#10;4. Mungesa e studenteve: Nese nje student qe keni regjistruar mungon ne listen e studenteve, atehere kontrolloni nese keni perfunduar plotesisht procesin e regjistrimit." wrappingWidth="721.5969219207764">
+                        <Text fx:id="troubleshootingText3" fill="#33b6ff" layoutX="116.0" layoutY="160.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Probleme ne kycje: Nese keni probleme gjate kycjes ne sistem, sigurohuni qe jeni duke perdorur emrin e sakte te perdoruesit dhe fjalekalimin&#10;&#10;2. Shfaqjen e studenteve: Nese keni veshtiresi ne gjetjen e studenteve, kontrolloni serish kriterin e kerkimit qe jeni duke e perdorur dhe te dhenat qe i keni dhene mbi ate kriter&#10;&#10;3. Gabime ne sistem: Nese hasni ne mesazhe gabimi gjate perdorimit te sistemit, provoni te rifreskoni faqen ose te kyceni serish ne sistem&#10;&#10;4. Mungesa e studenteve: Nese nje student qe keni regjistruar mungon ne listen e studenteve, atehere kontrolloni nese keni perfunduar plotesisht procesin e regjistrimit." wrappingWidth="721.5969219207764">
                            <font>
                               <Font name="Georgia" size="18.0" />
                            </font>
@@ -67,36 +67,36 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="FAQs">
+            <Tab fx:id="FAQsTab" text="FAQs">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text fill="#33b6ff" layoutX="63.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si mund ta dime qe regjistrimi ka qene i suksesshem?">
+                        <Text fx:id="firstQuestion" fill="#33b6ff" layoutX="63.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si mund ta dime qe regjistrimi ka qene i suksesshem?">
                            <font>
                               <Font name="Kristen ITC" size="18.0" />
                            </font>
                         </Text>
-                        <Text fill="#33b6ff" layoutX="63.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si mund ta anulojme/fshijme regjistrimin?">
+                        <Text fx:id="secondQuestion" fill="#33b6ff" layoutX="63.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si mund ta anulojme/fshijme regjistrimin?">
                            <font>
                               <Font name="Kristen ITC" size="18.0" />
                            </font>
                         </Text>
-                        <Text fill="#33b6ff" layoutX="63.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si t’i perditesojme te dhenat e studenteve?">
+                        <Text fx:id="thirdQuestion" fill="#33b6ff" layoutX="63.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si t’i perditesojme te dhenat e studenteve?">
                            <font>
                               <Font name="Kristen ITC" size="18.0" />
                            </font>
                         </Text>
-                        <Text layoutX="107.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Sapo te perfundoje procesi i regjistrimit, studenti duhet t’a pranoje nje E-mail ku do te konfirmoje&#10;brenda nje afati te caktuar se e ka pranuar ate dhe automatikisht regjistrimi perfundon me sukses">
+                        <Text fx:id="firstAns" layoutX="107.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Sapo te perfundoje procesi i regjistrimit, studenti duhet t’a pranoje nje E-mail ku do te konfirmoje&#10;brenda nje afati te caktuar se e ka pranuar ate dhe automatikisht regjistrimi perfundon me sukses">
                            <font>
                               <Font name="Georgia" size="18.0" />
                            </font>
                         </Text>
-                        <Text layoutX="128.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Per t’a larguar nje student nga sistemi, thjesht kerkoni studentin ne sistem dhe ndiqni instruksionet&#10;per fshirjen e regjistrimit.">
+                        <Text fx:id="secondAns" layoutX="128.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Per t’a larguar nje student nga sistemi, thjesht kerkoni studentin ne sistem dhe ndiqni instruksionet&#10;per fshirjen e regjistrimit.">
                            <font>
                               <Font name="Georgia" size="18.0" />
                            </font>
                         </Text>
-                        <Text layoutX="117.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Sistemi yne permbane pjesen  vecante per perditesim, ku mund t’i shenoni te dhenat e studentit&#10;dhe t’i ndryshoni te dhenat e caktuara.">
+                        <Text fx:id="thirdAns" layoutX="117.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Sistemi yne permbane pjesen  vecante per perditesim, ku mund t’i shenoni te dhenat e studentit&#10;dhe t’i ndryshoni te dhenat e caktuara.">
                            <font>
                               <Font name="Georgia" size="18.0" />
                            </font>
@@ -105,7 +105,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab text="Kontakti">
+            <Tab fx:id="contactTab" text="Kontakti">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

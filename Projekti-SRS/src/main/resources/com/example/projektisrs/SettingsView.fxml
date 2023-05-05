@@ -30,11 +30,11 @@
          </children></Pane>
       <TabPane layoutX="300.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-border-color: #38B6FF; -fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="40.0" tabMaxWidth="250.0" tabMinHeight="40.0" tabMinWidth="200.0">
         <tabs>
-          <Tab closable="false" text="Profile Settings" />
-          <Tab text="System Settings" />
+          <Tab  fx:id="profileSettingsTab" closable="false" text="Profile Settings" />
+          <Tab fx:id="sysSettingsTab" text="System Settings" />
         </tabs>
       </TabPane>
-      <Button layoutX="1100.0" layoutY="780.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #38B6FF;" text="Ruaj ndryshimet" textFill="WHITE">
+      <Button fx:id="settingsButton" layoutX="1100.0" layoutY="780.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #38B6FF;" text="Ruaj ndryshimet" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
