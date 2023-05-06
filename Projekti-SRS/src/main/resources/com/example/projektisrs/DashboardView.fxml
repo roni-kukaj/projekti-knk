@@ -20,14 +20,12 @@
                   <Image url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
-            <Button fx:id="logOutButton" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOutClicked" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;">
-               <graphic>
-                  <ImageView fitHeight="54.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/LogOut.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
+            <Button fx:id="logOutButton" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOutClicked" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;" />
+            <ImageView fitHeight="54.0" fitWidth="70.0" layoutX="1513.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/LogOut.png" />
+               </image>
+            </ImageView>
             <Label layoutX="1522.0" layoutY="72.0" prefHeight="17.0" prefWidth="56.0" text="Log Out" textFill="WHITE" />
          </children>
       </Pane>
@@ -110,13 +108,11 @@
          </children>
       </GridPane>
       <ImageView fitHeight="80.0" fitWidth="144.0" layoutX="1410.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="helpButton" layoutX="1519.0" layoutY="815.0" mnemonicParsing="false" onAction="#helpClicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffffff;">
-         <graphic>
-            <ImageView fitHeight="54.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/help.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
+      <Button fx:id="helpButton" layoutX="1519.0" layoutY="815.0" mnemonicParsing="false" onAction="#helpClicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffffff;" />
+      <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="1526.0" layoutY="823.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/help.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
