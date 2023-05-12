@@ -32,23 +32,20 @@ public class ShkollaRepository {
 
     public static ArrayList<Shkolla> getShkollat() throws SQLException {
         ArrayList<Shkolla> data = new ArrayList<>();
-
         Connection connection = ConnectionUtil.getConnection();
         String sql = "SELECT * FROM Shkolla";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while(resultSet.next()){
-            data.add(new Shkolla(
-                    resultSet.getInt("QId"),
-                    resultSet.getString("Emri"),
-                    resultSet.getInt("SId")
-            ));
+            data.add(
+                    new Shkolla(
+                            resultSet.getInt("SId"),
+                            resultSet.getString("EmriIShkolles"),
+                            resultSet.getInt("QId")
+                    )
+            );
         }
-        resultSet.close();
-        preparedStatement.close();
-        connection.close();
-
         return data;
     }
 

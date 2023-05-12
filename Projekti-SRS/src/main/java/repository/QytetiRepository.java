@@ -39,13 +39,10 @@ public class QytetiRepository {
 
         while(resultSet.next()){
             data.add(new Qyteti(
-                    resultSet.getInt("QId"),
-                    resultSet.getString("Emri")
+                    resultSet.getInt(1),
+                    resultSet.getString(2)
             ));
         }
-        resultSet.close();
-        preparedStatement.close();
-        connection.close();
 
         return data;
     }

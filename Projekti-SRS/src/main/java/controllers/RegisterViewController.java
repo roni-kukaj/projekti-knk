@@ -34,7 +34,7 @@ public class RegisterViewController implements Initializable {
     @FXML
     private RadioButton mRadioChoice;
     @FXML
-    private RadioButton fradioChoice;
+    private RadioButton fRadioChoice;
 
     private ToggleGroup toggleGroup;
     @FXML
@@ -67,18 +67,21 @@ public class RegisterViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
-        fradioChoice.setToggleGroup(toggleGroup);
+        fRadioChoice.setToggleGroup(toggleGroup);
 
-//        try {
-//            this.qytetet = QytetiRepository.getQytetet();
-//            this.shkollat = ShkollaRepository.getShkollat();
-//            for(Qyteti qyteti: qytetet){
-//                this.komunaChoiceBox.getItems().add(qyteti.getEmri());
-//                this.qytetiLindjesChoiceBox.getItems().add(qyteti.getEmri());
-//            }
-//        } catch (SQLException e) {
-//            AlertUtil.alertError("Data Error", "Database Data Error", "There was an error while trying to get the data!");
-//        }
+        try {
+            this.qytetet = QytetiRepository.getQytetet();
+            this.shkollat = ShkollaRepository.getShkollat();
+            for(Qyteti qyteti: qytetet){
+                this.komunaChoiceBox.getItems().add(qyteti.getEmri());
+                this.qytetiLindjesChoiceBox.getItems().add(qyteti.getEmri());
+            }
+            for(Shkolla shkolla: shkollat){
+                this.shkollaChoiceBox.getItems().add(shkolla.getEmriShkolles());
+            }
+        } catch (SQLException e) {
+            AlertUtil.alertError("Data Error", "Database Data Error", "There was an error while trying to get the data!");
+        }
 
     }
 
@@ -105,9 +108,9 @@ public class RegisterViewController implements Initializable {
             String choiceBox = this.qytetiLindjesChoiceBox.toString();
             String email = this.emailTextfield.getText();
 
-            int qyteti = Integer.parseInt(this.qytetiLindjesChoiceBox.getValue());
-            int komuna = Integer.parseInt(this.komunaChoiceBox.getValue());
-            int shkolla = Integer.parseInt((String) this.shkollaChoiceBox.toString());
+            int qyteti = getQytetiIdFromName(this.qytetiLindjesChoiceBox.getValue());
+            int komuna = getQytetiIdFromName(this.komunaChoiceBox.getValue());
+            int shkolla = getShkollaIdFromName(this.shkollaChoiceBox.getValue().toString());
             int matura = Integer.parseInt(this.maturaTextfield.getText());
             double suksesi = Double.parseDouble(this.suksesiTextfield.getText());
             int provimiPranues = Integer.parseInt(this.provimiPranuesTextfield.getText());
@@ -128,5 +131,22 @@ public class RegisterViewController implements Initializable {
         catch(Exception exc){
             AlertUtil.alertError("Input Error", "Wrong input!", "Please check that all of the fields have the right type of data!");
         }
+    }
+
+    public int getQytetiIdFromName(String name){
+        for(Qyteti qyteti: qytetet){
+            if(qyteti.getEmri().equals(name)){
+                return qyteti.getQytetiId();
+            }
+        }
+        return 0;
+    }
+    public int getShkollaIdFromName(String name){
+        for(Shkolla shkolla: shkollat){
+            if(shkolla.getEmriShkolles().equals(name)){
+                return shkolla.getQytetiId();
+            }
+        }
+        return 0;
     }
 }
