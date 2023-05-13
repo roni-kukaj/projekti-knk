@@ -2,6 +2,7 @@ package repository;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import models.Shkolla;
 import models.Studenti;
 import models.TableStudenti;
 import models.dto.CreateStudentDto;
@@ -11,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class StudentiRepository {
     public static ObservableList<TableStudenti> getTableStudenti() throws SQLException {
