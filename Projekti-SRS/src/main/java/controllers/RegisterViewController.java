@@ -46,7 +46,7 @@ public class RegisterViewController implements Initializable {
     @FXML
     private ChoiceBox<String> komunaChoiceBox;
     @FXML
-    private ChoiceBox shkollaChoiceBox;
+    private ChoiceBox<String> shkollaChoiceBox;
     @FXML
     private TextField maturaTextfield;
     @FXML
@@ -54,7 +54,7 @@ public class RegisterViewController implements Initializable {
     @FXML
     private TextField provimiPranuesTextfield;
     @FXML
-    private ChoiceBox drejtimiChoiceBox;
+    private ChoiceBox<String> drejtimiChoiceBox;
     @FXML
     private Button registerButton;
     @FXML
@@ -68,6 +68,7 @@ public class RegisterViewController implements Initializable {
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
         fRadioChoice.setToggleGroup(toggleGroup);
+        this.drejtimiChoiceBox.getItems().addAll("TIK", "IKS", "EAR");
 
         try {
             this.qytetet = QytetiRepository.getQytetet();
@@ -75,9 +76,7 @@ public class RegisterViewController implements Initializable {
             for(Qyteti qyteti: qytetet){
                 this.komunaChoiceBox.getItems().add(qyteti.getEmri());
                 this.qytetiLindjesChoiceBox.getItems().add(qyteti.getEmri());
-            }
-            for(Shkolla shkolla: shkollat){
-                this.shkollaChoiceBox.getItems().add(shkolla.getEmriShkolles());
+                this.komunaChoiceBox.setOnAction(e -> getShkollaItems(this.komunaChoiceBox.getValue()));
             }
         } catch (SQLException e) {
             AlertUtil.alertError("Data Error", "Database Data Error", "There was an error while trying to get the data!");
@@ -103,18 +102,17 @@ public class RegisterViewController implements Initializable {
             char gjinia = ((RadioButton)toggleGroup.getSelectedToggle()).getText().charAt(0);
 
             LocalDate selectedDate = this.birthdayPicker.getValue();
-            Instant instant = Instant.from(selectedDate.atStartOfDay(ZoneId.systemDefault()));
-            Date date = (Date) Date.from(instant);
-            String choiceBox = this.qytetiLindjesChoiceBox.toString();
+            java.util.Date utilDate = Date.from(selectedDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+            java.sql.Date date = new java.sql.Date(utilDate.getTime());
             String email = this.emailTextfield.getText();
 
             int qyteti = getQytetiIdFromName(this.qytetiLindjesChoiceBox.getValue());
             int komuna = getQytetiIdFromName(this.komunaChoiceBox.getValue());
-            int shkolla = getShkollaIdFromName(this.shkollaChoiceBox.getValue().toString());
+            int shkolla = getShkollaIdFromName(this.shkollaChoiceBox.getValue());
             int matura = Integer.parseInt(this.maturaTextfield.getText());
             double suksesi = Double.parseDouble(this.suksesiTextfield.getText());
             int provimiPranues = Integer.parseInt(this.provimiPranuesTextfield.getText());
-            String drejtimi = this.drejtimiChoiceBox.toString();
+            String drejtimi = this.drejtimiChoiceBox.getValue();
 
             CreateStudentDto studentDto = new CreateStudentDto(emri, mbiemri, gjinia, date, email, qyteti, komuna, shkolla, suksesi, matura, provimiPranues, drejtimi);
             if(RegisterStudentValidatorUtil.validateStudentOnRegister(studentDto)){
@@ -144,9 +142,21 @@ public class RegisterViewController implements Initializable {
     public int getShkollaIdFromName(String name){
         for(Shkolla shkolla: shkollat){
             if(shkolla.getEmriShkolles().equals(name)){
-                return shkolla.getQytetiId();
+                return shkolla.getShkollaId();
             }
         }
         return 0;
+    }
+    public void getShkollaItems(String qyteti){
+        int id = getQytetiIdFromName(qyteti);
+        try{
+            this.shkollat = ShkollaRepository.getShkollatByQytetiId(id);
+            this.shkollaChoiceBox.getItems().clear();
+            for(Shkolla shkolla: shkollat){
+                this.shkollaChoiceBox.getItems().add(shkolla.getEmriShkolles());
+            }
+        } catch (SQLException e) {
+            AlertUtil.alertError("Data Error", "Data not found!", "The data needed was not found!");
+        }
     }
 }
