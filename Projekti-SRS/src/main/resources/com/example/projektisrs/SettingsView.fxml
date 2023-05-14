@@ -30,8 +30,22 @@
          </children></Pane>
       <TabPane layoutX="300.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-border-color: #38B6FF; -fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="40.0" tabMaxWidth="250.0" tabMinHeight="40.0" tabMinWidth="200.0">
         <tabs>
-          <Tab  fx:id="profileSettingsTab" closable="false" text="Profile Settings" />
-          <Tab fx:id="sysSettingsTab" text="System Settings" />
+           <Tab fx:id="profileSettingsTab" closable="false" text="Profile Settings">
+              <content>
+                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                       <Label layoutX="14.0" layoutY="14.0" text="Current Password:" />
+                       <PasswordField fx:id="currentPasswordField" layoutX="14.0" layoutY="35.0" prefHeight="25.0" prefWidth="200.0" />
+                       <Label layoutX="14.0" layoutY="70.0" text="New Password:" />
+                       <PasswordField fx:id="newPasswordField" layoutX="14.0" layoutY="91.0" prefHeight="25.0" prefWidth="200.0" />
+                       <Label layoutX="14.0" layoutY="126.0" text="Confirm New Password:" />
+                       <PasswordField fx:id="confirmPasswordField" layoutX="14.0" layoutY="147.0" prefHeight="25.0" prefWidth="200.0" />
+                       <Button fx:id="saveProfileButton" layoutX="14.0" layoutY="182.0" mnemonicParsing="false" onAction="#saveProfile" prefHeight="25.0" prefWidth="100.0" text="Save" />
+                    </children>
+                 </AnchorPane>
+              </content>
+           </Tab>
+           <Tab fx:id="sysSettingsTab" text="System Settings" />
         </tabs>
       </TabPane>
       <Button fx:id="settingsButton" layoutX="1100.0" layoutY="780.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #38B6FF;" text="Ruaj ndryshimet" textFill="WHITE">
