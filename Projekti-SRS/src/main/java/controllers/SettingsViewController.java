@@ -21,6 +21,7 @@ public class SettingsViewController {
         }
     }
 
+    @FXML
     public void saveProfile(){
 
     }
