@@ -6,7 +6,7 @@ public class CreateStudentDto {
     private String emri;
     private String mbiemri;
     private char gjinia;
-    private Date ditelindja;
+    private java.sql.Date ditelindja;
     private String email;
     private int qytetiLindjesId;
     private int komunaId;
@@ -40,7 +40,7 @@ public class CreateStudentDto {
     public char getGjinia() {
         return gjinia;
     }
-    public Date getDitelindja() {
+    public java.sql.Date getDitelindja() {
         return ditelindja;
     }
     public String getEmail() {

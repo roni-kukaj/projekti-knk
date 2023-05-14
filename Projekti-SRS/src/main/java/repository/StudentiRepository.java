@@ -175,7 +175,7 @@ public class StudentiRepository {
             statement.setInt(10, studentDto.getPiketProvimitPranues());
             statement.setString(11, studentDto.getDrejtimi());
             statement.setInt(12, studentDto.getShkollaId());
-            statement.executeQuery();
+            statement.executeUpdate();
             return true;
         } catch (SQLException e){
             return false;
