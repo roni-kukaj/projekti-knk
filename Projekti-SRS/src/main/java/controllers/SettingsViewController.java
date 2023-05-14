@@ -20,4 +20,8 @@ public class SettingsViewController {
             return;
         }
     }
+
+    public void saveProfile(){
+
+    }
 }
