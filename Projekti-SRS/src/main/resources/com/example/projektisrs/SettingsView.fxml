@@ -9,6 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsViewController">
    <children>
@@ -35,13 +36,25 @@
               <content>
                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
                     <children>
-                       <Label layoutX="311.0" layoutY="106.0" text="Current Password:" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="580.0" />
-                       <PasswordField fx:id="currentPasswordField" layoutX="316.0" layoutY="144.0" prefHeight="26.0" prefWidth="262.0" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="316.0" />
-                       <Label layoutX="331.0" layoutY="210.0" text="New Password:" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="580.0" />
-                       <PasswordField fx:id="newPasswordField" layoutX="359.0" layoutY="263.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="316.0" />
-                       <Label layoutX="359.0" layoutY="321.0" text="Confirm New Password:" AnchorPane.leftAnchor="316.0" />
-                       <PasswordField fx:id="confirmPasswordField" layoutX="355.0" layoutY="348.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="316.0" />
-                       <Button fx:id="saveProfileButton" layoutX="349.0" layoutY="396.0" mnemonicParsing="false" onAction="#saveProfile" prefHeight="25.0" prefWidth="100.0" text="Save" AnchorPane.leftAnchor="316.0" />
+                       <Label layoutX="311.0" layoutY="106.0" prefHeight="20.0" prefWidth="120.0" text="Current Password:" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="568.0" AnchorPane.topAnchor="94.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                       <PasswordField fx:id="currentPasswordField" layoutX="316.0" layoutY="144.0" prefHeight="40.0" prefWidth="262.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="134.0" />
+                       <Label layoutX="331.0" layoutY="210.0" text="New Password:" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="580.0" AnchorPane.topAnchor="194.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                       <PasswordField fx:id="newPasswordField" layoutX="359.0" layoutY="263.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="234.0" />
+                       <Label layoutX="359.0" layoutY="321.0" text="Confirm New Password:" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="294.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                       <PasswordField fx:id="confirmPasswordField" layoutX="355.0" layoutY="348.0" prefHeight="40.0" prefWidth="366.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="334.0" />
+                       <Button fx:id="saveProfileButton" layoutX="349.0" layoutY="396.0" mnemonicParsing="false" onAction="#saveProfile" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #38B6FF;" text="Save" textFill="WHITE" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="404.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
                     </children>
                  </AnchorPane>
               </content>
