@@ -53,7 +53,7 @@
                        <PasswordField fx:id="confirmPasswordField" layoutX="355.0" layoutY="348.0" prefHeight="40.0" prefWidth="366.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="334.0" />
                        <Button fx:id="saveProfileButton" layoutX="349.0" layoutY="396.0" mnemonicParsing="false" onAction="#saveProfile" prefHeight="42.0" prefWidth="110.0" style="-fx-background-color: #38B6FF;" text="Save" textFill="WHITE" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="404.0">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="20.0" />
                            </font></Button>
                     </children>
                  </AnchorPane>
