@@ -59,7 +59,9 @@ public class UpdateViewController implements Initializable {
             String drejtimi = this.drejtimiChoiceBox.getValue();
             if(!StudentValidatorUtil.validateStudentOnUpdate(new UpdateStudentDto(this.id, emri, mbiemri, email, drejtimi))){
                 AlertUtil.alertError("Input Error", "Incorrect Input", "The id field should not be empty!");
+                return;
             }
+
         }
         catch(Exception e1){
             AlertUtil.alertError("Input Error", "Input Error", e1.getMessage());
