@@ -13,14 +13,13 @@ import repository.QytetiRepository;
 import repository.ShkollaRepository;
 import repository.StudentiRepository;
 import services.AlertUtil;
-import services.RegisterStudentValidatorUtil;
+import services.StudentValidatorUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -116,7 +115,7 @@ public class RegisterViewController implements Initializable {
             String drejtimi = this.drejtimiChoiceBox.getValue();
 
             CreateStudentDto studentDto = new CreateStudentDto(emri, mbiemri, gjinia, date, email, qyteti, komuna, shkolla, suksesi, matura, provimiPranues, drejtimi);
-            if(RegisterStudentValidatorUtil.validateStudentOnRegister(studentDto)){
+            if(StudentValidatorUtil.validateStudentOnRegister(studentDto)){
                 if(AlertUtil.alertConfirm("Confirmation", "Student Values", "Are you sure you want to proceed and register the student to the system?")) {
                     StudentiRepository.insert(studentDto);
                     AlertUtil.alertSuccess("Success!", "Inserting the student to database was successful!");

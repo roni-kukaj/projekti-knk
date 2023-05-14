@@ -6,6 +6,7 @@ import models.Shkolla;
 import models.Studenti;
 import models.TableStudenti;
 import models.dto.CreateStudentDto;
+import models.dto.UpdateStudentDto;
 import services.AlertUtil;
 import services.ConnectionUtil;
 import java.sql.Connection;
@@ -180,5 +181,22 @@ public class StudentiRepository {
         } catch (SQLException e){
             return false;
         }
+    }
+    public static UpdateStudentDto getUpdateStudentDtoFromId(int id) throws SQLException {
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM Studenti WHERE stuId = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, id);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if(resultSet.next()){
+            return new UpdateStudentDto(
+                    id,
+                    resultSet.getString("Emri"),
+                    resultSet.getString("Mbiemri"),
+                    resultSet.getString("Email"),
+                    resultSet.getString("Drejtimi")
+            );
+        }
+        return null;
     }
 }

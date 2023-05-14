@@ -5,25 +5,22 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import services.StudentValidatorUtil;
 
 public class UpdateStudentDto {
 
-    private String emri;
-
-    private String mbiemri;
-
-    private String email;
-
     private int id;
-
+    private String emri;
+    private String mbiemri;
+    private String email;
     private String drejtimi;
 
-    public UpdateStudentDto(String emri, String mbiemri, String email, int id, String drejtimi){
-            this.emri = emri;
-            this.mbiemri = mbiemri;
-            this.email = email;
-            this.id = id;
-            this.drejtimi = drejtimi;
+    public UpdateStudentDto(int id, String emri, String mbiemri, String email, String drejtimi){
+        this.id = id;
+        this.emri = emri;
+        this.mbiemri = mbiemri;
+        this.email = email;
+        this.drejtimi = drejtimi;
     }
 
     public String getEmri(){

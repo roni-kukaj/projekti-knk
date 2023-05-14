@@ -1,9 +1,9 @@
 package services;
 
-import javafx.scene.control.Alert;
 import models.dto.CreateStudentDto;
+import models.dto.UpdateStudentDto;
 
-public class RegisterStudentValidatorUtil {
+public class StudentValidatorUtil {
     public static boolean validateStudentOnRegister(CreateStudentDto studentDto){
         if(
                 studentDto.getEmri().isEmpty() ||
@@ -43,6 +43,26 @@ public class RegisterStudentValidatorUtil {
             return false;
         }
 
+        return true;
+    }
+    public static boolean validateStudentOnUpdate(UpdateStudentDto updateStudentDto){
+        if(
+            updateStudentDto.getEmri().isEmpty() ||
+            updateStudentDto.getMbiemri().isEmpty() ||
+            updateStudentDto.getEmail().isEmpty() ||
+            updateStudentDto.getDrejtimi().isEmpty()
+        ){
+            return false;
+        }
+        if(updateStudentDto.getEmri().length() < 2 || updateStudentDto.getEmri().length() > 20) {
+            return false;
+        }
+        if(updateStudentDto.getMbiemri().length() < 2 || updateStudentDto.getMbiemri().length() > 20){
+            return false;
+        }
+        if(!updateStudentDto.getEmail().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")){
+            return false;
+        }
         return true;
     }
 }
