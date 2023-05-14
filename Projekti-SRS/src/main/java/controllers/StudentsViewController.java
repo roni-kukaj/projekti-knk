@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import models.Studenti;
 import models.TableStudenti;
 import repository.StudentiRepository;
+import services.AlertUtil;
 import services.SceneUtil;
 import services.TypeUtil;
 
@@ -59,11 +60,15 @@ public class StudentsViewController {
 
         this.studentTable.setOnMouseClicked(event -> {
             if(event.getClickCount() == 2){
-                TableStudenti ts = this.studentTable.getSelectionModel().getSelectedItem();
                 try {
+                    TableStudenti ts = this.studentTable.getSelectionModel().getSelectedItem();
                     SceneUtil.changeSceneWithIdParameter((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentiIndividualView.fxml", ts.getId());
                 } catch (IOException e) {
                     e.printStackTrace();
+                    return;
+                }
+                catch(Exception ee){
+                    AlertUtil.alertError("Data Error", "Data Error", "Something went wrong!");
                     return;
                 }
             }
