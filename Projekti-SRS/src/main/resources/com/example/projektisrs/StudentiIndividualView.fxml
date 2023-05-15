@@ -320,12 +320,17 @@
                         </Label>
                      </children></VBox>
                </items></SplitPane>
-            <Button fx:id="updateInfoButton" alignment="CENTER" layoutX="824.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Perditeso te dhenat" textFill="WHITE">
+            <Button fx:id="updateInfoButton" alignment="CENTER" layoutX="925.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Perditeso te dhenat" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="printAsPDFButton" alignment="CENTER" layoutX="1144.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printAsPDFButtonClicked" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Printo si PDF" textFill="WHITE">
+            <Button fx:id="printAsPDFButton" alignment="CENTER" layoutX="1200.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printAsPDFButtonClicked" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Printo si PDF" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteStudentButton" alignment="CENTER" layoutX="650.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteStudentButtonClicked" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: dd0000; -fx-background-radius: 10;" text="Fshij Studentin" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

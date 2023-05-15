@@ -1,6 +1,8 @@
 package controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -9,13 +11,16 @@ import models.TableStudenti;
 import repository.QytetiRepository;
 import repository.ShkollaRepository;
 import repository.StudentiRepository;
+import services.AlertUtil;
 import services.FileUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class StudentiIndividualViewController {
+public class StudentiIndividualViewController implements Initializable {
     @FXML
     private Label idLabel;
     @FXML
@@ -44,6 +49,8 @@ public class StudentiIndividualViewController {
     private Label drejtimiLabel;
     @FXML
     private Button goBackButton;
+    @FXML
+    private Button deleteStudentButton;
 
     @FXML
     private Button printAsPDFButton;
@@ -51,7 +58,34 @@ public class StudentiIndividualViewController {
     private Studenti studenti;
 
 
-    public void initialize() {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        fillData();
+    }
+
+    @FXML
+    public void deleteStudentButtonClicked(ActionEvent e){
+        try{
+            if(studenti != null){
+                if(AlertUtil.alertConfirm("Confirmation", "Delete Student", "Are you sure you want to proceed and delete the student from the system?")) {
+                    if(StudentiRepository.delete(studenti.getStudentId())) {
+                        AlertUtil.alertSuccess("Success!", "Deleting the student from the system was successful!");
+                        SceneUtil.changeScene((Stage) this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentsView.fxml");
+                    }
+                    else{
+                        throw new Exception("The action could not be completed!");
+                    }
+                }
+            }
+            else{
+                throw new Exception("No data to delete");
+            }
+        }
+        catch (Exception ee){
+            AlertUtil.alertError("Data Error", "Data Error", ee.getMessage());
+        }
+    }
+    public void fillData(){
         try {
             if (studenti == null) {
                 return;
@@ -71,16 +105,17 @@ public class StudentiIndividualViewController {
             this.drejtimiLabel.setText(this.studenti.getDrejtimi());
         }
         catch(SQLException sqlException){
-
+            AlertUtil.alertError("Data Error", "Data not found!", "We're sorry, but the data you requested was not found!");
+            return ;
         }
     }
 
     public void initData(int studentId){
         try{
             this.studenti = StudentiRepository.getStudentiById(studentId);
-            initialize();
+            fillData();
         } catch (SQLException e) {
-            e.printStackTrace();
+            AlertUtil.alertError("Data Error", "Data not found", "We're sorry  but the data you requested could no be found!");
             return;
         }
     }
@@ -89,7 +124,7 @@ public class StudentiIndividualViewController {
         try {
             SceneUtil.changeScene((Stage) this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentsView.fxml");
         } catch (IOException e) {
-            e.printStackTrace();
+            AlertUtil.alertError("System Error", "System Error", "We're sorry, but this action could not be completed!");
             return;
         }
     }
@@ -101,9 +136,9 @@ public class StudentiIndividualViewController {
             FileUtil.writeStudentInfoOnPDF(this.studenti, directory);
         }
         catch (IOException e){
-            e.printStackTrace();
+            AlertUtil.alertError("File Error", "File could not be created!", "Please try again later!");
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            AlertUtil.alertError("Data Error", "Data not found", "We're sorry  but the data you requested could no be found!");
         }
     }
 }
