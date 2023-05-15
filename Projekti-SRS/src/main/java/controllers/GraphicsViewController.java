@@ -20,7 +20,6 @@ public class GraphicsViewController {
 
         private XYChart.Series<Number, Number> dataSeries = new XYChart.Series<>();
 
-        @Override
         public void start(Stage primaryStage) throws Exception {
             // Create the axes for the graph
             final NumberAxis xAxis = new NumberAxis();

@@ -63,7 +63,6 @@ public class RegisterViewController implements Initializable {
     private ArrayList<Qyteti> qytetet;
     private ArrayList<Shkolla> shkollat;
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
