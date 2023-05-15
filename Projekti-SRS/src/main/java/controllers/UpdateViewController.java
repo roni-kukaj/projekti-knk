@@ -73,7 +73,20 @@ public class UpdateViewController implements Initializable {
         catch(Exception e1){
             AlertUtil.alertError("Input Error", "Input Error", e1.getMessage());
         }
-    }
+    }  @FXML
+    public void searchButtonClicked(){
+        if(this.idTextField.getText().isEmpty()){
+            AlertUtil.alertError("Input Error", "Empty Field", "The id field should not be empty!");
+            return;
+        }
+        try{
+            this.id = Integer.parseInt(this.idTextField.getText());
+            UpdateStudentDto updateStudentDto = StudentiRepository.getUpdateStudentDtoFromId(id);
+            if(updateStudentDto != null)
+                this.fillForm(updateStudentDto);
+            else
+                throw new Exception("Student was not found!");
+        }
 
 
 }
