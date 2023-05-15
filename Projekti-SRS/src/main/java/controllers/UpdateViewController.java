@@ -4,7 +4,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import models.dto.UpdateStudentDto;
+import services.AlertUtil;
+import services.StudentValidatorUtil;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -40,3 +43,14 @@ public class UpdateViewController implements Initializable {
         this.emailTextfield.setText(updateStudentDto.getEmail());
         this.drejtimiChoiceBox.setValue(updateStudentDto.getDrejtimi());
     }
+    @FXML
+    private void updateButtonClicked(ActionEvent e){
+        try {
+            String emri = this.emriUpdateTextfield.getText();
+            String mbiemri = this.mbiemriUpdateTextfield.getText();
+            String email = this.emailTextfield.getText();
+            String drejtimi = this.drejtimiChoiceBox.getValue();
+            if(!StudentValidatorUtil.validateStudentOnUpdate(new UpdateStudentDto(this.id, emri, mbiemri, email, drejtimi))){
+                AlertUtil.alertError("Input Error", "Incorrect Input", "The id field should not be empty!");
+                return;
+            }
