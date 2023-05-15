@@ -199,4 +199,47 @@ public class StudentiRepository {
         }
         return null;
     }
+    public static boolean update(UpdateStudentDto updateStudentDto) {
+        try{
+            Connection connection = ConnectionUtil.getConnection();
+            String sql = "UPDATE Studenti SET Emri = ?, Mbiemri = ?, Email = ?, Drejtimi = ? WHERE stuId = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, updateStudentDto.getEmri());
+            preparedStatement.setString(2, updateStudentDto.getMbiemri());
+            preparedStatement.setString(3, updateStudentDto.getEmail());
+            preparedStatement.setString(4, updateStudentDto.getDrejtimi());
+            preparedStatement.setInt(5, updateStudentDto.getId());
+            preparedStatement.executeUpdate();
+            return true;
+        }
+        catch (SQLException e){
+            return false;
+        }
+    }
+    public static boolean delete(int id){
+        try{
+            Connection connection = ConnectionUtil.getConnection();
+            String sql = "DELETE FROM Studenti WHERE stuId = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            return true;
+        }
+        catch(SQLException e){
+            return false;
+        }
+    }
+    public static boolean delete(Studenti studenti){
+        try{
+            Connection connection = ConnectionUtil.getConnection();
+            String sql = "DELETE FROM Studenti WHERE stuId = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, studenti.getStudentId());
+            preparedStatement.executeUpdate();
+            return true;
+        }
+        catch(SQLException e){
+            return false;
+        }
+    }
 }

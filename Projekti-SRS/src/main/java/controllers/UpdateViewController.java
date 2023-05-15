@@ -1,6 +1,5 @@
 package controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -11,12 +10,12 @@ import services.AlertUtil;
 import services.SceneUtil;
 import services.StudentValidatorUtil;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ResourceBundle;
-
 public class UpdateViewController implements Initializable {
     @FXML
     private TextField emriUpdateTextfield;
@@ -37,21 +36,18 @@ public class UpdateViewController implements Initializable {
 
     private int id;
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.drejtimiChoiceBox.getItems().addAll("EAR", "TIK", "IKS");
         this.id = 0;
     }
-
     private void fillForm(UpdateStudentDto updateStudentDto){
         this.emriUpdateTextfield.setText(updateStudentDto.getEmri());
         this.mbiemriUpdateTextfield.setText(updateStudentDto.getMbiemri());
         this.emailTextfield.setText(updateStudentDto.getEmail());
         this.drejtimiChoiceBox.setValue(updateStudentDto.getDrejtimi());
     }
-
     @FXML
-    private void updateButtonClicked(ActionEvent e){
+    public void updateButtonClicked(){
         try {
             String emri = this.emriUpdateTextfield.getText();
             String mbiemri = this.mbiemriUpdateTextfield.getText();
@@ -61,15 +57,27 @@ public class UpdateViewController implements Initializable {
                 AlertUtil.alertError("Input Error", "Incorrect Input", "The id field should not be empty!");
                 return;
             }
+            if(this.id == 0){
+                AlertUtil.alertError("System Error", "Unexpected Error", "Something went wrong!");
+                return;
+            }
+            if(StudentiRepository.update(new UpdateStudentDto(this.id, emri, mbiemri, email, drejtimi))){
+                AlertUtil.alertSuccess("Update Successful", "The student information was updated!");
+                this.searchButtonClicked();
+                return;
+            }
+            else{
+                AlertUtil.alertError("Update Error", "Student Update Error", "Student could not me updated!");
+                return;
+            }
 
         }
         catch(Exception e1){
             AlertUtil.alertError("Input Error", "Input Error", e1.getMessage());
         }
     }
-
     @FXML
-    public void searchButtonClicked(ActionEvent e){
+    public void searchButtonClicked(){
         if(this.idTextField.getText().isEmpty()){
             AlertUtil.alertError("Input Error", "Empty Field", "The id field should not be empty!");
             return;
@@ -81,24 +89,27 @@ public class UpdateViewController implements Initializable {
                 this.fillForm(updateStudentDto);
             else
                 throw new Exception("Student was not found!");
-        }
-        catch (NumberFormatException ne){
+        }   catch (NumberFormatException ne){
             AlertUtil.alertError("Input Error", "Incorrect Input", "Check if the format you have entered is incorrect!");
         }
         catch (SQLException se){
             AlertUtil.alertError("Data Error", "Data not found", "The id you've entered does not exist in the system!");
-        }
-        catch (Exception ee){
+        }catch (Exception ee){
             AlertUtil.alertError("Data Error", "Data not found", ee.getMessage());
         }
     }
-
     @FXML
     public void goToDashboard() {
         try{
             SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
         } catch (IOException e){
-            AlertUtil.alertError("Program Error", "Scene Error", "Could not go back!");
+            e.printStackTrace();
+            return;
         }
+    }
+    public void initData(int studentId){
+        this.id = studentId;
+        this.idTextField.setText(String.valueOf(id));
+        this.searchButtonClicked();
     }
 }

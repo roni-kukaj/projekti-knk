@@ -13,13 +13,16 @@ import javafx.stage.Stage;
 import models.Studenti;
 import models.TableStudenti;
 import repository.StudentiRepository;
+import services.AlertUtil;
 import services.SceneUtil;
 import services.TypeUtil;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class StudentsViewController {
+public class StudentsViewController implements Initializable {
     @FXML
     private Button goBackButton;
     @FXML
@@ -42,33 +45,6 @@ public class StudentsViewController {
     private TableColumn<TableStudenti, String> drejtimiColumn;
 
     private ObservableList<TableStudenti> studentiData;
-
-    public void initialize(){
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        emriColumn.setCellValueFactory(new PropertyValueFactory<>("emri"));
-        mbiemriColumn.setCellValueFactory(new PropertyValueFactory<>("mbiemri"));
-        drejtimiColumn.setCellValueFactory(new PropertyValueFactory<>("drejtimi"));
-
-        try{
-            studentiData = StudentiRepository.getTableStudenti();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return;
-        }
-        studentTable.setItems(studentiData);
-
-        this.studentTable.setOnMouseClicked(event -> {
-            if(event.getClickCount() == 2){
-                TableStudenti ts = this.studentTable.getSelectionModel().getSelectedItem();
-                try {
-                    SceneUtil.changeSceneWithIdParameter((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentiIndividualView.fxml", ts.getId());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    return;
-                }
-            }
-        });
-    }
 
     public void filterButtonClicked(){
         String id = this.idFilterField.getText();
@@ -101,5 +77,37 @@ public class StudentsViewController {
             e.printStackTrace();
             return;
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        emriColumn.setCellValueFactory(new PropertyValueFactory<>("emri"));
+        mbiemriColumn.setCellValueFactory(new PropertyValueFactory<>("mbiemri"));
+        drejtimiColumn.setCellValueFactory(new PropertyValueFactory<>("drejtimi"));
+
+        try{
+            studentiData = StudentiRepository.getTableStudenti();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return;
+        }
+        studentTable.setItems(studentiData);
+
+        this.studentTable.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2){
+                try {
+                    TableStudenti ts = this.studentTable.getSelectionModel().getSelectedItem();
+                    SceneUtil.changeSceneWithIdParameter((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentiIndividualView.fxml", ts.getId());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return;
+                }
+                catch(Exception ee){
+                    AlertUtil.alertError("Data Error", "Data Error", "Something went wrong!");
+                    return;
+                }
+            }
+        });
     }
 }
