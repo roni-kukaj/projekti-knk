@@ -24,24 +24,6 @@ public class SettingsViewController {
 
 
 
-    @FXML
-    public void saveNewPassword(String currentPassword, String newPassword, String confirmNewPassword) {
-        try {
 
-            if (!password.getPassword().equals(currentPassword)) {
-                System.out.println("Current password is incorrect");
-                return;
-            }
-
-            if (!newPassword.equals(confirmNewPassword)) {
-                System.out.println("New password and confirm password do not match");
-                return;
-            }
-            password.setPassword(newPassword);
-            System.out.println("Password changed successfully");
-        }catch(IOException e){
-
-        }
-    }
 
 }
