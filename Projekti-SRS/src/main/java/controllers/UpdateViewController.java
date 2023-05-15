@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import models.dto.UpdateStudentDto;
+import repository.StudentiRepository;
 import services.AlertUtil;
 import services.StudentValidatorUtil;
 
@@ -54,3 +55,25 @@ public class UpdateViewController implements Initializable {
                 AlertUtil.alertError("Input Error", "Incorrect Input", "The id field should not be empty!");
                 return;
             }
+            if(this.id == 0){
+                AlertUtil.alertError("System Error", "Unexpected Error", "Something went wrong!");
+                return;
+            }
+            if(StudentiRepository.update(new UpdateStudentDto(this.id, emri, mbiemri, email, drejtimi))){
+                AlertUtil.alertSuccess("Update Successful", "The student information was updated!");
+                this.searchButtonClicked();
+                return;
+            }
+            else{
+                AlertUtil.alertError("Update Error", "Student Update Error", "Student could not me updated!");
+                return;
+            }
+
+        }
+        catch(Exception e1){
+            AlertUtil.alertError("Input Error", "Input Error", e1.getMessage());
+        }
+    }
+
+
+}
