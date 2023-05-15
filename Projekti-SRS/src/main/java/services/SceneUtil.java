@@ -1,6 +1,7 @@
 package services;
 
 import controllers.StudentiIndividualViewController;
+import controllers.UpdateViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,6 +23,14 @@ public class SceneUtil {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         StudentiIndividualViewController controller = loader.getController();
+        controller.initData(id);
+        stage.setScene(scene);
+    }
+    public static void changeSceneWithIdParameterForUpdate(Stage stage, String viewName, int id) throws IOException{
+        FXMLLoader loader = new FXMLLoader(SceneUtil.class.getResource(viewName));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        UpdateViewController controller = loader.getController();
         controller.initData(id);
         stage.setScene(scene);
     }

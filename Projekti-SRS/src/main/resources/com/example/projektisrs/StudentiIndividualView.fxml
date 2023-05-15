@@ -320,7 +320,7 @@
                         </Label>
                      </children></VBox>
                </items></SplitPane>
-            <Button fx:id="updateInfoButton" alignment="CENTER" layoutX="925.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Perditeso te dhenat" textFill="WHITE">
+            <Button fx:id="updateInfoButton" onAction="#updateInfoButtonClicked" alignment="CENTER" layoutX="925.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Perditeso te dhenat" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

@@ -107,5 +107,9 @@ public class UpdateViewController implements Initializable {
             return;
         }
     }
-
+    public void initData(int studentId){
+        this.id = studentId;
+        this.idTextField.setText(String.valueOf(id));
+        this.searchButtonClicked();
+    }
 }

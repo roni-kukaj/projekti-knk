@@ -3,6 +3,7 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -49,6 +50,9 @@ public class StudentiIndividualViewController implements Initializable {
     private Label drejtimiLabel;
     @FXML
     private Button goBackButton;
+
+    @FXML
+    private Button updateInfoButton;
     @FXML
     private Button deleteStudentButton;
 
@@ -139,6 +143,18 @@ public class StudentiIndividualViewController implements Initializable {
             AlertUtil.alertError("File Error", "File could not be created!", "Please try again later!");
         } catch (SQLException e) {
             AlertUtil.alertError("Data Error", "Data not found", "We're sorry  but the data you requested could no be found!");
+        }
+    }
+
+    @FXML
+    public void updateInfoButtonClicked()  {
+        try{
+            if(this.studenti != null){
+                SceneUtil.changeSceneWithIdParameterForUpdate((Stage)this.deleteStudentButton.getScene().getWindow(), "/com/example/projektisrs/UpdateView.fxml", this.studenti.getStudentId());
+            }
+        }
+        catch (IOException ie){
+            AlertUtil.alertError("System Error", "System Error", "We're sorry, but this action could not be completed!");
         }
     }
 }
