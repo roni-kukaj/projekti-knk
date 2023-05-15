@@ -3,9 +3,11 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import models.dto.UpdateStudentDto;
 import repository.StudentiRepository;
 import services.AlertUtil;
+import services.SceneUtil;
 import services.StudentValidatorUtil;
 
 import java.awt.event.ActionEvent;
@@ -45,7 +47,7 @@ public class UpdateViewController implements Initializable {
         this.drejtimiChoiceBox.setValue(updateStudentDto.getDrejtimi());
     }
     @FXML
-    private void updateButtonClicked(ActionEvent e){
+    public void updateButtonClicked(){
         try {
             String emri = this.emriUpdateTextfield.getText();
             String mbiemri = this.mbiemriUpdateTextfield.getText();
@@ -73,7 +75,8 @@ public class UpdateViewController implements Initializable {
         catch(Exception e1){
             AlertUtil.alertError("Input Error", "Input Error", e1.getMessage());
         }
-    }  @FXML
+    }
+    @FXML
     public void searchButtonClicked(){
         if(this.idTextField.getText().isEmpty()){
             AlertUtil.alertError("Input Error", "Empty Field", "The id field should not be empty!");
@@ -95,7 +98,14 @@ public class UpdateViewController implements Initializable {
             AlertUtil.alertError("Data Error", "Data not found", ee.getMessage());
         }
     }
-
-
+    @FXML
+    public void goToDashboard() {
+        try{
+            SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+        } catch (IOException e){
+            e.printStackTrace();
+            return;
+        }
+    }
 
 }
