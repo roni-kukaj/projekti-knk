@@ -86,6 +86,11 @@ public class UpdateViewController implements Initializable {
                 this.fillForm(updateStudentDto);
             else
                 throw new Exception("Student was not found!");
+        }   catch (NumberFormatException ne){
+            AlertUtil.alertError("Input Error", "Incorrect Input", "Check if the format you have entered is incorrect!");
+        }
+        catch (SQLException se){
+            AlertUtil.alertError("Data Error", "Data not found", "The id you've entered does not exist in the system!");
         }
 
 
