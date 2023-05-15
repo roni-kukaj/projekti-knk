@@ -91,7 +91,11 @@ public class UpdateViewController implements Initializable {
         }
         catch (SQLException se){
             AlertUtil.alertError("Data Error", "Data not found", "The id you've entered does not exist in the system!");
+        }catch (Exception ee){
+            AlertUtil.alertError("Data Error", "Data not found", ee.getMessage());
         }
+    }
+
 
 
 }
