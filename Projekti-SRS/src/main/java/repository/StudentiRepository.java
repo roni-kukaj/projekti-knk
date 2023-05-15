@@ -2,6 +2,7 @@ package repository;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.chart.XYChart;
 import models.Shkolla;
 import models.Studenti;
 import models.TableStudenti;
@@ -241,5 +242,48 @@ public class StudentiRepository {
         catch(SQLException e){
             return false;
         }
+    }
+
+    public static XYChart.Series<String, Number> getDrejtimiStudentetData() throws SQLException {
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT Drejtimi, COUNT(*) AS NrStudenteve FROM Studenti GROUP BY Drejtimi";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()){
+            series.getData().add(
+                    new XYChart.Data<>(resultSet.getString(1), resultSet.getInt(2))
+            );
+        }
+        series.setName("Drejtimet");
+        return series;
+    }
+    public static XYChart.Series<String, Number> getDrejtimiPiketData() throws SQLException {
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT Drejtimi, AVG(PiketEProvimitPranues) AS Piket FROM Studenti GROUP BY Drejtimi";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()){
+            series.getData().add(
+                    new XYChart.Data<>(resultSet.getString(1), resultSet.getInt(2))
+            );
+        }
+        series.setName("Drejtimet");
+        return series;
+    }
+    public static XYChart.Series<String, Number> getQytetiStudentetData() throws SQLException {
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT Komuna, COUNT(*) AS NrStudenteve FROM Studenti GROUP BY Komuna";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()){
+            series.getData().add(
+                    new XYChart.Data<>(QytetiRepository.getQytetiById(resultSet.getInt(1)).getEmri(), resultSet.getInt(2))
+            );
+        }
+        series.setName("Qytetet");
+        return series;
     }
 }

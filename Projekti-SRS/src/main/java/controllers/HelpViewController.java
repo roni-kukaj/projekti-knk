@@ -2,13 +2,17 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import services.AlertUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class HelpViewController {
+public class HelpViewController implements Initializable {
 
     @FXML
     private Button dergoButton;
@@ -20,8 +24,13 @@ public class HelpViewController {
         try{
             SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
         } catch (IOException e){
-            e.printStackTrace();
-            return;
+            AlertUtil.alertError("System Error", "Operation Failed", "This action could not be done!");
+
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

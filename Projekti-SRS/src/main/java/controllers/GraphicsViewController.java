@@ -1,88 +1,58 @@
 package controllers;
 
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
+import services.AlertUtil;
+import services.DataUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
-public class GraphicsViewController {
-
-    public class GraphApplication extends Application {
-
-        private XYChart.Series<Number, Number> dataSeries = new XYChart.Series<>();
-
-        public void start(Stage primaryStage) throws Exception {
-            // Create the axes for the graph
-            final NumberAxis xAxis = new NumberAxis();
-            final NumberAxis yAxis = new NumberAxis();
-            xAxis.setLabel("X");
-            yAxis.setLabel("Y");
-
-            // Create the line chart and add it to the scene
-            final LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
-            lineChart.setTitle("Graph");
-            lineChart.getData().add(dataSeries);
-            Scene scene = new Scene(lineChart, 800, 600);
-
-            // Update the graph when the criteria changes
-            updateGraph(0); // initialize with default criteria
-            Criteria criteria = new Criteria();
-            criteria.addListener((obs, oldCriteria, newCriteria) -> updateGraph(newCriteria));
-
-            // Show the scene
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        }
-
-        private void updateGraph(int criteria) {
-            // Generate some sample data based on the criteria
-            dataSeries.getData().clear();
-            for (int i = 0; i <= 10; i++) {
-                double y = Math.random() * (criteria + 1);
-                dataSeries.getData().add(new XYChart.Data<>(i, y));
-            }
-        }
-
-        public void main(String[] args) {
-            launch(args);
-        }
-
-        // Dummy class to represent the criteria
-        private class Criteria {
-            private int value;
-
-            public int getValue() {
-                return value;
-            }
-
-            public void setValue(int value) {
-                this.value = value;
-            }
-
-            public void addListener(ChangeListener<? super Integer> listener) {
-                // implement listener registration here
-            }
-        }
-    }
-
+public class GraphicsViewController implements Initializable {
     @FXML
     private Button goBackButton;
+    @FXML
+    private ChoiceBox<String> criteriaBox;
+    @FXML
+    private BarChart<String, Number> chart;
+    private XYChart.Series<String, Number> series;
+    private CategoryAxis xAxis;
+    private NumberAxis yAxis;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.criteriaBox.getItems().addAll("Drejtim - Studentë", "Drejtim - Pikë Provim Pranues", "Qytet - Studentë");
+        this.criteriaBox.setOnAction(e -> updateGraph());
+        series = new XYChart.Series<>();
+    }
+
+    private void updateGraph() {
+        try{
+            this.chart.getData().clear();
+            this.series.getData().clear();
+            this.series = DataUtil.getChartData(this.criteriaBox.getValue());
+            this.chart.getData().add(this.series);
+        }
+        catch (SQLException se){
+            AlertUtil.alertError("Data Error", "Data not accessible", "We're sorry but this option is not available for the moment!");
+        }
+    }
 
     public void goToDashboard(){
         try {
             SceneUtil.changeScene((Stage) this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
         } catch (IOException e) {
-            e.printStackTrace();
-            return;
+            AlertUtil.alertError("System Error", "Error", "We're sorry but this option is not available for the moment!");
         }
     }
 }
