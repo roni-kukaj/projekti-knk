@@ -1,6 +1,7 @@
 package services;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import models.Admin;
 import org.mindrot.jbcrypt.BCrypt;
 import repository.AdminRepository;
@@ -28,22 +29,33 @@ public class AdminUtil {
         }
     }
 
-    public static void saveNewPassword(String currentPassword, String newPassword, String confirmNewPassword) {
-        try {
-
-            if (!admin.getPassword().equals(currentPassword)) {
-                System.out.println("Current password is incorrect");
-                return;
-            }
-
-            if (!admin.equals(confirmNewPassword)) {
-                System.out.println("New password and confirm password do not match");
-                return;
-            }
-            admin.setPassword(newPassword);
-            System.out.println("Password changed successfully");
-        }catch(IOException e){
-
+    public static boolean saveNewPassword(String currentPassword, String newPassword, String confirmNewPassword) {
+        if(currentPassword.isEmpty()||newPassword.isEmpty()||confirmNewPassword.isEmpty()){
+            AlertUtil.alertError("Imput Error", "Incorrect Input", "All fields are required");
+            return false;
         }
+        if (BCrypt.checkpw(currentPassword, admin.getPassword())) {
+            if (newPassword.equals(confirmNewPassword)) {
+                admin.setPassword(BCrypt.hashpw(newPassword, BCrypt.gensalt()));
+                if (AdminRepository.updatePassword(admin)) {
+                    return true;
+                } else {
+                    admin.setPassword(currentPassword);
+                    AlertUtil.alertError("Operation Failed", "Password Error", "Sorry but your password could not be changed!");
+                    return false;
+                }
+            } else {
+                AlertUtil.alertError("Operation Failed", "Password Error", "Your passwords did not match!");
+                return false;
+            }
+        } else {
+            AlertUtil.alertError("Operation Failed", "Password Error", "Your current password was incorrect!");
+            return false;
+        }
+
+    }
+
+    public static void logOut(){
+        admin=null;
     }
 }

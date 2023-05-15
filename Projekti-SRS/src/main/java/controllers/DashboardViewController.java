@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import services.AdminUtil;
+import services.AlertUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
@@ -39,7 +41,8 @@ public class DashboardViewController {
         try {
             SceneUtil.changeScene((Stage) registerStudentButton.getScene().getWindow(), "/com/example/projektisrs/RegisterView.fxml");
         } catch (IOException ioe) {
-            // TO DO
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
+
         }
 
     }
@@ -50,7 +53,8 @@ public class DashboardViewController {
         try {
             SceneUtil.changeScene((Stage) studentListButton.getScene().getWindow(), "/com/example/projektisrs/StudentsView.fxml");
         } catch (IOException ioe) {
-            // TO DO
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
+
         }
 
     }
@@ -61,7 +65,8 @@ public class DashboardViewController {
         try {
             SceneUtil.changeScene((Stage) updateStudentButton.getScene().getWindow(), "/com/example/projektisrs/UpdateView.fxml");
         } catch (IOException ioe) {
-            // TO DO
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
+
         }
     }
 
@@ -71,7 +76,8 @@ public class DashboardViewController {
         try {
             SceneUtil.changeScene((Stage) graphicsButton.getScene().getWindow(), "/com/example/projektisrs/GraphicsView.fxml");
         } catch (IOException ioe) {
-            // TO DO
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
+
         }
     }
 
@@ -81,16 +87,17 @@ public class DashboardViewController {
         try {
             SceneUtil.changeScene((Stage) settingsButton.getScene().getWindow(), "/com/example/projektisrs/SettingsView.fxml");
         } catch (IOException ioe) {
-            // TO DO
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
         }
     }
 
     @FXML
     private void  logOutClicked(ActionEvent e) throws IOException {
         try {
+            AdminUtil.logOut();
             SceneUtil.changeScene((Stage) logOutButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
         } catch (IOException ioe) {
-            // TO DO
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
         }
 
     }
@@ -100,7 +107,7 @@ public class DashboardViewController {
         try {
             SceneUtil.changeScene((Stage) helpButton.getScene().getWindow(), "/com/example/projektisrs/HelpView.fxml");
         } catch (IOException ioe) {
-            // TO DO
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
         }
 
     }

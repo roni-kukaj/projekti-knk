@@ -4,10 +4,7 @@ import models.Admin;
 import org.mindrot.jbcrypt.BCrypt;
 import services.ConnectionUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class AdminRepository {
     public static Admin getAdminByUsername(String username){
@@ -28,6 +25,20 @@ public class AdminRepository {
             }
         } catch (SQLException e) {
             return null;
+        }
+    }
+
+    public static boolean updatePassword(Admin admin){
+        try{
+            Connection connection = ConnectionUtil.getConnection();
+            String sql="UPDATE Admin SET Password = ? WHERE AId = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, admin.getPassword());
+            statement.setInt(2, admin.getAdminId());
+            statement.executeUpdate();
+            return true;
+        }catch (SQLException e){
+            return false;
         }
     }
 }
