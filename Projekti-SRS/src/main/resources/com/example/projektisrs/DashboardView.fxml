@@ -20,7 +20,7 @@
                   <Image url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
-            <Button fx:id="logOutButton" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOutClicked" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;" />
+            <Button fx:id="logoutButton" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOutClicked" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;" />
             <ImageView fitHeight="54.0" fitWidth="70.0" layoutX="1513.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/LogOut.png" />
@@ -108,6 +108,7 @@
          </children>
       </GridPane>
       <ImageView fitHeight="80.0" fitWidth="144.0" layoutX="1410.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" />
+
       <Button fx:id="helpButton" layoutX="1519.0" layoutY="815.0" mnemonicParsing="false" onAction="#helpClicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffffff;" />
       <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="1526.0" layoutY="823.0" pickOnBounds="true" preserveRatio="true">
          <image>

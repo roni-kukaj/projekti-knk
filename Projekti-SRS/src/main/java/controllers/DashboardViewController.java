@@ -86,10 +86,9 @@ public class DashboardViewController {
     }
 
     @FXML
-    private void logOutClicked(ActionEvent e) throws IOException {
-
+    private void  logOutClicked(ActionEvent e) throws IOException {
         try {
-            SceneUtil.changeScene((Stage) logOutButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
+            SceneUtil.changeScene((Stage) logoutButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
         } catch (IOException ioe) {
             // TO DO
         }
@@ -97,8 +96,7 @@ public class DashboardViewController {
     }
 
     @FXML
-    private void helpClicked(ActionEvent e) throws IOException {
-
+    private void  helpClicked(ActionEvent e) throws IOException {
         try {
             SceneUtil.changeScene((Stage) helpButton.getScene().getWindow(), "/com/example/projektisrs/HelpView.fxml");
         } catch (IOException ioe) {
