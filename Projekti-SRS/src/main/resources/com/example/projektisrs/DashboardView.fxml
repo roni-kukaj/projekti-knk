@@ -20,7 +20,7 @@
                   <Image url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
-            <Button fx:id="logoutButton" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOutClicked" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;" />
+            <Button fx:id="logOutButton" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOutClicked" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;" />
             <ImageView fitHeight="54.0" fitWidth="70.0" layoutX="1513.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/LogOut.png" />

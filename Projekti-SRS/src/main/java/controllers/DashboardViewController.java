@@ -88,7 +88,7 @@ public class DashboardViewController {
     @FXML
     private void  logOutClicked(ActionEvent e) throws IOException {
         try {
-            SceneUtil.changeScene((Stage) logoutButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
+            SceneUtil.changeScene((Stage) logOutButton.getScene().getWindow(), "/com/example/projektisrs/LogInView.fxml");
         } catch (IOException ioe) {
             // TO DO
         }
