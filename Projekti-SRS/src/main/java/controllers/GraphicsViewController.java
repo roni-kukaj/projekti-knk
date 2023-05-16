@@ -40,6 +40,7 @@ public class GraphicsViewController implements Initializable {
         try{
             this.chart.getData().clear();
             this.series.getData().clear();
+            this.chart.getXAxis().setAutoRanging(true);
             this.series = DataUtil.getChartData(this.criteriaBox.getValue());
             this.chart.getData().add(this.series);
         }

@@ -3,6 +3,8 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.dto.UpdateStudentDto;
 import repository.StudentiRepository;
@@ -96,6 +98,13 @@ public class UpdateViewController implements Initializable {
             AlertUtil.alertError("Data Error", "Data not found", "The id you've entered does not exist in the system!");
         }catch (Exception ee){
             AlertUtil.alertError("Data Error", "Data not found", ee.getMessage());
+        }
+    }
+
+    @FXML
+    public void onKeyPressedEvent(KeyEvent e){
+        if(e.getCode() == KeyCode.ENTER){
+            this.updateButtonClicked();
         }
     }
     @FXML

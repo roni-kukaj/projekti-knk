@@ -3,6 +3,7 @@ package repository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
+import models.Pagination;
 import models.Shkolla;
 import models.Studenti;
 import models.TableStudenti;

@@ -1,6 +1,8 @@
 package services;
 
 import javafx.scene.chart.XYChart;
+import models.Qyteti;
+import models.Shkolla;
 import repository.StudentiRepository;
 
 import java.sql.SQLException;
@@ -22,5 +24,21 @@ public class DataUtil {
             return null;
         }
         return data;
+    }
+    public static int getShkollaIdFromName(ArrayList<Shkolla> shkollat, String name){
+        for(Shkolla shkolla: shkollat){
+            if(shkolla.getEmriShkolles().equals(name)){
+                return shkolla.getShkollaId();
+            }
+        }
+        return 0;
+    }
+    public static int getQytetiIdFromName(ArrayList<Qyteti> qytetet, String name){
+        for(Qyteti qyteti: qytetet){
+            if(qyteti.getEmri().equals(name)){
+                return qyteti.getQytetiId();
+            }
+        }
+        return 0;
     }
 }

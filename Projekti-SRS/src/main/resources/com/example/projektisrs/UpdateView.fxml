@@ -30,7 +30,7 @@
             </Button>
          </children>
       </Pane>
-      <Pane layoutX="300.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="940.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;">
+      <Pane layoutX="300.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressedEvent" prefHeight="591.0" prefWidth="940.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;">
          <children>
             <Label fx:id="updateForm" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="500.0" text="Forma për Përditësimin e Studentëve">
                <font>
@@ -70,7 +70,7 @@
                </font>
             </Label>
             <ChoiceBox fx:id="drejtimiChoiceBox" layoutX="100.0" layoutY="429.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" />
-            <Button fx:id="updateButton" onAction="#updateButtonClicked" alignment="CENTER" contentDisplay="CENTER" layoutX="645.0" layoutY="429.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #38B6FF;" text="Përditëso" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="updateButton" alignment="CENTER" contentDisplay="CENTER" layoutX="645.0" layoutY="429.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateButtonClicked" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #38B6FF;" text="Përditëso" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

@@ -45,10 +45,10 @@
          </Button>
          <BarChart fx:id="chart" categoryGap="3.0" layoutX="300.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0">
            <xAxis>
-             <CategoryAxis gapStartAndEnd="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1000.0" side="BOTTOM" startMargin="1.0" tickLabelRotation="90.0" />
+             <CategoryAxis side="LEFT" />
            </xAxis>
            <yAxis>
-             <NumberAxis side="LEFT" />
+             <NumberAxis side="BOTTOM"/>
            </yAxis>
          </BarChart>
       </children>

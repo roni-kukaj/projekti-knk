@@ -5,6 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import models.Qyteti;
 import models.Shkolla;
@@ -13,6 +16,7 @@ import repository.QytetiRepository;
 import repository.ShkollaRepository;
 import repository.StudentiRepository;
 import services.AlertUtil;
+import services.DataUtil;
 import services.StudentValidatorUtil;
 import services.SceneUtil;
 
@@ -59,6 +63,8 @@ public class RegisterViewController implements Initializable {
     private Button registerButton;
     @FXML
     private Button goBackButton;
+    @FXML
+    private Pane registerPane;
 
     private ArrayList<Qyteti> qytetet;
     private ArrayList<Shkolla> shkollat;
@@ -84,6 +90,12 @@ public class RegisterViewController implements Initializable {
     }
 
     @FXML
+    public void onKeyPressedEvent(KeyEvent e){
+        if(e.getCode() == KeyCode.ENTER){
+            this.registerButtonClicked();
+        }
+    }
+    @FXML
     public void goToDashboard() {
         try{
             SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
@@ -94,7 +106,7 @@ public class RegisterViewController implements Initializable {
     }
 
     @FXML
-    public void registerButtonClicked(ActionEvent e){
+    public void registerButtonClicked(){
         try{
             String emri = this.emriTextfield.getText();
             String mbiemri = this.mbiemriTextfield.getText();
@@ -105,9 +117,9 @@ public class RegisterViewController implements Initializable {
             java.sql.Date date = new java.sql.Date(utilDate.getTime());
             String email = this.emailTextfield.getText();
 
-            int qyteti = getQytetiIdFromName(this.qytetiLindjesChoiceBox.getValue());
-            int komuna = getQytetiIdFromName(this.komunaChoiceBox.getValue());
-            int shkolla = getShkollaIdFromName(this.shkollaChoiceBox.getValue());
+            int qyteti = DataUtil.getQytetiIdFromName(this.qytetet, this.qytetiLindjesChoiceBox.getValue());
+            int komuna = DataUtil.getQytetiIdFromName(this.qytetet, this.komunaChoiceBox.getValue());
+            int shkolla = DataUtil.getShkollaIdFromName(this.shkollat, this.shkollaChoiceBox.getValue());
             int matura = Integer.parseInt(this.maturaTextfield.getText());
             double suksesi = Double.parseDouble(this.suksesiTextfield.getText());
             int provimiPranues = Integer.parseInt(this.provimiPranuesTextfield.getText());
@@ -129,25 +141,8 @@ public class RegisterViewController implements Initializable {
             AlertUtil.alertError("Input Error", "Wrong input!", "Please check that all of the fields have the right type of data!");
         }
     }
-
-    public int getQytetiIdFromName(String name){
-        for(Qyteti qyteti: qytetet){
-            if(qyteti.getEmri().equals(name)){
-                return qyteti.getQytetiId();
-            }
-        }
-        return 0;
-    }
-    public int getShkollaIdFromName(String name){
-        for(Shkolla shkolla: shkollat){
-            if(shkolla.getEmriShkolles().equals(name)){
-                return shkolla.getShkollaId();
-            }
-        }
-        return 0;
-    }
     public void getShkollaItems(String qyteti){
-        int id = getQytetiIdFromName(qyteti);
+        int id = DataUtil.getQytetiIdFromName(this.qytetet, qyteti);
         try{
             this.shkollat = ShkollaRepository.getShkollatByQytetiId(id);
             this.shkollaChoiceBox.getItems().clear();
