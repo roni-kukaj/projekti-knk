@@ -3,13 +3,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
 import models.dto.UpdateStudentDto;
 import repository.StudentiRepository;
 import services.AlertUtil;
+import services.SceneUtil;
 import services.StudentValidatorUtil;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -118,4 +122,24 @@ public class UpdateViewController extends BaseController {
         }catch (Exception ee){
             AlertUtil.alertError("Data Error", "Data not found", ee.getMessage());
         }
+    }
+    @FXML
+    public void onKeyPressedEvent(KeyEvent e){
+        if(e.getCode() == KeyCode.ENTER){
+            this.updateButtonClicked();
+        }
+    }
+    @FXML
+    public void goToDashboard() {
+        try{
+            SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+        } catch (IOException e){
+            e.printStackTrace();
+            return;
+        }
+    }
+    public void initData(int studentId){
+        this.id = studentId;
+        this.idTextField.setText(String.valueOf(id));
+        this.searchButtonClicked();
     }
