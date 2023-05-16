@@ -28,3 +28,15 @@ public class QytetiRepository {
             return null;
         }
     }
+    ArrayList<Qyteti> data = new ArrayList<>();
+
+    Connection connection = ConnectionUtil.getConnection();
+    String sql = "SELECT * FROM Qyteti";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    ResultSet resultSet = preparedStatement.executeQuery();
+
+
+    }
+
+        return data;
+}
