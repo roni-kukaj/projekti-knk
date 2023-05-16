@@ -1,19 +1,22 @@
-import controllers.BaseController;
+package controllers;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 import models.dto.UpdateStudentDto;
 import repository.StudentiRepository;
 import services.AlertUtil;
+import services.SceneUtil;
 import services.StudentValidatorUtil;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 public class UpdateViewController extends BaseController {
@@ -119,3 +122,35 @@ public class UpdateViewController extends BaseController {
             AlertUtil.alertError("Data Error", "Data not found", ee.getMessage());
         }
     }
+    @FXML
+    public void onKeyPressedEvent(KeyEvent e){
+        if(e.getCode() == KeyCode.ENTER){
+            this.updateButtonClicked();
+        }
+    }
+    @FXML
+    public void goToDashboard() {
+        try{
+            SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
+        } catch (IOException e){
+            e.printStackTrace();
+            return;
+        }
+    }
+    public void initData(int studentId){
+        this.id = studentId;
+        this.idTextField.setText(String.valueOf(id));
+        this.searchButtonClicked();
+    }
+    @Override
+    public void labelContent(ResourceBundle translate) {
+        this.searchWithID.setText(translate.getString("update.searchWithID"));
+        this.searchButton.setText(translate.getString("update.searchButton"));
+        this.updateForm.setText(translate.getString("update.updateForm.text"));
+        this.updateEmri.setText(translate.getString("update.updateEmri.text"));
+        this.updateMbiemri.setText(translate.getString("update.updateMbiemri.text"));
+        this.updateEmail.setText(translate.getString("update.updateEmail.text"));
+        this.updateDrejtimi.setText(translate.getString("update.updateDrejtimi.text"));
+        this.updateButton.setText(translate.getString("update.updateButton"));
+    }
+}

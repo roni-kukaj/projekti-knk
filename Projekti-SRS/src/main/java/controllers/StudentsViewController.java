@@ -117,9 +117,9 @@ public class StudentsViewController extends BaseController {
 
     @Override
     public void labelContent(ResourceBundle translate) {
-        this.idFilterField.setText(translate.getString("students.idFilterField.promptText"));
-        this.emriFilterField.setText(translate.getString("students.emriFilterField.promptText"));
-        this.mbiemriFilterField.setText(translate.getString("students.mbiemriFilterField.promptText"));
+        this.idFilterField.setPromptText(translate.getString("students.idFilterField.promptText"));
+        this.emriFilterField.setPromptText(translate.getString("students.emriFilterField.promptText"));
+        this.mbiemriFilterField.setPromptText(translate.getString("students.mbiemriFilterField.promptText"));
         this.filterButton.setText(translate.getString("students.filterButton.text"));
         this.idColumn.setText(translate.getString("students.idColumn.text"));
         this.emriColumn.setText(translate.getString("students.emriColumn.text"));

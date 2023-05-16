@@ -32,8 +32,6 @@ public class SettingsViewController extends BaseController {
     @FXML
     private Tab sysSettingsTab;
     @FXML
-    private ChoiceBox<String> colorBox;
-    @FXML
     private Button albFlagButton;
     @FXML
     private Button usaFlagButton;

@@ -3,6 +3,7 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import services.AdminUtil;
@@ -31,6 +32,8 @@ public class DashboardViewController extends BaseController {
     private Button helpButton;
     @FXML
     private ImageView logo;
+    @FXML
+    private Image logoImage;
 
     @FXML
     private void registerClicked(ActionEvent e) throws IOException {
