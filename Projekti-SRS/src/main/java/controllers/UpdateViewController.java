@@ -4,6 +4,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import models.dto.UpdateStudentDto;
+import repository.StudentiRepository;
+import services.AlertUtil;
+import services.StudentValidatorUtil;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -61,4 +64,36 @@ public class UpdateViewController extends BaseController {
         this.mbiemriUpdateTextfield.setText(updateStudentDto.getMbiemri());
         this.emailTextfield.setText(updateStudentDto.getEmail());
         this.drejtimiChoiceBox.setValue(updateStudentDto.getDrejtimi());
+    }
+
+
+    @FXML
+    public void updateButtonClicked(){
+        try {
+            String emri = this.emriUpdateTextfield.getText();
+            String mbiemri = this.mbiemriUpdateTextfield.getText();
+            String email = this.emailTextfield.getText();
+            String drejtimi = this.drejtimiChoiceBox.getValue();
+            if(!StudentValidatorUtil.validateStudentOnUpdate(new UpdateStudentDto(this.id, emri, mbiemri, email, drejtimi))){
+                AlertUtil.alertError("Input Error", "Incorrect Input", "The id field should not be empty!");
+                return;
+            }
+            if(this.id == 0){
+                AlertUtil.alertError("System Error", "Unexpected Error", "Something went wrong!");
+                return;
+            }
+            if(StudentiRepository.update(new UpdateStudentDto(this.id, emri, mbiemri, email, drejtimi))){
+                AlertUtil.alertSuccess("Update Successful", "The student information was updated!");
+                this.searchButtonClicked();
+                return;
+            }
+            else{
+                AlertUtil.alertError("Update Error", "Student Update Error", "Student could not me updated!");
+                return;
+            }
+
+        }
+        catch(Exception e1){
+            AlertUtil.alertError("Input Error", "Input Error", e1.getMessage());
+        }
     }
