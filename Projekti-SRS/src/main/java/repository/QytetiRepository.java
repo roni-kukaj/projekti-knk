@@ -44,3 +44,15 @@ public class QytetiRepository {
 
         return data;
 }
+    public static ArrayList<String> getQytetiNames() throws SQLException {
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT Emri FROM Qyteti";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+        ArrayList<String> qytetet = new ArrayList<>();
+        while(resultSet.next()){
+            qytetet.add(resultSet.getString(1));
+        }
+        return qytetet;
+    }
+}
