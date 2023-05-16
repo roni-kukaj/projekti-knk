@@ -1,11 +1,12 @@
 package controllers;
 
-import controllers.BaseController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.dto.UpdateStudentDto;
 import repository.StudentiRepository;
@@ -13,13 +14,9 @@ import services.AlertUtil;
 import services.SceneUtil;
 import services.StudentValidatorUtil;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 public class UpdateViewController extends BaseController {

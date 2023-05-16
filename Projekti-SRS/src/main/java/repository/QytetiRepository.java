@@ -28,22 +28,22 @@ public class QytetiRepository {
             return null;
         }
     }
-    ArrayList<Qyteti> data = new ArrayList<>();
+    public static ArrayList<Qyteti> getQytetet() throws SQLException {
+        ArrayList<Qyteti> data = new ArrayList<>();
 
-    Connection connection = ConnectionUtil.getConnection();
-    String sql = "SELECT * FROM Qyteti";
-    PreparedStatement preparedStatement = connection.prepareStatement(sql);
-    ResultSet resultSet = preparedStatement.executeQuery();
+        Connection connection = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM Qyteti";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
 
-  while(resultSet.next()){
-        data.add(new Qyteti(
-                resultSet.getInt(1),
-                resultSet.getString(2)
-        ));
-    }
-
+        while(resultSet.next()){
+            data.add(new Qyteti(
+                    resultSet.getInt(1),
+                    resultSet.getString(2)
+            ));
+        }
         return data;
-}
+    }
     public static ArrayList<String> getQytetiNames() throws SQLException {
         Connection connection = ConnectionUtil.getConnection();
         String sql = "SELECT Emri FROM Qyteti";

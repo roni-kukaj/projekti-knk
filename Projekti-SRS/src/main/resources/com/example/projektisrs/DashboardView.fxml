@@ -50,7 +50,7 @@
                <graphic>
                   <ImageView fx:id="registerImageView" fitHeight="109.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/add.png" />
+                        <Image url="@../../../images/blue_register_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -61,7 +61,7 @@
                <graphic>
                   <ImageView fx:id="stulistImageView" fitHeight="141.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: 1;">
                      <image>
-                        <Image url="@../../../images/students.png" />
+                        <Image url="@../../../images/blue_students_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -72,7 +72,7 @@
                <graphic>
                   <ImageView fx:id="updateImageView" fitHeight="113.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/update.png" />
+                        <Image url="@../../../images/blue_update_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -94,7 +94,7 @@
                <graphic>
                   <ImageView fx:id="graphicsImageView" fitHeight="114.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/statistics.png" />
+                        <Image url="@../../../images/blue_graphics_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -105,7 +105,7 @@
                <graphic>
                   <ImageView fx:id="settingImageView" fitHeight="114.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/settings.png" />
+                        <Image url="@../../../images/blue_settings_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
