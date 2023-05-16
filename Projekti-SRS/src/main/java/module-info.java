@@ -12,6 +12,7 @@ module com.example.projektisrs {
     requires java.sql;
     requires java.desktop;
     requires pdfbox;
+    requires javafx.swing;
 
     opens com.example.projektisrs to javafx.fxml, javafx.graphics;
     opens controllers to javafx.fxml, javafx.graphics;

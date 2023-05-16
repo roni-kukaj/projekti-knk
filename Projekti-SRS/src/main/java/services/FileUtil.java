@@ -1,7 +1,14 @@
 package services;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
+
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.PieChart;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.stage.DirectoryChooser;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.stage.Stage;
 import models.Studenti;
 
@@ -84,5 +91,17 @@ public class FileUtil {
         String file_path = path + "/" + studenti.getEmri() + studenti.getMbiemri() + ".pdf";
         document.save(file_path);
         document.close();
+    }
+
+    public static void saveBarChartAsPNG(PieChart chart, Stage stage){
+        try{
+            String directory = FileUtil.getDirectoryFromUser(stage);
+            String filename = "/piechart.png";
+            WritableImage image = chart.snapshot(null, null);
+            File outputFile = new File(directory, filename);
+            ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", outputFile);
+        } catch (IOException e) {
+            AlertUtil.alertError("File Error", "Image Error", "We're sorry but this action could not be completed!");
+        }
     }
 }

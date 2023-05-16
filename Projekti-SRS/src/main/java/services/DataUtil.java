@@ -1,5 +1,7 @@
 package services;
 
+import javafx.collections.ObservableList;
+import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import models.Qyteti;
 import models.Shkolla;
@@ -9,8 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DataUtil {
-    public static XYChart.Series<String, Number> getChartData(String criteria) throws SQLException {
-        XYChart.Series<String, Number> data = new XYChart.Series<>();
+    public static ArrayList<PieChart.Data> getData(String criteria) throws SQLException{
+        ArrayList<PieChart.Data> data;
         if(criteria.equals("Drejtim - Studentë")){
             data = StudentiRepository.getDrejtimiStudentetData();
         }

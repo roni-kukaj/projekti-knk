@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.application.Application;
@@ -8,14 +9,18 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import services.AlertUtil;
 import services.DataUtil;
+import services.FileUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
@@ -25,28 +30,34 @@ public class GraphicsViewController implements Initializable {
     @FXML
     private ChoiceBox<String> criteriaBox;
     @FXML
-    private BarChart<String, Number> chart;
-    private XYChart.Series<String, Number> series;
-    private CategoryAxis xAxis;
-    private NumberAxis yAxis;
+    private Button saveAsPNGButton;
+    @FXML
+    private PieChart chart;
+    private ArrayList<PieChart.Data> data;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.criteriaBox.getItems().addAll("Drejtim - Studentë", "Drejtim - Pikë Provim Pranues", "Qytet - Studentë");
         this.criteriaBox.setOnAction(e -> updateGraph());
-        series = new XYChart.Series<>();
+        data = new ArrayList<>();
     }
 
     private void updateGraph() {
         try{
             this.chart.getData().clear();
-            this.series.getData().clear();
-            this.chart.getXAxis().setAutoRanging(true);
-            this.series = DataUtil.getChartData(this.criteriaBox.getValue());
-            this.chart.getData().add(this.series);
+            this.data = DataUtil.getData(this.criteriaBox.getValue());
+            for(PieChart.Data d: this.data){
+                this.chart.getData().add(d);
+            }
         }
         catch (SQLException se){
             AlertUtil.alertError("Data Error", "Data not accessible", "We're sorry but this option is not available for the moment!");
         }
+    }
+    @FXML
+    public void saveAsPNGButtonClicked(){
+        FileUtil.saveBarChartAsPNG(this.chart, (Stage)this.saveAsPNGButton.getScene().getWindow());
     }
 
     public void goToDashboard(){
