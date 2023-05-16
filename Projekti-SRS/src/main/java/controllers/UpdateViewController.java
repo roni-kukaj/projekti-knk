@@ -1,3 +1,5 @@
+package controllers;
+
 import controllers.BaseController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -143,3 +145,15 @@ public class UpdateViewController extends BaseController {
         this.idTextField.setText(String.valueOf(id));
         this.searchButtonClicked();
     }
+    @Override
+    public void labelContent(ResourceBundle translate) {
+        this.searchWithID.setText(translate.getString("update.searchWithID"));
+        this.searchButton.setText(translate.getString("update.searchButton"));
+        this.updateForm.setText(translate.getString("update.updateForm.text"));
+        this.updateEmri.setText(translate.getString("update.updateEmri.text"));
+        this.updateMbiemri.setText(translate.getString("update.updateMbiemri.text"));
+        this.updateEmail.setText(translate.getString("update.updateEmail.text"));
+        this.updateDrejtimi.setText(translate.getString("update.updateDrejtimi.text"));
+        this.updateButton.setText(translate.getString("update.updateButton"));
+    }
+}
