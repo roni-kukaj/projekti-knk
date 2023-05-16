@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -16,6 +17,7 @@ import services.SceneUtil;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class LogInViewController implements Initializable {
@@ -25,7 +27,10 @@ public class LogInViewController implements Initializable {
     private TextField passwordTextfield;
     @FXML
     private Button loginButton;
-
+    @FXML
+    private Label usernameLabel;
+    @FXML
+    private Label passwordLabel;
     @FXML
     private Pane loginPane;
 
@@ -36,6 +41,10 @@ public class LogInViewController implements Initializable {
         }
     }
 
+    public ResourceBundle getLangBundle(){
+        Locale currentLocale = Locale.getDefault();
+        return ResourceBundle.getBundle("strings", currentLocale);
+    }
     @FXML
     private void loginButtonClicked() throws IOException {
         String username = this.usernameTextfield.getText();
@@ -56,6 +65,12 @@ public class LogInViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        labelContent(translate);
+
         this.loginButton.setOnMouseEntered(e -> {
             this.loginButton.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #38B6FF;");
         });
@@ -64,5 +79,18 @@ public class LogInViewController implements Initializable {
         });
     }
 
+    public void translate(){
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        this.labelContent(translate);
+    }
+
+    public void labelContent(ResourceBundle translate){
+        this.loginButton.setText(translate.getString("login.loginButton.text"));
+        this.usernameLabel.setText(translate.getString("login.usernameLabel.text"));
+        this.passwordLabel.setText(translate.getString("login.passwordLabel.text"));
+    }
 
 }
