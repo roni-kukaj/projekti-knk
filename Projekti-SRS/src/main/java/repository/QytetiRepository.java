@@ -35,7 +35,11 @@ public class QytetiRepository {
     PreparedStatement preparedStatement = connection.prepareStatement(sql);
     ResultSet resultSet = preparedStatement.executeQuery();
 
-
+  while(resultSet.next()){
+        data.add(new Qyteti(
+                resultSet.getInt(1),
+                resultSet.getString(2)
+        ));
     }
 
         return data;
