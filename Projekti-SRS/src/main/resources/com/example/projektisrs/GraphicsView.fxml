@@ -10,8 +10,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GraphicsViewController">
-    <Pane fx:id="topNav" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;">
+    <Pane fx:id="topNav" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <children>
             <ImageView fx:id="logo" fitHeight="80.0" fitWidth="200.0" layoutX="1398.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -44,4 +48,27 @@
          <PieChart fx:id="chart" layoutX="300.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: #38B6FF; -fx-border-radius: 10;" />
       </children>
    </Pane>
+    <MenuBar fx:id="menubar" layoutX="33.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="File">
+                <items>
+                    <MenuItem fx:id="newStudentMenuItem" mnemonicParsing="false" text="New Student" />
+                    <MenuItem fx:id="updateStudentMenuItem" mnemonicParsing="false" text="Update Student" />
+                    <MenuItem fx:id="studentListMenuItem" mnemonicParsing="false" text="Student List" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="Exit" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Graphics">
+                <items>
+                    <MenuItem fx:id="makeGraphicsMenuItem" mnemonicParsing="false" text="Make Graphics" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
 </AnchorPane>

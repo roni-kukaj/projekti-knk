@@ -21,7 +21,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class StudentiIndividualViewController implements Initializable {
+public class StudentiIndividualViewController extends BaseController {
     @FXML
     private Label idLabel;
     @FXML
@@ -64,6 +64,7 @@ public class StudentiIndividualViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.setMenuFunctions();
         fillData();
     }
 

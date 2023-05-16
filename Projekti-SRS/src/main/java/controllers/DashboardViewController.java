@@ -9,9 +9,11 @@ import services.AlertUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class DashboardViewController {
+public class DashboardViewController extends BaseController {
 
     @FXML
     private Button registerStudentButton;
@@ -112,4 +114,8 @@ public class DashboardViewController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.setMenuFunctions();
+    }
 }

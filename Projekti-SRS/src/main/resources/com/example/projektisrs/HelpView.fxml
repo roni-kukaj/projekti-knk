@@ -10,11 +10,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HelpViewController">
    <children>
-      <Pane prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;">
+      <Pane prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <children>
-            <Button fx:id="goBackButton" onAction="#goToDashboard" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #33B6FF;">
+            <Button fx:id="goBackButton" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToDashboard" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #33B6FF;">
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -29,7 +33,7 @@
             </ImageView>
          </children>
       </Pane>
-      <TabPane layoutX="143.0" layoutY="259.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #33B6FF; -fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="40.0" tabMaxWidth="250.0" tabMinHeight="40.0" tabMinWidth="200.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="150.0">
+      <TabPane layoutX="143.0" layoutY="259.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #33B6FF; -fx-background-radius: 10;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="40.0" tabMaxWidth="250.0" tabMinHeight="40.0" tabMinWidth="200.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="180.0">
         <tabs>
           <Tab fx:id="hyrjeTab" text="Hyrje">
             <content>
@@ -135,5 +139,28 @@
             </Tab>
         </tabs>
       </TabPane>
+       <MenuBar fx:id="menubar" layoutX="33.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <menus>
+               <Menu mnemonicParsing="false" text="File">
+                   <items>
+                       <MenuItem fx:id="newStudentMenuItem" mnemonicParsing="false" text="New Student" />
+                       <MenuItem fx:id="updateStudentMenuItem" mnemonicParsing="false" text="Update Student" />
+                       <MenuItem fx:id="studentListMenuItem" mnemonicParsing="false" text="Student List" />
+                       <SeparatorMenuItem mnemonicParsing="false" />
+                       <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="Exit" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Graphics">
+                   <items>
+                       <MenuItem fx:id="makeGraphicsMenuItem" mnemonicParsing="false" text="Make Graphics" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Help">
+                   <items>
+                       <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+                   </items>
+               </Menu>
+           </menus>
+       </MenuBar>
    </children>
 </AnchorPane>

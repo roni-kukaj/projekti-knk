@@ -9,9 +9,11 @@ import services.AlertUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class SettingsViewController {
+public class SettingsViewController extends BaseController {
     @FXML
     private Button goBackButton;
     @FXML
@@ -47,5 +49,8 @@ public class SettingsViewController {
     }
 
 
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.setMenuFunctions();
+    }
 }

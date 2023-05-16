@@ -22,7 +22,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class StudentsViewController implements Initializable {
+public class StudentsViewController extends BaseController {
     @FXML
     private Button goBackButton;
     @FXML
@@ -81,6 +81,7 @@ public class StudentsViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.setMenuFunctions();
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         emriColumn.setCellValueFactory(new PropertyValueFactory<>("emri"));
         mbiemriColumn.setCellValueFactory(new PropertyValueFactory<>("mbiemri"));

@@ -29,7 +29,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class RegisterViewController implements Initializable {
+public class RegisterViewController extends BaseController {
 
     @FXML
     private TextField emriTextfield;
@@ -70,6 +70,7 @@ public class RegisterViewController implements Initializable {
     private ArrayList<Shkolla> shkollat;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.setMenuFunctions();
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
         fRadioChoice.setToggleGroup(toggleGroup);

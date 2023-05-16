@@ -11,9 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentiIndividualViewController">
    <children>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <children>
              <ImageView fx:id="logo" fitHeight="80.0" fitWidth="200.0" layoutX="1398.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                  <image>
@@ -32,12 +36,12 @@
       </Pane>
       <Pane layoutY="100.0" prefHeight="800.0" prefWidth="1600.0">
          <children>
-            <Label fx:id="studentDataLabel" layoutX="634.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="400.0" text="Te dhenat e studentit">
+            <Label fx:id="studentDataLabel" layoutX="634.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="400.0" text="Te dhenat e studentit">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <SplitPane dividerPositions="0.5" layoutX="150.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0">
+            <SplitPane dividerPositions="0.5" layoutX="150.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0">
                <items>
                   <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0">
                      <children>
@@ -320,22 +324,45 @@
                         </Label>
                      </children></VBox>
                </items></SplitPane>
-            <Button fx:id="updateInfoButton" onAction="#updateInfoButtonClicked" alignment="CENTER" layoutX="925.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Perditeso te dhenat" textFill="WHITE">
+            <Button fx:id="updateInfoButton" alignment="CENTER" layoutX="925.0" layoutY="720.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateInfoButtonClicked" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Perditeso te dhenat" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="printAsPDFButton" alignment="CENTER" layoutX="1200.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printAsPDFButtonClicked" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Printo si PDF" textFill="WHITE">
+            <Button fx:id="printAsPDFButton" alignment="CENTER" layoutX="1200.0" layoutY="720.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printAsPDFButtonClicked" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #38B6FF; -fx-background-radius: 10;" text="Printo si PDF" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="deleteStudentButton" alignment="CENTER" layoutX="650.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteStudentButtonClicked" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: dd0000; -fx-background-radius: 10;" text="Fshij Studentin" textFill="WHITE">
+            <Button fx:id="deleteStudentButton" alignment="CENTER" layoutX="650.0" layoutY="720.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteStudentButtonClicked" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: dd0000; -fx-background-radius: 10;" text="Fshij Studentin" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Button>
          </children>
       </Pane>
+      <MenuBar fx:id="menubar" layoutX="33.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="newStudentMenuItem" mnemonicParsing="false" text="New Student" />
+                  <MenuItem fx:id="updateStudentMenuItem" mnemonicParsing="false" text="Update Student" />
+                  <MenuItem fx:id="studentListMenuItem" mnemonicParsing="false" text="Student List" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Graphics">
+               <items>
+                  <MenuItem fx:id="makeGraphicsMenuItem" mnemonicParsing="false" text="Make Graphics" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
    </children>
 </AnchorPane>

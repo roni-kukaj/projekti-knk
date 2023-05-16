@@ -13,17 +13,20 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<?import java.net.URL?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentsViewController">
     <children>
-        <Pane fx:id="topNav" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;">
+        <Pane fx:id="topNav" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #38B6FF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
             <children>
             <ImageView fx:id="logo" fitHeight="80.0" fitWidth="200.0" layoutX="1400.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
-                <Button fx:id="goBackButton" onAction="#goToDashboard" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="goBackButton" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToDashboard" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #38B6FF; -fx-border-radius: 10;" textAlignment="CENTER" textFill="WHITE">
                <graphic>
                         <ImageView fx:id="leftArrowFigure" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -33,7 +36,7 @@
                </graphic></Button>
             </children>
         </Pane>
-      <HBox alignment="TOP_CENTER" layoutX="3.0" layoutY="108.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="70.0" prefWidth="1580.0" spacing="10.0">
+      <HBox alignment="TOP_CENTER" layoutX="3.0" layoutY="138.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="70.0" prefWidth="1580.0" spacing="10.0">
          <children>
             <TextField fx:id="idFilterField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="ID">
                <font>
@@ -51,7 +54,7 @@
                </font>
             </TextField>
             <Region prefHeight="55.0" prefWidth="451.0" />
-            <Button id="filterButton" onAction="#filterButtonClicked" fx:id="filterButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #38B6FF;" text="Filter" textAlignment="CENTER" textFill="WHITE">
+            <Button id="filterButton" fx:id="filterButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#filterButtonClicked" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #38B6FF;" text="Filter" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -61,7 +64,7 @@
             <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </HBox>
-      <TableView fx:id="studentTable" layoutX="50.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0" style="-fx-border-color: #38B6FF;">
+      <TableView fx:id="studentTable" layoutX="50.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0" style="-fx-border-color: #38B6FF;">
          <columns>
             <TableColumn fx:id="idColumn" maxWidth="450.0" minWidth="300.0" prefWidth="350.0" resizable="false" text="ID" />
             <TableColumn fx:id="emriColumn" maxWidth="400.0" minWidth="300.0" prefWidth="350.0" text="EMRI" />
@@ -72,5 +75,28 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+        <MenuBar fx:id="menubar" layoutX="33.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="newStudentMenuItem" mnemonicParsing="false" text="New Student" />
+                        <MenuItem fx:id="updateStudentMenuItem" mnemonicParsing="false" text="Update Student" />
+                        <MenuItem fx:id="studentListMenuItem" mnemonicParsing="false" text="Student List" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Graphics">
+                    <items>
+                        <MenuItem fx:id="makeGraphicsMenuItem" mnemonicParsing="false" text="Make Graphics" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
     </children>
 </AnchorPane>

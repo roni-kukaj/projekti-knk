@@ -18,7 +18,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ResourceBundle;
-public class UpdateViewController implements Initializable {
+public class UpdateViewController extends BaseController {
     @FXML
     private TextField emriUpdateTextfield;
     @FXML
@@ -39,6 +39,7 @@ public class UpdateViewController implements Initializable {
     private int id;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.setMenuFunctions();
         this.drejtimiChoiceBox.getItems().addAll("EAR", "TIK", "IKS");
         this.id = 0;
     }
