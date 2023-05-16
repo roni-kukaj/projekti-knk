@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import services.AlertUtil;
 import services.DataUtil;
@@ -15,10 +16,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 
-public class GraphicsViewController implements Initializable {
+public class GraphicsViewController extends BaseController {
     @FXML
     private Button goBackButton;
     @FXML
@@ -27,11 +29,19 @@ public class GraphicsViewController implements Initializable {
     private Button saveAsPNGButton;
     @FXML
     private PieChart chart;
+    @FXML
+    private Label formoGrafTextLabel;
     private ArrayList<PieChart.Data> data;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        labelContent(translate);
+        this.setMenuFunctions();
         this.criteriaBox.getItems().addAll("Drejtim - Studentë", "Drejtim - Pikë Provim Pranues", "Qytet - Studentë");
         this.criteriaBox.setOnAction(e -> updateGraph());
         data = new ArrayList<>();
@@ -60,5 +70,11 @@ public class GraphicsViewController implements Initializable {
         } catch (IOException e) {
             AlertUtil.alertError("System Error", "Error", "We're sorry but this option is not available for the moment!");
         }
+    }
+
+    @Override
+    public void labelContent(ResourceBundle translate) {
+        this.formoGrafTextLabel.setText(translate.getString("graphics.formoGrafTextLabel.text"));
+        this.saveAsPNGButton.setText(translate.getString("graphics.saveAsPNGButton.text"));
     }
 }

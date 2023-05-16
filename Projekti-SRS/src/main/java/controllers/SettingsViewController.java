@@ -2,6 +2,7 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
 import javafx.stage.Stage;
@@ -31,6 +32,13 @@ public class SettingsViewController extends BaseController {
     @FXML
     private Tab sysSettingsTab;
     @FXML
+    private ChoiceBox<String> colorBox;
+    @FXML
+    private Button albFlagButton;
+    @FXML
+    private Button usaFlagButton;
+
+    @FXML
     public void goToDashboard() {
 
         try{
@@ -57,13 +65,18 @@ public class SettingsViewController extends BaseController {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Locale.setDefault(new Locale("sq"));
         Locale locale = Locale.getDefault();
         ResourceBundle translate = ResourceBundle.getBundle(
                 "translations.content", locale
         );
         labelContent(translate);
         this.setMenuFunctions();
+        this.albFlagButton.setOnAction(e -> {
+            this.changeLangToAlb();
+        });
+        this.usaFlagButton.setOnAction(e -> {
+            this.changeLangToEng();
+        });
     }
 
     public void labelContent(ResourceBundle translate){

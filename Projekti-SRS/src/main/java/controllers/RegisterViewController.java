@@ -95,7 +95,6 @@ public class RegisterViewController extends BaseController {
     private ArrayList<Shkolla> shkollat;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Locale.setDefault(new Locale("sq"));
         Locale locale = Locale.getDefault();
         ResourceBundle translate = ResourceBundle.getBundle(
                 "translations.content", locale

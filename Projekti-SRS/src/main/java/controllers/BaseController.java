@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Menu;
 import javafx.stage.Stage;
 import services.AlertUtil;
 import services.SceneUtil;
@@ -15,19 +16,25 @@ import java.util.ResourceBundle;
 
 public abstract class BaseController implements Initializable {
     @FXML
-    private MenuItem newStudentMenuItem;
+    public MenuItem newStudentMenuItem;
     @FXML
-    private MenuItem updateStudentMenuItem;
+    public MenuItem updateStudentMenuItem;
     @FXML
-    private MenuItem studentListMenuItem;
+    public MenuItem studentListMenuItem;
     @FXML
-    private MenuItem exitMenuItem;
+    public MenuItem exitMenuItem;
     @FXML
-    private MenuItem makeGraphicsMenuItem;
+    public MenuItem makeGraphicsMenuItem;
     @FXML
-    private MenuItem aboutMenuItem;
+    public MenuItem aboutMenuItem;
     @FXML
-    private MenuBar menubar;
+    public MenuBar menubar;
+    @FXML
+    public Menu fileMenu;
+    @FXML
+    public Menu graphicsMenu;
+    @FXML
+    public Menu helpMenu;
 
     public void setMenuFunctions() {
         this.newStudentMenuItem.setOnAction(e -> {
@@ -77,5 +84,14 @@ public abstract class BaseController implements Initializable {
                 "translations.content", locale
         );
         this.labelContent(translate);
+    }
+    public void changeLangToAlb(){
+        Locale.setDefault(new Locale("sq"));
+        this.translate();
+    }
+
+    public void changeLangToEng(){
+        Locale.setDefault(new Locale("en"));
+        this.translate();
     }
 }

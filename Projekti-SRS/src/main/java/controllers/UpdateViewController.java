@@ -52,7 +52,6 @@ public class UpdateViewController extends BaseController {
     private int id;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Locale.setDefault(new Locale("sq"));
         Locale locale = Locale.getDefault();
         ResourceBundle translate = ResourceBundle.getBundle(
                 "translations.content", locale

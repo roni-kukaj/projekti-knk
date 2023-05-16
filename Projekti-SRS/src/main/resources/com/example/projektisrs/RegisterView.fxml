@@ -153,7 +153,7 @@
       </Pane>
       <MenuBar fx:id="menubar" layoutX="33.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <menus>
-            <Menu mnemonicParsing="false" text="File">
+            <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
                <items>
                   <MenuItem fx:id="newStudentMenuItem" mnemonicParsing="false" text="New Student" />
                   <MenuItem fx:id="updateStudentMenuItem" mnemonicParsing="false" text="Update Student" />
@@ -162,12 +162,12 @@
                   <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="Exit" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Graphics">
+            <Menu fx:id="graphicsMenu" mnemonicParsing="false" text="Graphics">
                <items>
                   <MenuItem fx:id="makeGraphicsMenuItem" mnemonicParsing="false" text="Make Graphics" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Help">
+            <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
                <items>
                   <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
                </items>
