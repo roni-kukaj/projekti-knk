@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import models.dto.UpdateStudentDto;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -53,4 +54,11 @@ public class UpdateViewController extends BaseController {
         this.setMenuFunctions();
         this.drejtimiChoiceBox.getItems().addAll("EAR", "TIK", "IKS");
         this.id = 0;
+    }
+
+    private void fillForm(UpdateStudentDto updateStudentDto){
+        this.emriUpdateTextfield.setText(updateStudentDto.getEmri());
+        this.mbiemriUpdateTextfield.setText(updateStudentDto.getMbiemri());
+        this.emailTextfield.setText(updateStudentDto.getEmail());
+        this.drejtimiChoiceBox.setValue(updateStudentDto.getDrejtimi());
     }
