@@ -43,3 +43,14 @@ public class UpdateViewController extends BaseController {
     private Label updateDrejtimi;
 
     private int id;
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        labelContent(translate);
+        this.setMenuFunctions();
+        this.drejtimiChoiceBox.getItems().addAll("EAR", "TIK", "IKS");
+        this.id = 0;
+    }
