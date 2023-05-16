@@ -20,7 +20,7 @@
          <children>
             <ImageView fx:id="logo" fitHeight="80.0" fitWidth="200.0" layoutX="41.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../images/blue_logo_sm.png" />
+                  <Image fx:id="logoImage" url="@../../../images/blue_logo_sm.png" />
                </image>
             </ImageView>
             <Button fx:id="logOutButton" contentDisplay="TOP" layoutX="1463.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOutClicked" prefHeight="80.0" prefWidth="118.0" style="-fx-background-color: #38B6FF;" text="Logout" textAlignment="CENTER" textFill="WHITE">
