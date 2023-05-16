@@ -4,10 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import models.Studenti;
@@ -20,6 +17,7 @@ import services.TypeUtil;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class StudentsViewController extends BaseController {
@@ -81,6 +79,12 @@ public class StudentsViewController extends BaseController {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Locale.setDefault(new Locale("sq"));
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        labelContent(translate);
         this.setMenuFunctions();
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         emriColumn.setCellValueFactory(new PropertyValueFactory<>("emri"));
@@ -110,5 +114,17 @@ public class StudentsViewController extends BaseController {
                 }
             }
         });
+    }
+
+    @Override
+    public void labelContent(ResourceBundle translate) {
+        this.idFilterField.setText(translate.getString("students.idFilterField.promptText"));
+        this.emriFilterField.setText(translate.getString("students.emriFilterField.promptText"));
+        this.mbiemriFilterField.setText(translate.getString("students.mbiemriFilterField.promptText"));
+        this.filterButton.setText(translate.getString("students.filterButton.text"));
+        this.idColumn.setText(translate.getString("students.idColumn.text"));
+        this.emriColumn.setText(translate.getString("students.emriColumn.text"));
+        this.mbiemriColumn.setText(translate.getString("students.mbiemriColumn.text"));
+        this.drejtimiColumn.setText(translate.getString("students.drejtimiColumn.text"));
     }
 }

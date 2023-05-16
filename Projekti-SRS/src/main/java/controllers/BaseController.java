@@ -10,6 +10,8 @@ import services.AlertUtil;
 import services.SceneUtil;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public abstract class BaseController implements Initializable {
     @FXML
@@ -62,5 +64,18 @@ public abstract class BaseController implements Initializable {
                 AlertUtil.alertError("System Error", "Window Error", "Sorry but this action could not be completed!");
             }
         });
+    }
+    public ResourceBundle getLangBundle(){
+        Locale.setDefault(new Locale("en"));
+        Locale currentLocale = Locale.getDefault();
+        return ResourceBundle.getBundle("strings", currentLocale);
+    }
+    public abstract void labelContent(ResourceBundle translate);
+    public void translate(){
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        this.labelContent(translate);
     }
 }

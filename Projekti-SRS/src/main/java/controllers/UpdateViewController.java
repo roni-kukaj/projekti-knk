@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 public class UpdateViewController extends BaseController {
     @FXML
@@ -35,10 +36,28 @@ public class UpdateViewController extends BaseController {
     private Button searchButton;
     @FXML
     private Button goBackButton;
+    @FXML
+    private Label searchWithID;
+    @FXML
+    private Label updateForm;
+    @FXML
+    private Label updateEmri;
+    @FXML
+    private Label updateMbiemri;
+    @FXML
+    private Label updateEmail;
+    @FXML
+    private Label updateDrejtimi;
 
     private int id;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Locale.setDefault(new Locale("sq"));
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        labelContent(translate);
         this.setMenuFunctions();
         this.drejtimiChoiceBox.getItems().addAll("EAR", "TIK", "IKS");
         this.id = 0;
@@ -121,5 +140,17 @@ public class UpdateViewController extends BaseController {
         this.id = studentId;
         this.idTextField.setText(String.valueOf(id));
         this.searchButtonClicked();
+    }
+
+    @Override
+    public void labelContent(ResourceBundle translate) {
+        this.searchWithID.setText(translate.getString("update.searchWithID"));
+        this.searchButton.setText(translate.getString("update.searchButton"));
+        this.updateForm.setText(translate.getString("update.updateForm.text"));
+        this.updateEmri.setText(translate.getString("update.updateEmri.text"));
+        this.updateMbiemri.setText(translate.getString("update.updateMbiemri.text"));
+        this.updateEmail.setText(translate.getString("update.updateEmail.text"));
+        this.updateDrejtimi.setText(translate.getString("update.updateDrejtimi.text"));
+        this.updateButton.setText(translate.getString("update.updateButton"));
     }
 }

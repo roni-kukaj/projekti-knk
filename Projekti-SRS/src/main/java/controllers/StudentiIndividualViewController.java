@@ -19,6 +19,7 @@ import services.SceneUtil;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class StudentiIndividualViewController extends BaseController {
@@ -55,15 +56,48 @@ public class StudentiIndividualViewController extends BaseController {
     private Button updateInfoButton;
     @FXML
     private Button deleteStudentButton;
-
     @FXML
     private Button printAsPDFButton;
+    @FXML
+    private Label studentDataLabel;
+    @FXML
+    private Label studentiID;
+    @FXML
+    private Label studentiName;
+    @FXML
+    private Label studentiSurname;
+    @FXML
+    private Label studentiGender;
+    @FXML
+    private Label studentiBirthdate;
+    @FXML
+    private Label studentiEmail;
+    @FXML
+    private Label studentiBirthPlace;
+    @FXML
+    private Label studentiCommune;
+    @FXML
+    private Label studentiHS;
+    @FXML
+    private Label studentiHSSuccess;
+    @FXML
+    private Label studentiHSPoints;
+    @FXML
+    private Label studentiUniPoints;
+    @FXML
+    private Label studentiMajor;
 
     private Studenti studenti;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Locale.setDefault(new Locale("sq"));
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        labelContent(translate);
         this.setMenuFunctions();
         fillData();
     }
@@ -157,5 +191,25 @@ public class StudentiIndividualViewController extends BaseController {
         catch (IOException ie){
             AlertUtil.alertError("System Error", "System Error", "We're sorry, but this action could not be completed!");
         }
+    }
+
+    @Override
+    public void labelContent(ResourceBundle translate) {
+        this.studentDataLabel.setText(translate.getString("student.studentDataLabel.text"));
+        this.studentiID.setText(translate.getString("student.studentiID.text"));
+        this.studentiName.setText(translate.getString("student.studentiName.text"));
+        this.studentiSurname.setText(translate.getString("student.studentiSurname.text"));
+        this.studentiGender.setText(translate.getString("student.studentiGender.text"));
+        this.studentiBirthdate.setText(translate.getString("student.studentiBirthdate.text"));
+        this.studentiEmail.setText(translate.getString("student.studentiEmail.text"));
+        this.studentiBirthPlace.setText(translate.getString("student.studentiBirthPlace.text"));
+        this.studentiCommune.setText(translate.getString("student.studentiCommune.text"));
+        this.studentiHS.setText(translate.getString("student.studentiHS.text"));
+        this.studentiHSSuccess.setText(translate.getString("student.studentiHSSuccess.text"));
+        this.studentiHSPoints.setText(translate.getString("student.studentiHSPoints.text"));
+        this.studentiUniPoints.setText(translate.getString("student.studentiUniPoints.text"));
+        this.studentiMajor.setText(translate.getString("student.studentiMajor.text"));
+        this.updateInfoButton.setText(translate.getString("student.updateInfoButton.text"));
+        this.printAsPDFButton.setText(translate.getString("student.printAsPDFButton.text"));
     }
 }

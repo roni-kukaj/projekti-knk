@@ -27,6 +27,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class RegisterViewController extends BaseController {
@@ -65,11 +66,41 @@ public class RegisterViewController extends BaseController {
     private Button goBackButton;
     @FXML
     private Pane registerPane;
+    @FXML
+    private Label formaLabel;
+    @FXML
+    private Label emriLabel;
+    @FXML
+    private Label mbiemriLabel;
+    @FXML
+    private Label gjiniaLabel;
+    @FXML
+    private Label birthDateLabel;
+    @FXML
+    private Label birthPlaceLabel;
+    @FXML
+    private Label emailLabel;
+    @FXML
+    private Label komunaLabel;
+    @FXML
+    private Label highSchoolLabel;
+    @FXML
+    private Label maturaLabel;
+    @FXML
+    private Label provimiPranuesLabel;
+    @FXML
+    private Label drejtimiLabel;
 
     private ArrayList<Qyteti> qytetet;
     private ArrayList<Shkolla> shkollat;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Locale.setDefault(new Locale("sq"));
+        Locale locale = Locale.getDefault();
+        ResourceBundle translate = ResourceBundle.getBundle(
+                "translations.content", locale
+        );
+        labelContent(translate);
         this.setMenuFunctions();
         toggleGroup = new ToggleGroup();
         mRadioChoice.setToggleGroup(toggleGroup);
@@ -153,6 +184,22 @@ public class RegisterViewController extends BaseController {
         } catch (SQLException e) {
             AlertUtil.alertError("Data Error", "Data not found!", "The data needed was not found!");
         }
+    }
+    @Override
+    public void labelContent(ResourceBundle translate) {
+        this.formaLabel.setText(translate.getString("register.formaLabel.text"));
+        this.emriLabel.setText(translate.getString("register.emriLabel.text"));
+        this.mbiemriLabel.setText(translate.getString("register.mbiemriLabel.text"));
+        this.gjiniaLabel.setText(translate.getString("register.gjiniaLabel.text"));
+        this.birthDateLabel.setText(translate.getString("register.birthDateLabel.text"));
+        this.birthPlaceLabel.setText(translate.getString("register.birthPlaceLabel.text"));
+        this.emailLabel.setText(translate.getString("register.emailLabel.text"));
+        this.komunaLabel.setText(translate.getString("register.komunaLabel.text"));
+        this.highSchoolLabel.setText(translate.getString("register.highSchoolLabel.text"));
+        this.maturaLabel.setText(translate.getString("register.maturaLabel.text"));
+        this.provimiPranuesLabel.setText(translate.getString("register.provimiPranuesLabel.text"));
+        this.drejtimiLabel.setText(translate.getString("register.drejtimiLabel.text"));
+        this.registerButton.setText(translate.getString("register.registerButton.text"));
     }
 }
 
