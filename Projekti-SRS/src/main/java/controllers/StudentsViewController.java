@@ -59,8 +59,7 @@ public class StudentsViewController extends BaseController {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
-            return;
+            AlertUtil.alertError("Data Error", "Data not found!", "The data needed was not found!");
         }
         studentTable.setItems(studentiData);
         idFilterField.clear();
@@ -72,8 +71,7 @@ public class StudentsViewController extends BaseController {
         try{
             SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
         } catch (IOException e){
-            e.printStackTrace();
-            return;
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
         }
     }
 
@@ -93,7 +91,7 @@ public class StudentsViewController extends BaseController {
         try{
             studentiData = StudentiRepository.getTableStudenti();
         } catch (SQLException e) {
-            e.printStackTrace();
+            AlertUtil.alertError("Data Error", "Data Error", "Data could not be fetched!");
             return;
         }
         studentTable.setItems(studentiData);
@@ -104,8 +102,7 @@ public class StudentsViewController extends BaseController {
                     TableStudenti ts = this.studentTable.getSelectionModel().getSelectedItem();
                     SceneUtil.changeSceneWithIdParameter((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/StudentiIndividualView.fxml", ts.getId());
                 } catch (IOException e) {
-                    e.printStackTrace();
-                    return;
+                    AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
                 }
                 catch(Exception ee){
                     AlertUtil.alertError("Data Error", "Data Error", "Something went wrong!");

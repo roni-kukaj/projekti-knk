@@ -47,8 +47,7 @@ public class SettingsViewController extends BaseController {
         try{
             SceneUtil.changeScene((Stage)this.goBackButton.getScene().getWindow(), "/com/example/projektisrs/DashboardView.fxml");
         } catch (IOException e){
-            e.printStackTrace();
-            return;
+            AlertUtil.alertError("Operation Failed", "System Error", "This operation could not be done!");
         }
     }
 
