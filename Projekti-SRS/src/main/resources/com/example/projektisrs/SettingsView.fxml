@@ -68,7 +68,7 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="systemColorLabel1" layoutX="460.0" layoutY="195.0" prefHeight="20.0" prefWidth="120.0" text="System Language:">
+                        <Label fx:id="systemLanguageLabel" layoutX="460.0" layoutY="195.0" prefHeight="20.0" prefWidth="120.0" text="System Language:">
                            <font>
                               <Font size="14.0" />
                            </font>

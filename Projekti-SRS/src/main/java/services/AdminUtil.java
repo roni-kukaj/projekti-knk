@@ -18,7 +18,7 @@ public class AdminUtil {
                 return false;
             }
             if(BCrypt.checkpw(password, admin_.getPassword())){
-                admin=admin_;
+                admin = admin_;
                 return true;
             }
             else{
@@ -31,7 +31,7 @@ public class AdminUtil {
 
     public static boolean saveNewPassword(String currentPassword, String newPassword, String confirmNewPassword) {
         if(currentPassword.isEmpty()||newPassword.isEmpty()||confirmNewPassword.isEmpty()){
-            AlertUtil.alertError("Imput Error", "Incorrect Input", "All fields are required");
+            AlertUtil.alertError("Input Error", "Incorrect Input", "All fields are required");
             return false;
         }
         if (BCrypt.checkpw(currentPassword, admin.getPassword())) {

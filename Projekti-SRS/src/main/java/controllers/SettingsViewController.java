@@ -1,10 +1,7 @@
 package controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.Tab;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import services.AdminUtil;
 import services.AlertUtil;
@@ -35,6 +32,14 @@ public class SettingsViewController extends BaseController {
     private Button albFlagButton;
     @FXML
     private Button usaFlagButton;
+    @FXML
+    private Label currentPsw;
+    @FXML
+    private Label newPsw;
+    @FXML
+    private Label confirmPsw;
+    @FXML
+    private Label systemLanguageLabel;
 
     @FXML
     public void goToDashboard() {
@@ -80,5 +85,10 @@ public class SettingsViewController extends BaseController {
     public void labelContent(ResourceBundle translate){
         this.profileSettingsTab.setText(translate.getString("settings.profileSettingsTab.text"));
         this.sysSettingsTab.setText(translate.getString("settings.sysSettingsTab.text"));
+        this.currentPsw.setText(translate.getString("settings.currentPsw.text"));
+        this.newPsw.setText(translate.getString("settings.newPsw.text"));
+        this.confirmPsw.setText(translate.getString("settings.confirmPsw.text"));
+        this.saveProfileButton.setText(translate.getString("settings.saveProfileButton.text"));
+        this.systemLanguageLabel.setText(translate.getString("settings.systemLanguageLabel.text"));
     }
 }

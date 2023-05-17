@@ -62,7 +62,11 @@ public abstract class BaseController implements Initializable {
             System.exit(0);
         });
         this.makeGraphicsMenuItem.setOnAction(e -> {
-                Platform.exit();
+            try {
+                SceneUtil.changeScene((Stage)this.menubar.getScene().getWindow(), "/com/example/projektisrs/GraphicsView.fxml");
+            } catch (IOException ex) {
+                AlertUtil.alertError("System Error", "Window Error", "Sorry but this action could not be completed!");
+            }
         });
         this.aboutMenuItem.setOnAction(e -> {
             try {

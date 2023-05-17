@@ -34,7 +34,7 @@
     </Pane>
    <Pane layoutX="-1.0" layoutY="98.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0">
       <children>
-         <Label fx:id="formoGrafTextLabel" layoutX="300.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="500.0" text="Formo graf sipas kriterit:" textAlignment="CENTER">
+         <Label fx:id="formoGrafTextLabel" layoutX="300.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="500.0" text="Formo graf sipas kriterit:" textAlignment="CENTER">
             <font>
                <Font name="System Bold Italic" size="24.0" />
             </font>

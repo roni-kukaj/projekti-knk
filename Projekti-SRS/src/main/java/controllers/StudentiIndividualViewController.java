@@ -210,5 +210,6 @@ public class StudentiIndividualViewController extends BaseController {
         this.studentiMajor.setText(translate.getString("student.studentiMajor.text"));
         this.updateInfoButton.setText(translate.getString("student.updateInfoButton.text"));
         this.printAsPDFButton.setText(translate.getString("student.printAsPDFButton.text"));
+        this.deleteStudentButton.setText(translate.getString("student.deleteStudentButton.text"));
     }
 }

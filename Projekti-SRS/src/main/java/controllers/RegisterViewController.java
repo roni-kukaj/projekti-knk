@@ -89,6 +89,8 @@ public class RegisterViewController extends BaseController {
     private Label provimiPranuesLabel;
     @FXML
     private Label drejtimiLabel;
+    @FXML
+    private Label suksesiShkolleMesme;
 
     private ArrayList<Qyteti> qytetet;
     private ArrayList<Shkolla> shkollat;
@@ -198,6 +200,7 @@ public class RegisterViewController extends BaseController {
         this.provimiPranuesLabel.setText(translate.getString("register.provimiPranuesLabel.text"));
         this.drejtimiLabel.setText(translate.getString("register.drejtimiLabel.text"));
         this.registerButton.setText(translate.getString("register.registerButton.text"));
+        this.suksesiShkolleMesme.setText(translate.getString("register.HSSuccess.text"));
     }
 }
 
